@@ -7,6 +7,9 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        <!--Boostraps CDN -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
@@ -29,8 +32,14 @@
 
             <!-- Page Content -->
             <main>
-                {{ $slot }}
+               <div class="flex m-5 max-w-xl h-96 bg-cover"  style="background-image: url('https:/source.unsplash.com/1000x600?computer')">
+                <div class="bg-neutral-400 flex w-full h-full mix-blend-multiply">
+                    <h1 class="m-auto text-4xl text-transparent bg-gradient-to-r from-blue-800 to-red-900 bg-clip-text ">Presale 20% With BRI</h1>
+                </div>
+            </div>
+                {{-- {{ $slot }} --}}
             </main>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     </body>
 </html>
