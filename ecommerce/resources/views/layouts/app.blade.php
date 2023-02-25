@@ -55,16 +55,6 @@
                       <span class="visually-hidden">Next</span>
                     </button>
                   </div>
-                {{-- <div class="group posting flex h-full mb-32">
-                    <div class="slider1" id="banner1">
-                        <img src="img/Only.png" class="bg-cover" alt="">
-                    </div>
-                    <div class="slider2 hidden" id="banner2">
-                        <img src="img/buy.png" class="bg-cover" alt="">
-                    </div>
-                    <a href="#" id="frst" onclick="next()" class="absolute z-20 carosel top-2/4 -right-10 transition ease-out group-hover:duration-200 group-hover:-translate-x-12 hover:bg-black hover:text-white"><span class="material-symbols-rounded transition ease-out hover:text-white duration-200 text-5xl">chevron_right</span></a>
-                    <a href="#" id="scnd" onclick="prev()" class="absolute z-20 carosel top-2/4 -left-10  transition ease-out group-hover:duration-200 group-hover:translate-x-12  hover:bg-black hover:text-white"><span class="material-symbols-rounded transition ease-out hover:text-white duration-200 text-5xl">chevron_left</span></a>
-                </div> --}}
                 <section class="inline-block relative">
                     <div class="category">
                         <h1>Category</h1>
@@ -73,28 +63,6 @@
                 {{-- {{ $slot }} --}}
             </main>
         </div>
-        {{-- <script>
-        function next(){
-            document.getElementById("banner1").style.transition="1s all";
-            document.getElementById("banner1").style.visibility="hidden";
-            document.getElementById("banner1").style.zIndex="10";
-            document.getElementById("banner2").style.zIndex="20";
-            document.getElementById("frst").style.visibility="hidden";
-            document.getElementById("banner2").style.visibility="visible";
-            document.getElementById("scnd").style.visibility="visible";
-
-        }
-        function prev(){
-            document.getElementById("banner2").style.transition="1s all";
-            document.getElementById("banner2").style.visibility="hidden";
-            document.getElementById("banner2").style.zIndex="10";
-            document.getElementById("banner1").style.zIndex="20";
-            document.getElementById("scnd").style.visibility="hidden";
-            document.getElementById("frst").style.visibility="visible";
-            document.getElementById("banner1").style.visibility="visible";
-        }
-        </script> --}}
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-        {{-- <script src="js/script.js"></script> --}}
     </body>
 </html>
