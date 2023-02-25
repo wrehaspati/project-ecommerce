@@ -1,5 +1,5 @@
 <x-app-layout>
-    @foreach ($getItem as $item)
+    @foreach ($items as $item)
         {
         <x-slot name="header">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
