@@ -13,6 +13,17 @@ class DataUsers extends DataTableComponent
     public function configure(): void
     {
         $this->setPrimaryKey('id');
+        $this->setBulkActions([
+            'deleteSelected' => 'Delete',
+        ]);
+    }
+    
+    public function deleteSelected()
+    {
+        foreach($this->getSelected() as $item)
+        {
+            User::destroy($item);
+        }
     }
 
     public function columns(): array

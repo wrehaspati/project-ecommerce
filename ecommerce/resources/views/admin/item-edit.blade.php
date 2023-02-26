@@ -1,6 +1,5 @@
-<x-app-layout>
+<x-admin-layout>
     @foreach ($items as $item)
-        {
         <x-slot name="header">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __('Product Overview Edit') }}
@@ -413,6 +412,5 @@
                 </div>
             </div>
         </div>
-        }
     @endforeach
-</x-app-layout>
+</x-admin-layout>

@@ -84,7 +84,13 @@ class ItemController extends Controller
  
         $item->name = $request->name;
 
-        $item->thumbnail = 'https://via.placeholder.com/300.png';
+        if($request->thumbnail):
+            $path = $request->thumbnail->store('images');
+            $item->thumbnail = $path;
+        else:
+            $item->thumbnail = 'https://via.placeholder.com/300.png';
+        endif;
+
 
         $item->display_price = $request->price;
 
