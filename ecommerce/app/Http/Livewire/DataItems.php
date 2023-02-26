@@ -2,15 +2,14 @@
 
 namespace App\Http\Livewire;
 
-use Rappasoft\LaravelLivewireTables\DataTableComponent;
-use Rappasoft\LaravelLivewireTables\Views\Column;
-namespace App\Http\Livewire;
-
+use App\Models\Image;
 use App\Models\Item;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
+use Rappasoft\LaravelLivewireTables\Views\Columns\ImageColumn;
 
 
 class DataItems extends DataTableComponent
@@ -39,7 +38,11 @@ class DataItems extends DataTableComponent
     {
         foreach($this->getSelected() as $item)
         {
-            Item::destroy($item);
+            if($image = Image::where('item_id', $item)):
+                Storage::disk('public')->delete('images/'.$image->image);
+            endif;
+            
+            Image::destroy($image->id);
         }
     }
 
@@ -56,6 +59,19 @@ class DataItems extends DataTableComponent
                 ->format( function($value, $row, Column $column){
                     return 'Rp. '.number_format($row->display_price,0,',','.');
                 }),
+            ImageColumn::make('Thumbnail')
+                ->location(function($row)
+                {
+                    $image = Image::where('item_id', $row->id)->value('image');
+                    if(Str::contains($image, 'http')):
+                        return $image;
+                    else:
+                        return url('storage/images/'.$image);
+                    endif;
+                } 
+                )->attributes(fn() => [
+                    'alt' => 'image',
+                ]),
             Column::make("General Description", "general_description")
                 ->sortable()
                 ->searchable()

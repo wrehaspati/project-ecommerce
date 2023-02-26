@@ -10,65 +10,91 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900">
-                        
+
                         <div class="bg-white">
                             <div class="pt-6">
                                 <nav aria-label="Breadcrumb">
-                                    <ol role="list" class="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-                        
+                                    <ol role="list"
+                                        class="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+
                                         <li>
                                             <div class="flex items-center">
-                                                <a href="{{ url('/') }}" class="mr-2 text-sm font-medium text-gray-900">Homepage</a>
-                                                <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" aria-hidden="true"
+                                                <a href="{{ url('/') }}"
+                                                    class="mr-2 text-sm font-medium text-gray-900">Homepage</a>
+                                                <svg width="16" height="20" viewBox="0 0 16 20"
+                                                    fill="currentColor" aria-hidden="true"
                                                     class="h-5 w-4 text-gray-300">
                                                     <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
                                                 </svg>
                                             </div>
                                         </li>
-                        
+
                                         <li>
                                             <div class="flex items-center">
-                                                <a href="{{ url('/') }}" class="mr-2 text-sm font-medium text-gray-900">Product</a>
-                                                <svg width="16" height="20" viewBox="0 0 16 20" fill="currentColor" aria-hidden="true"
+                                                <a href="{{ url('/') }}"
+                                                    class="mr-2 text-sm font-medium text-gray-900">Product</a>
+                                                <svg width="16" height="20" viewBox="0 0 16 20"
+                                                    fill="currentColor" aria-hidden="true"
                                                     class="h-5 w-4 text-gray-300">
                                                     <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
                                                 </svg>
                                             </div>
                                         </li>
-                        
+
                                         <li class="text-sm">
-                                            <a href="{{ url('/product/' . Str::slug($item->name)) }}" aria-current="page"
+                                            <a href="{{ url('/product/' . Str::slug($item->name)) }}"
+                                                aria-current="page"
                                                 class="font-medium text-gray-500 hover:text-gray-600">{{ $item->name }}</a>
                                         </li>
                                     </ol>
                                 </nav>
-                        
-                                <!-- Image gallery -->
-                                <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
-                                    <div class="aspect-w-3 aspect-h-4 hidden overflow-hidden rounded-lg lg:block">
-                                        <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg"
-                                            alt="Two each of gray, white, and black shirts laying flat."
-                                            class="h-full w-full object-cover object-center">
-                                    </div>
-                                    <div class="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
-                                        <div class="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg">
-                                            <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg"
-                                                alt="Model wearing plain black basic tee." class="h-full w-full object-cover object-center">
-                                        </div>
-                                        <div class="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg">
-                                            <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg"
-                                                alt="Model wearing plain gray basic tee." class="h-full w-full object-cover object-center">
-                                        </div>
-                                    </div>
-                                    <div class="aspect-w-4 aspect-h-5 sm:overflow-hidden sm:rounded-lg lg:aspect-w-3 lg:aspect-h-4">
-                                        <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-featured-product-shot.jpg"
-                                            alt="Model wearing plain white basic tee." class="h-full w-full object-cover object-center">
-                                    </div>
-                                </div>
-                        
-                                <!-- Product info -->
-                                <form action="{{ route('product.update') }}" method="POST">
+
+                                <form action="{{ route('product.update') }}" method="POST"
+                                    enctype="multipart/form-data">
                                     @csrf
+                                    <!-- Image gallery -->
+                                    <div
+                                        class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
+                                        <div class="aspect-w-3 aspect-h-4 hidden overflow-hidden rounded-lg lg:block"
+                                            x-data="imageData()">
+                                            <p class="text-center uppercase text-bold">
+                                                <label for="thumbnail"
+                                                    class="cursor-pointer h-full w-full object-cover object-center"
+                                                    x-show="previewUrl == ''">
+                                                    <img src="@include('components.partials.thumbnail-control')" alt="Image Loading"
+                                                        class="h-full w-full object-cover object-center">
+                                                </label>
+                                                <label for="thumbnail"
+                                                    class="cursor-pointer h-full w-full object-cover object-center"
+                                                    x-show="previewUrl !== ''">
+                                                    <img :src="previewUrl" alt="Image Loading"
+                                                        class="h-full w-full object-cover object-center">
+                                                </label>
+                                                <input type="file" name="thumbnail" id="thumbnail" class="hidden"
+                                                    @change="updatePreview()">
+                                            </p>
+                                        </div>
+                                        <div class="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
+                                            <div class="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg">
+                                                <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg"
+                                                    alt="Model wearing plain black basic tee."
+                                                    class="h-full w-full object-cover object-center">
+                                            </div>
+                                            <div class="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg">
+                                                <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg"
+                                                    alt="Model wearing plain gray basic tee."
+                                                    class="h-full w-full object-cover object-center">
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="aspect-w-4 aspect-h-5 sm:overflow-hidden sm:rounded-lg lg:aspect-w-3 lg:aspect-h-4">
+                                            <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-featured-product-shot.jpg"
+                                                alt="Model wearing plain white basic tee."
+                                                class="h-full w-full object-cover object-center">
+                                        </div>
+                                    </div>
+
+                                    <!-- Product info -->
                                     <input type="hidden" name='id' value="{{ $item->id }}">
                                     <div
                                         class="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
@@ -76,19 +102,22 @@
                                             <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
                                                 <input
                                                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                                    id="grid-last-name" type="text" placeholder="{{ $item->name }}" value="{{ $item->name }}" name="name">
+                                                    id="grid-last-name" type="text" placeholder="{{ $item->name }}"
+                                                    value="{{ $item->name }}" name="name">
                                             </h1>
                                         </div>
-                        
+
                                         <!-- Options -->
                                         <div class="mt-4 lg:row-span-3 lg:mt-0">
                                             <h2 class="sr-only">Product information</h2>
                                             <p class="text-3xl tracking-tight text-gray-900">
                                                 <input
                                                     class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                                    id="grid-last-name" type="text" placeholder="{{ $item->display_price }}" value="{{ $item->display_price }}" name="price">
+                                                    id="grid-last-name" type="text"
+                                                    placeholder="{{ $item->display_price }}"
+                                                    value="{{ $item->display_price }}" name="price">
                                             </p>
-                        
+
                                             <!-- Reviews -->
                                             {{-- <div class="mt-6">
                                             <h3 class="sr-only">Reviews</h3>
@@ -136,7 +165,7 @@
                                                     reviews</a>
                                             </div>
                                         </div> --}}
-                        
+
                                             <form class="mt-10">
                                                 <!-- Colors -->
                                                 <div>
@@ -192,14 +221,15 @@
                                                         </label>
                                                     </div>
                                                 </fieldset> --}}
-                        
+
                                                 </div>
-                        
+
                                                 <!-- Sizes -->
                                                 <div class="mt-10">
                                                     <div class="flex items-center justify-between">
                                                         <h3 class="text-sm font-medium text-gray-900">Size</h3>
-                                                        <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Size
+                                                        <a href="#"
+                                                            class="text-sm font-medium text-indigo-600 hover:text-indigo-500">Size
                                                             guide</a>
                                                     </div>
                                                     -
@@ -338,9 +368,9 @@
                                                         </label>
                                                     </div>
                                                 </fieldset> --}}
-                        
+
                                                 </div>
-                        
+
                                                 {{-- <button type="submit" class="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                                                 Add to cart
                                             </button> --}}
@@ -348,15 +378,16 @@
                                                     class="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Save</button>
                                                 <button type="reset"
                                                     class="mt-2 flex w-full items-center justify-center rounded-md border border-transparent bg-gray-200 py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 focus:ring-offset-2">Cancel</button>
-                        
+
                                             </form>
                                         </div>
-                        
-                                        <div class="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pt-6 lg:pb-16 lg:pr-8">
+
+                                        <div
+                                            class="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pt-6 lg:pb-16 lg:pr-8">
                                             <!-- Description and details -->
                                             <div>
                                                 <h3 class="sr-only">Description</h3>
-                        
+
                                                 <div class="space-y-6">
                                                     <p class="text-base text-gray-900">
                                                         <textarea id="message" rows="4" name="description"
@@ -365,7 +396,7 @@
                                                     </p>
                                                 </div>
                                             </div>
-                        
+
                                             <div class="mt-10">
                                                 <h3 class="text-sm font-medium text-gray-900">Highlights</h3>
                                                 -
@@ -388,7 +419,7 @@
                                                 </ul>
                                             </div> --}}
                                             </div>
-                        
+
                                             <div class="mt-10">
                                                 <h2 class="text-sm font-medium text-gray-900">Details</h2>
                                                 -
@@ -406,7 +437,7 @@
                                 </form>
                             </div>
                         </div>
-                        
+
 
                     </div>
                 </div>
@@ -414,3 +445,27 @@
         </div>
     @endforeach
 </x-admin-layout>
+
+<script>
+    function imageData() {
+        return {
+            previewUrl: "",
+            updatePreview() {
+                var reader,
+                    files = document.getElementById("thumbnail").files;
+
+                reader = new FileReader();
+
+                reader.onload = e => {
+                    this.previewUrl = e.target.result;
+                };
+
+                reader.readAsDataURL(files[0]);
+            },
+            clearPreview() {
+                document.getElementById("thumbnail").value = null;
+                this.previewUrl = "";
+            }
+        };
+    }
+</script>

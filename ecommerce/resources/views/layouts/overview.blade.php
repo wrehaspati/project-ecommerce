@@ -38,7 +38,7 @@
         <!-- Image gallery -->
         <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
             <div class="aspect-w-3 aspect-h-4 hidden overflow-hidden rounded-lg lg:block">
-                <img src="https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg"
+                <img src="@include('components.partials.thumbnail-control')"
                     alt="Two each of gray, white, and black shirts laying flat."
                     class="h-full w-full object-cover object-center">
             </div>
