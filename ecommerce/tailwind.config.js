@@ -15,6 +15,21 @@ module.exports = {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                'black-pale':'rgba(0, 0, 0, 0.2)',
+            },
+            inset: {
+                '17':'4.8rem',
+            },
+            height: {
+                '98':'50rem',
+            },
+            margin: {
+                '30': '7.4rem',
+            },
+            opacity:{
+                '1': '0.01',
+            },
         },
     },
 
