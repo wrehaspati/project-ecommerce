@@ -19,7 +19,6 @@ class ItemFactory extends Factory
         return [
             'name' => fake()->name(),
             'general_description' => fake()->text(),
-            'thumbnail' => 'https://via.placeholder.com/300.png',
             'display_price' => fake()->numberBetween(500000, 5000000)
         ];
     }
