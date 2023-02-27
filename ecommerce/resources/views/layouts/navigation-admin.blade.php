@@ -30,11 +30,14 @@
                             </x-slot>
             
                             <x-slot name="content">
-                                <x-dropdown-link :href="route('show.item')">
-                                    {{ __('Item / Product') }}
+                                <x-dropdown-link :href="route('show.items')">
+                                    {{ __('Items / Products') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('show.user')">
-                                    {{ __('User / Customer') }}
+                                <x-dropdown-link :href="route('show.users')">
+                                    {{ __('Users / Customers') }}
+                                </x-dropdown-link>
+                                <x-dropdown-link :href="route('show.images')">
+                                    {{ __('Images / Photos') }}
                                 </x-dropdown-link>
                             </x-slot>
                         </x-dropdown>
