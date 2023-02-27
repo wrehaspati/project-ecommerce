@@ -1,6 +1,6 @@
 <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-    <a href="#">
-        <img class="p-8 rounded-t-lg" src="{{ $item->thumbnail }}" alt="product image" />
+    <a href="{{ url("/product/" . Str::slug($item->name)) }}">
+        <img class="p-8 rounded-t-lg" src="@include('components.partials.thumbnail-control')" alt="product image" />
     </a>
     <div class="px-5 pb-5">
         <a href="{{ url("/product/" . Str::slug($item->name)) }}">

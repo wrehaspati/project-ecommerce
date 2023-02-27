@@ -17,12 +17,11 @@ class ItemDetailFactory extends Factory
     public function definition(): array
     {
         return [
-            'item_id' => fake()->numberBetween(1, 10),
+            'item_id' => fake()->numberBetween(1, 20),
             'variant_name' => fake()->word(),
             'quantity' => fake()->numberBetween(1, 15),
             'price' => fake()->numberBetween(500000, 5000000),
-            'description' => fake()->text(),
-            'image' => 'https://via.placeholder.com/300.png'
+            'description' => fake()->text()
         ];
     }
 }
