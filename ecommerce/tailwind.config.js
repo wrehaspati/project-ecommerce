@@ -26,9 +26,16 @@ module.exports = {
             },
             margin: {
                 '30': '7.4rem',
+                '34': '8.5rem',
+                '50': '12.5rem',
+                '47': '11.7rem',
+                '19': '4.7rem',
             },
             opacity:{
                 '1': '0.01',
+            },
+            backgroundImage: {
+                'model': "url('img/Buy.png')",
             },
         },
     },
