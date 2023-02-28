@@ -22,7 +22,7 @@ module.exports = {
                 '17':'4.8rem',
             },
             height: {
-                '98':'50rem',
+                '98':'80rem',
             },
             margin: {
                 '30': '7.4rem',
@@ -35,7 +35,7 @@ module.exports = {
                 '1': '0.01',
             },
             backgroundImage: {
-                'model': "url('img/Buy.png')",
+                'model': "url('img/model.jpeg')",
             },
         },
     },
