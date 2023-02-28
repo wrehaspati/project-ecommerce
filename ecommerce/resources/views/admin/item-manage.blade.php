@@ -1,7 +1,7 @@
 <x-admin-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Table Item') }}
+            {{ __('Table Items') }}
             <x-nav-link class="ml-6" :href="route('item.insert')" :active="request()->routeIs('item.insert')">
                 {{ __('Insert') }}
             </x-nav-link>

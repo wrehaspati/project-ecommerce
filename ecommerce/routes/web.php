@@ -35,9 +35,10 @@ Route::middleware('auth', 'verified', 'admin')->group(function () {
     Route::prefix('admin')->group(function () {
         Route::get('/', function(){ return view('admin.index'); })->middleware(['auth', 'verified', 'admin']);
         Route::prefix('database')->group(function () {
-            Route::get('item', function(){ return view('admin.item-manage'); })->name('show.item');
+            Route::get('items', function(){ return view('admin.item-manage'); })->name('show.items');
             Route::get('item/insert', [AdminController::class, 'itemInsert'])->name('item.insert');
-            Route::get('user', function(){ return view('admin.user-manage'); })->name('show.user');
+            Route::get('users', function(){ return view('admin.user-manage'); })->name('show.users');
+            Route::get('images', function(){ return view('admin.image-manage'); })->name('show.images');
         });
         Route::get('messages', function(){ return 'null'; });
         Route::get('analytics', function(){ return 'null'; });

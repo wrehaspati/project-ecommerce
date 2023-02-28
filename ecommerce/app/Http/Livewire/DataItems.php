@@ -38,11 +38,14 @@ class DataItems extends DataTableComponent
     {
         foreach($this->getSelected() as $item)
         {
-            if($image = Image::where('item_id', $item)):
-                Storage::disk('public')->delete('images/'.$image->image);
+            $image = Image::where('item_id', $item)->value('image');
+
+            if($image != ''):
+                Storage::disk('public')->delete('images/'.$image);
+                Image::destroy($item);
             endif;
-            
-            Image::destroy($image->id);
+
+            Item::destroy($item);
         }
     }
 
