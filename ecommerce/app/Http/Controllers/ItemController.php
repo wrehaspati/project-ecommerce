@@ -31,10 +31,24 @@ class ItemController extends Controller
             abort(404);
         endif;
 
+        if($this->checkimg($result) == false):
+            $item = Item::where('name', $result)->get();
+        else:
+            $item = Item::select('items.*', 'images.image')->where('name', $result)->join('images', 'items.id', '=', 'images.item_id')->get();
+        endif;
         
-        $item = Item::select('items.*', 'images.image')->join('images', 'items.id', '=', 'images.item_id')->where('name', $result)->get();
-
         return $item;
+    }
+
+    private function checkimg($result){
+        $check_img = Item::where('name', $result)->value('id');
+        $image = Image::where('item_id',$check_img)->value('item_id');
+
+        if($image == ""):
+            return false;
+        else:
+            return true;
+        endif;
     }
     
     public function index($name)
@@ -62,14 +76,24 @@ class ItemController extends Controller
         $item->save();
 
         if($request->thumbnail):
-            $image = Image::where('item_id', $request->id)->first();
-            // $image_name = Image::where('item_id', $request->id)->value('image');
-            // Storage::disk('public')->delete('images/'.$image_name);
-            
-            $path = $request->thumbnail->store('images', 'public');
-            $image->image = basename($path);
+            if($this->checkimg($request->id) == true):
+                $image = new Image;
+                $path = $request->thumbnail->store('images', 'public');
+        
+                $image->image = basename($path);
+                $image->item_id = $item->id;
+        
+                $image->save();
+            else:
+                $image = Image::where('item_id', $request->id)->first();
+                $image_name = Image::where('item_id', $request->id)->value('image');
+                Storage::disk('public')->delete('images/'.$image_name);
+                
+                $path = $request->thumbnail->store('images', 'public');
+                $image->image = basename($path);
 
-            $image->save();
+                $image->save();
+            endif;
         endif;
  
         return redirect('product/'.Str::slug($request->name).'/edit');
