@@ -37,6 +37,9 @@ module.exports = {
             backgroundImage: {
                 'model': "url('img/model.jpeg')",
             },
+            inset: {
+                '34':'8.5rem',
+            },
         },
     },
 
