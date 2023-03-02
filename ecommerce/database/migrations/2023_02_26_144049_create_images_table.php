@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('image');
             $table->foreignId('item_id')->nullable()->constrained()->nullOnDelete()->cascadeOnUpdate();
-            $table->foreignId('item_detail_id')->nullable()->constrained()->nullOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }

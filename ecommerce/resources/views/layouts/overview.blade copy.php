@@ -1,5 +1,5 @@
 <div class="bg-white">
-    <div class="pt-6">
+    <div>
         <nav aria-label="Breadcrumb">
             <ol role="list"
                 class="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -76,7 +76,7 @@
                 <!-- Reviews -->
                 <div class="mt-6">
                     <h3 class="sr-only">Reviews</h3>
-                    <div class="flex items-center">
+                    {{-- <div class="flex items-center">
                         <div class="flex items-center">
                             <!-- Active: "text-gray-900", Default: "text-gray-200" -->
                             <svg class="text-gray-900 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20"
@@ -118,7 +118,7 @@
                         <a href="#"
                             class="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">0
                             reviews</a>
-                    </div>
+                    </div> --}}
                 </div>
 
                 <form class="mt-10">

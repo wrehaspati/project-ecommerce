@@ -1,14 +1,14 @@
 <x-app-layout>
     <x-slot name="main">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        {{-- <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
-        </h2>
+        </h2> --}}
         <style>
             .pagination div[class^="swiper-button"]::after{
                 display: none
             }   
         </style>
- {{-- {{ $slot }} --}}
+
         <div id="carouselExampleDark" class="carousel carousel-dark slide group overflow-hidden mb-10">
             <div class="carousel-indicators transistion duration-200 translate-y-11 group-hover:-translate-y-1">
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>

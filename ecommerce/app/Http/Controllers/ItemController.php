@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Image;
 use App\Models\Item;
+use App\Models\ItemVariant;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
@@ -13,7 +14,8 @@ use Illuminate\Support\Facades\Storage;
 
 class ItemController extends Controller
 {
-    private function urlConvertion($name){
+    private function urlConvertion($name)
+    {
         $result = null;
         $unslug_name = str_replace('-', ' ', $name);
         $raws = Item::all();
@@ -31,36 +33,25 @@ class ItemController extends Controller
             abort(404);
         endif;
 
-        if($this->checkimg($result) == false):
-            $item = Item::where('name', $result)->get();
-        else:
-            $item = Item::select('items.*', 'images.image')->where('name', $result)->join('images', 'items.id', '=', 'images.item_id')->get();
-        endif;
-        
-        return $item;
+        $id = Item::where('name', $result)->first();
+
+        return $id;
     }
 
-    private function checkimg($result){
-        $check_img = Item::where('name', $result)->value('id');
-        $image = Image::where('item_id',$check_img)->value('item_id');
-
-        if($image == ""):
-            return false;
-        else:
-            return true;
-        endif;
-    }
-    
     public function index($name)
     {
         $item = $this->urlConvertion($name);
-        return view('overview', ['items' => $item]);
+        $image = Item::find($item->id)->image;
+        
+        return view('overview.overview', ['item' => $item,'images' => $image]);
     }
 
     public function edit($name)
     {
         $item = $this->urlConvertion($name);
-        return view('admin.item-edit', ['items' => $item]);
+        $image = Item::find($item->id)->image;
+        
+        return view('admin.item-edit', ['item' => $item,'images' => $image]);
     }
 
     public function update(Request $request): RedirectResponse
@@ -75,26 +66,34 @@ class ItemController extends Controller
  
         $item->save();
 
-        if($request->thumbnail):
-            if($this->checkimg($request->id) == true):
-                $image = new Image;
-                $path = $request->thumbnail->store('images', 'public');
-        
-                $image->image = basename($path);
-                $image->item_id = $item->id;
-        
-                $image->save();
-            else:
-                $image = Image::where('item_id', $request->id)->first();
-                $image_name = Image::where('item_id', $request->id)->value('image');
-                Storage::disk('public')->delete('images/'.$image_name);
+
+        for($i=1; $i<count(Image::where('item_id', $request->id)->get())+1;$i++):
+
+            if(isset($request->image[$i])):
+
+                $image = Image::find($request->id_image[$i]);
+
+                if(!isset($image)):
+                    
+                    $image = new Image;
+
+                    $image->item_id = $item->id;
+
+                else:
+                    
+                    Storage::disk('public')->delete('images/'.$image->name);
+
+                endif; 
                 
-                $path = $request->thumbnail->store('images', 'public');
+                $path = $request->image[$i]->store('images', 'public');
+
                 $image->image = basename($path);
 
                 $image->save();
+
             endif;
-        endif;
+
+        endfor;
  
         return redirect('product/'.Str::slug($request->name).'/edit');
     }
@@ -120,7 +119,7 @@ class ItemController extends Controller
 
         $image->save();
  
-        return redirect('admin/database/item');
+        return redirect('admin/database/items');
     }
 
 }
