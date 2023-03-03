@@ -30,6 +30,7 @@ module.exports = {
                 '50': '12.5rem',
                 '47': '11.7rem',
                 '19': '4.7rem',
+                '2' : '2.5px',
             },
             opacity:{
                 '1': '0.01',
@@ -39,13 +40,29 @@ module.exports = {
             },
             inset: {
                 '34':'8.5rem',
+                '30':'7.3rem',
+                '21':'5.5rem',
+                '19': '4.7rem',
+                '25': '6.5rem',
+                '4': '0.80rem',
             },
+            screens: {
+                'laptop':'800px',
+                'handphone':'400px',
+                'tablet':'600px',
+            },
+            borderWidth: {
+                '1': '1.2px',
+            },
+            zIndex: {
+                '1': '2',
+            }
         },
     },
 
     plugins: [
         require('@tailwindcss/forms'),
         require('@tailwindcss/aspect-ratio'),
-        require('@tailwindcss/typography')
+        require('@tailwindcss/typography'),
     ],
 };
