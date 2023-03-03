@@ -11,9 +11,9 @@ class ItemCard extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public $item)
+    public function __construct()
     {
-        $this->item=$item;
+        
     }
 
     /**
