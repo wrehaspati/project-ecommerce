@@ -38,6 +38,11 @@ class ItemController extends Controller
         return $id;
     }
 
+    public function homepage()
+    {
+        return view('homepage.homepage', ['Items' => Item::select('items.*', 'images.image')->join('images', 'items.id', '=', 'images.item_id')->get()]);
+    }
+
     public function index($name)
     {
         $item = $this->urlConvertion($name);

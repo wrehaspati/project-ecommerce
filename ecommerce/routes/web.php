@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-Route::get('/', [HomepageController::class, 'getItem'])->name('homepage');
+Route::get('/', [ItemController::class, 'homepage'])->name('homepage');
 
 Route::get('product/{name}', [ItemController::class, 'index'])->name('product');
 
