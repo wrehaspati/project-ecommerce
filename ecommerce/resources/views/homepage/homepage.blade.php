@@ -1,5 +1,4 @@
 <x-app-layout>
-    <x-slot name="main">
 
         {{-- Corousel --}}
         @include('homepage.partials.homepage-carousel')
@@ -12,8 +11,5 @@
 
         <!-- Slider main container -->
         <x-item-card/>
-     
-        {{-- Footer --}}
-        @include('homepage.partials.homepage-footer')
-    </x-slot>
+
 </x-app-layout>

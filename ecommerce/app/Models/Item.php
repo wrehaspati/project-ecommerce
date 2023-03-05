@@ -10,11 +10,6 @@ use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 class Item extends Model
 {
     use HasFactory;
-    
-    // public function variant(): HasManyThrough
-    // {
-    //     return $this->hasManyThrough(Image::class, ItemVariant::class);
-    // }
 
     public function image(): HasMany
     {
