@@ -1,4 +1,3 @@
-
 <footer class="p-4 bg-white sm:p-6 dark:bg-gray-900 mt-4">
     <div class="md:flex md:justify-between">
         <div class="mb-10 md:mb-0">
