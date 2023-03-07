@@ -1,7 +1,7 @@
 const swiper = new Swiper('.swiper', {
     speed: 400,
     spaceBetween: 1,
-    slidesPerView: 3,
+    slidesPerView: 4,
     pagination: {
         el: '.swiper-pagination',
         type: 'bullets',
@@ -12,33 +12,31 @@ const swiper = new Swiper('.swiper', {
         prevEl: '.swiper-button-prev',
     },
     breakpoints: {
-        '768': {
-            slidesPerView: 4,
-            spaceBetween: 1,
-        },
-        '640': {
-            slidesPerView: 3,
-            spaceBetween: 1,
-        },
-        '320': {
+        400: {
             slidesPerView: 2,
-            spaceBetween: 1,
-        }
+            spaceBetween: 10
+        },
+        800: {
+            slidesPerView: 3,
+            spaceBetween: 10
+        },
+        1024: {
+            slidesPerView: 4,
+            spaceBetween: 10
+        },
     }
 });
+let test= screen.width;
+console.log(test);
 
 function morph() {
-    document.getElementById('fist').style.transition = "all 1s";
-    document.getElementById('fist').style.opacity = "0";
-    document.getElementById('okeh').style.transition = "all 3s";
-    document.getElementById('okeh').style.opacity = "1";
+    document.getElementById('fist').style.display = "none";
+    document.getElementById('okeh').style.display = "flex";
 }
 
 function morphin() {
-    document.getElementById('fist').style.transition = "all 3s";
-    document.getElementById('fist').style.opacity = "1";
-    document.getElementById('okeh').style.transition = "all 1s";
-    document.getElementById('okeh').style.opacity = "0";
+    document.getElementById('fist').style.display = "flex";
+    document.getElementById('okeh').style.display ="none";
 }
 
 // button =document.getElementById('satu');

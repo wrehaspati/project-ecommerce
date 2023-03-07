@@ -24,3 +24,4 @@ class CategoryCard extends Component
         return view('components.category-card');
     }
 }
+?>

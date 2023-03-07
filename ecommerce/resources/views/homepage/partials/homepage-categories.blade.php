@@ -5,8 +5,8 @@
     </div>
     
     <div class="flex flex-row">
-        <x-category-card :anything="'cincin'"/>
-        <x-category-card :anything="'emas'"/>
-        <x-category-card :anything="'kalung'"/>
+        <x-category-card :anything="'Cincin'"/>
+        <x-category-card :anything="'Emas'"/>
+        <x-category-card :anything="'Kalung'"/>
     </div>
 </div>

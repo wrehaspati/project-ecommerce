@@ -47,7 +47,7 @@ module.exports = {
                 '4': '0.80rem',
             },
             screens: {
-                'laptop':'800px',
+                'laptop':'700px',
                 'handphone':'400px',
                 'tablet':'600px',
             },

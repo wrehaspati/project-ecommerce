@@ -3,13 +3,13 @@
 }   
 .cad{
     position: relative;
-    width: 450px;
+    width: 380px;
     height: 220px;
 }
 .cad .liner{
     position: absolute;
     inset: 0;
-    width: 400px;
+    width: 380px;
     background: black;
     overflow: hidden;
 }
