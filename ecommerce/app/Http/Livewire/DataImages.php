@@ -37,25 +37,23 @@ class DataImages extends DataTableComponent
         return [
             Column::make("Id", "id")
                 ->sortable(),
-            // ImageColumn::make('Preview')
-            //         ->location(function($row)
-            //         {
-            //             $image = Image::where('item_id', $row->id)->value('image');
-            //             if(Str::contains($image, 'http')):
-            //                 return $image;
-            //             else:
-            //                 return url('storage/images/'.$image);
-            //             endif;
-            //         } 
-            //         )->attributes(fn() => [
-            //             'alt' => 'image',
-            //             'class' => 'max-w-sm',
-            //         ]),
+            ImageColumn::make('Preview')
+                    ->location(function($row)
+                    {
+                        $image = $row->image;
+                        if(Str::contains($image, 'http')):
+                            return $image;
+                        else:
+                            return url('storage/images/'.$image);
+                        endif;
+                    } 
+                    )->attributes(fn() => [
+                        'alt' => 'image',
+                        'style' => "width:10rem !important",
+                    ]),
             Column::make("Images Name", "image")
                 ->sortable(),
             Column::make("Id Item", "item_id")
-                ->sortable(),
-            Column::make("Id Item Detail", "item_detail_id")
                 ->sortable(),
             Column::make("Created at", "created_at")
                 ->sortable(),

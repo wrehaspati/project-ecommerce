@@ -100,7 +100,7 @@ class ItemController extends Controller
 
         endfor;
  
-        return redirect('product/'.Str::slug($request->name).'/edit');
+        return redirect('admin/products/'.Str::slug($request->name).'/edit');
     }
 
     public function store(Request $request): RedirectResponse
@@ -124,7 +124,7 @@ class ItemController extends Controller
 
         $image->save();
  
-        return redirect('admin/database/items');
+        return redirect('admin/products');
     }
 
 }

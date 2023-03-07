@@ -31,7 +31,29 @@ class DataItems extends DataTableComponent
         $this->setBulkActions([
             'deleteSelected' => 'Delete',
         ]);
+
+        $this->setAdditionalSelects(['items.id as id', 'items.general_description as general_description', 'items.display_price as display_price']);
+
+        // $this->setTheadAttributes([
+        //     'class' => 'hidden',
+        //   ]);
+
+        $this->setTdAttributes(function(Column $column, $row, $columnIndex, $rowIndex) {
+            if ($column->isField('name')) {
+              return [
+                'default' => false,
+                'class' => 'px-6 py-4 text-sm font-medium dark:text-white',
+              ];
+            }
         
+            return [];
+          });
+        
+        $this->setDefaultSort('id', 'desc');
+
+        $this->setConfigurableAreas([
+            'toolbar-left-end' => 'admin.partials.insert-button',
+          ]);
     }
 
     public function deleteSelected()
@@ -52,17 +74,7 @@ class DataItems extends DataTableComponent
     public function columns(): array
     {
         return [
-            Column::make("Id")
-                ->sortable()
-                ->searchable(),
-            Column::make("Name")
-                ->sortable()
-                ->searchable(),
-            Column::make("Display Price", "display_price")
-                ->format( function($value, $row, Column $column){
-                    return 'Rp. '.number_format($row->display_price,0,',','.');
-                }),
-            ImageColumn::make('Thumbnail')
+            ImageColumn::make('Image')
                 ->location(function($row)
                 {
                     $image = Image::where('item_id', $row->id)->value('image');
@@ -75,14 +87,26 @@ class DataItems extends DataTableComponent
                 )->attributes(fn() => [
                     'alt' => 'image',
                 ]),
-            Column::make("General Description", "general_description")
+            Column::make("Product Information", 'name')
                 ->sortable()
                 ->searchable()
-                ->collapseOnTablet(),
+                ->view('admin/partials/database-item-data'),
+            Column::make("Display Price", "display_price")
+                ->format( function($value, $row, Column $column){
+                    return 'Rp. '.number_format($row->display_price,0,',','.');
+                })
+                ->sortable()
+                ->searchable(),
+            // Column::make("General Description", "general_description")
+            //     ->sortable()
+            //     ->searchable()
+            //     ->collapseOnTablet(),
             Column::make("Created at", "created_at")
-                ->sortable(),
+                ->sortable()
+                ->collapseOnTablet(),
             Column::make("Updated at", "updated_at")
-                ->sortable(),
+                ->sortable()
+                ->collapseOnTablet(),
         ];
     }
 }
