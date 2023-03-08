@@ -4,9 +4,8 @@
         <p class="bg-gradient-to-r w-28 m-auto from-purple-400 to-pink-500 rounded-xl h-1 overflow-hidden">Z</p>
     </div>
     
-    <div class="flex flex-row">
-        <x-category-card :anything="'Cincin'"/>
-        <x-category-card :anything="'Emas'"/>
-        <x-category-card :anything="'Kalung'"/>
-    </div>
+    {{-- <div class="flex flex-row">
+        <x-category-card/>
+    </div> --}}
+    <x-category-card/>
 </div>

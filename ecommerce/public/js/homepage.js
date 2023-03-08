@@ -1,7 +1,7 @@
 const swiper = new Swiper('.swiper', {
     speed: 400,
     spaceBetween: 1,
-    slidesPerView: 4,
+    slidesPerView: 1,
     pagination: {
         el: '.swiper-pagination',
         type: 'bullets',
@@ -14,30 +14,34 @@ const swiper = new Swiper('.swiper', {
     breakpoints: {
         400: {
             slidesPerView: 2,
-            spaceBetween: 10
+            spaceBetween: -50
+        },
+        600: {
+            slidesPerView: 3,
+            spaceBetween: -50
         },
         800: {
-            slidesPerView: 3,
-            spaceBetween: 10
-        },
-        1024: {
             slidesPerView: 4,
-            spaceBetween: 10
+            spaceBetween: -50
+        },
+        1000: {
+            slidesPerView: 5,
+            spaceBetween: -50
         },
     }
 });
-let test= screen.width;
-console.log(test);
+// let test= screen.width;
+// console.log(test);
 
-function morph() {
-    document.getElementById('fist').style.display = "none";
-    document.getElementById('okeh').style.display = "flex";
-}
+// function morph() {
+//     document.getElementById('fist').style.display = "none";
+//     document.getElementById('okeh').style.display = "flex";
+// }
 
-function morphin() {
-    document.getElementById('fist').style.display = "flex";
-    document.getElementById('okeh').style.display ="none";
-}
+// function morphin() {
+//     document.getElementById('fist').style.display = "flex";
+//     document.getElementById('okeh').style.display ="none";
+// }
 
 // button =document.getElementById('satu');
 // button.addEventListener('click',function(){
