@@ -10,29 +10,70 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet" />
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
     </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation-admin')
+    <body class="font-sans antialiased overflow-hidden">
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
+        <div class="w-full h-full bg-gray-200">
+            <div class="flex flex-no-wrap">
+              <!-- Sidebar starts -->
+                @include('layouts.admin-partials.admin-sidebar')
+                
+                @include('layouts.admin-partials.admin-mobile-sidebar')
+
+                <!-- Sidebar ends -->
+                <div class="w-full">
+                    <!-- Navigation starts -->
+                    @include('layouts.admin-partials.admin-navigation')
+                    <!-- Navigation ends -->
+                    <!-- Remove class [ h-64 ] when adding a card block -->
+                    <div class="container mx-auto py-10 h-screen md:w-5/6 w-11/12 px-6">
+                        <!-- Remove class [ border-dashed border-2 border-gray-300 ] to remove dotted border -->
+                        <div class="w-full h-full rounded overflow-scroll pb-6">
+                            {{ $slot }}
+                        </div>
                     </div>
-                </header>
-            @endif
-
-            <!-- Page Content -->
-            <main>     
-                {{ $slot }}
-            </main>
+                </div>
+            </div>
+          
+          
         </div>
+        <script>
+            function dropdownHandler(element) {
+                let single = element.getElementsByTagName("ul")[0];
+                single.classList.toggle("hidden");
+            }
+
+            // var sideBar = document.getElementById("mobile-nav");
+            // function sidebarHandler() {
+            //     sideBar.classList.toggle("hidden");
+            // }
+
+            function dropdownHandler(element) {
+                let single = element.getElementsByTagName("ul")[0];
+                single.classList.toggle("hidden");
+            }
+            let sideBar = document.getElementById("mobile-nav");
+            let menu = document.getElementById("menu");
+            let cross = document.getElementById("cross");
+            const sidebarHandler = (check) => {
+                if (check) {
+                    sideBar.style.transform = "translateX(0px)";
+                    menu.classList.add("hidden");
+                } else {
+                    sideBar.style.transform = "translateX(-100%)";
+                    menu.classList.remove("hidden");
+                }
+            };
+            function dropdownHandler(element) {
+                let single = element.getElementsByTagName("ul")[0];
+                single.classList.toggle("hidden");
+            }
+        </script>
         @livewireScripts
     </body>
 </html>

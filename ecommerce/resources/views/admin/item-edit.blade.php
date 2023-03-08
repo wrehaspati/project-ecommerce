@@ -1,9 +1,9 @@
-<x-branch-layout>
-    <x-slot name="header">
+<x-admin-layout>
+    {{-- <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Product Overview Edit') }}
         </h2>
-    </x-slot>
+    </x-slot> --}}
 
     <form action="{{ route('product.update') }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -13,7 +13,7 @@
                 <div class="bg-white overflow-scroll shadow-sm sm:rounded-lg max-h-[46rem]">
                     <div class="p-6 text-gray-900">
 
-                        <nav aria-label="Breadcrumb">
+                        {{-- <nav aria-label="Breadcrumb">
                             <ol role="list"
                                 class="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
 
@@ -57,7 +57,7 @@
                                     </div>
                                 </li>
                             </ol>
-                        </nav>
+                        </nav> --}}
 
 
                         <div class="relative mx-auto max-w-screen-xl px-4 py-8">
@@ -129,6 +129,10 @@
                                                 class="block rounded bg-gray-500 px-5 py-3 text-xs font-medium text-white hover:bg-gray-600">
                                                 Cancel or Reset
                                             </button>
+                                            <a href="{{ url('admin/products') }}"
+                                                class="block rounded bg-red-500 px-5 py-3 text-xs font-medium text-white hover:bg-gray-600">
+                                                Back
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -142,7 +146,7 @@
 
     </form>
 
-</x-branch-layout>
+</x-admin-layout>
 
 <script>
     function imageData() {
