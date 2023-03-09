@@ -34,9 +34,10 @@ class DataItems extends DataTableComponent
 
         $this->setAdditionalSelects(['items.id as id', 'items.general_description as general_description', 'items.display_price as display_price']);
 
-        // $this->setTheadAttributes([
-        //     'class' => 'hidden',
-        //   ]);
+        $this->setTableWrapperAttributes([
+            'default' => false,
+            'class' => 'shadow border-b border-gray-200 dark:border-gray-700 sm:rounded-lg added these classes',
+          ]);
 
         $this->setTdAttributes(function(Column $column, $row, $columnIndex, $rowIndex) {
             if ($column->isField('name')) {
@@ -90,13 +91,15 @@ class DataItems extends DataTableComponent
             Column::make("Product Information", 'name')
                 ->sortable()
                 ->searchable()
-                ->view('admin/partials/database-item-data'),
+                ->view('admin/partials/database-item-data')
+                ->collapseOnTablet(),
             Column::make("Display Price", "display_price")
                 ->format( function($value, $row, Column $column){
                     return 'Rp. '.number_format($row->display_price,0,',','.');
                 })
                 ->sortable()
-                ->searchable(),
+                ->searchable()
+                ->collapseOnTablet(),
             // Column::make("General Description", "general_description")
             //     ->sortable()
             //     ->searchable()

@@ -1,3 +1,3 @@
 <x-admin-layout>
-    NULL
+    {{ request()->ip() }}
 </x-admin-layout>

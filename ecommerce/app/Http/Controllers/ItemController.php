@@ -123,6 +123,19 @@ class ItemController extends Controller
         $image->item_id = $item->id;
 
         $image->save();
+
+        $x=0;
+        while($x < 4):
+
+        $image = new Image;
+
+        $image->image = 'https://via.placeholder.com/300.png';
+        $image->item_id = $item->id;
+
+        $image->save();
+
+        $x++;
+        endwhile;
  
         return redirect('admin/products');
     }

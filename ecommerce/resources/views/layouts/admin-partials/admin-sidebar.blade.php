@@ -21,6 +21,13 @@
             </div>
         </li>
         <li
+            class="pl-6 cursor-pointer text-sm leading-3 tracking-normal mt-4 mb-4 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none {{ Request::segment(2) === 'blogs' ? 'text-indigo-700' : 'text-gray-600' }}">
+            <div class="flex items-center">
+                <i class="fa-solid fa-gem"></i>
+                <a href="{{ route('show.blog') }}" class="ml-2">&nbsp; Blogs</a>
+            </div>
+        </li>
+        <li
             class="pl-6 cursor-pointer text-sm leading-3 tracking-normal mb-4 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none {{ request()->is('admin/b/') ? 'text-indigo-700' : 'text-gray-600' }}">
             <div class="flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-compass" width="20"

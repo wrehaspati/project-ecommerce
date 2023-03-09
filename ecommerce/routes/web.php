@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ItemController::class, 'homepage'])->name('homepage');
 
-Route::get('product/{name}', [ItemController::class, 'index'])->name('product');
+Route::get('products/{name}', [ItemController::class, 'index'])->name('product.overview');
 
 
 Route::middleware('auth', 'verified', 'admin')->group(function () {
@@ -35,17 +35,15 @@ Route::middleware('auth', 'verified', 'admin')->group(function () {
         Route::get('/', function(){ return view('admin.index'); })->middleware(['auth', 'verified', 'admin']);
         Route::prefix('products')->group(function () {
             Route::get('/', function(){ return view('admin.item-manage'); })->name('show.items');
-            Route::get('item/insert', [AdminController::class, 'itemInsert'])->name('item.insert');
-            Route::get('user', function(){ return view('admin.user-manage'); })->name('show.users');
-            Route::get('image', function(){ return view('admin.image-manage'); })->name('show.images');
-        });
-        Route::prefix('products')->group(function () {
-            Route::get('/{name}/edit', [ItemController::class, 'edit'])->name('product.edit');
+            Route::get('/add', function(){ return view('admin.item-insert'); })->name('show.add.product');
             Route::post('/store', [ItemController::class, 'store'])->name('product.store');
             Route::post('/update', [ItemController::class, 'update'])->name('product.update');
         });
+        Route::get('/blogs', function(){ return view('admin.blog-manage'); })->name('show.blog');
     });
-
+    Route::prefix('products')->group(function () {
+        Route::get('/{name}/edit', [ItemController::class, 'edit'])->name('product.edit');
+    });
 });
 
 Route::middleware('auth')->group(function () {

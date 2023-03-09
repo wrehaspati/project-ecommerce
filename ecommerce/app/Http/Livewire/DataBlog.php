@@ -4,36 +4,21 @@ namespace App\Http\Livewire;
 
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
-use App\Models\User;
+use App\Models\BlogPost;
 
-class DataUsers extends DataTableComponent
+class DataBlog extends DataTableComponent
 {
-    protected $model = User::class;
+    protected $model = BlogPost::class;
 
     public function configure(): void
     {
         $this->setPrimaryKey('id');
-        $this->setBulkActions([
-            'deleteSelected' => 'Delete',
-        ]);
-    }
-    
-    public function deleteSelected()
-    {
-        foreach($this->getSelected() as $item)
-        {
-            User::destroy($item);
-        }
     }
 
     public function columns(): array
     {
         return [
             Column::make("Id", "id")
-                ->sortable(),
-            Column::make("Name", "name")
-                ->sortable(),
-            Column::make("Email", "email")
                 ->sortable(),
             Column::make("Created at", "created_at")
                 ->sortable(),
