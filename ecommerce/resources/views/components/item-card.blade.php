@@ -52,9 +52,12 @@
     </div>
 </div>
 </div> --}}
-<div class="container flex handphone:max-w-sm tablet:max-w-[35rem] laptop:max-w-[55rem] lg:max-w-[65rem] xl:max-w-[75rem]">
-    <div class="bg-slate-50 tablet:-mt-[0.5rem] w-1/2 h-3/4">
-        <a href="#" class="relative z-10 top-2 lg:top-0 lg:left-1 laptop:top-0 left-2"><img src="img/heart.svg" class="tablet:w-[15%] xl:w-[10%] laptop:w-[12%]" width="10%" alt=""></a>
+<div class="link handphone:max-w-[34rem] tablet:max-w-[42rem] laptop:max-w-[63rem] lg:max-w-[62rem] xl:max-w-[110rem] justify-end flex lg:ml-50 -mt-14 p-4">
+    <a href="#" class="text-sm flex"><u>View All</u><img class="ml-1" src="img/arrow.svg" width="17%" alt=""></a>
+</div>
+<div class="container flex pb-5 handphone:max-w-sm tablet:max-w-[35rem] laptop:max-w-[55rem] lg:max-w-[65rem] xl:max-w-[75rem]">
+    <div class="bg-slate-50 xl:hover:shadow-lg transition-all duration-150 xl:hover:shadow-purple-700/50 tablet:-mt-[0.5rem] w-1/2 h-3/4 group">
+        <a href="#" class="relative z-10 top-2 lg:top-0 lg:left-1 laptop:top-0 left-2"><img src="img/heart.svg" class="tablet:w-[15%] xl:w-[10%] xl:-translate-x-9 xl:opacity-1 xl:group-hover:opacity-100 xl:group-hover:translate-x-1 transition-all duration-150 handphone:w-[13%] laptop:w-[15%] lg:w-[10%]" width="10%" alt=""></a>
         <div class="relative tablet:-mt-[1.90rem] laptop:-mt-[2.3rem] handphone:-mt-7 -mt-5 z-1">
             <img class="w-full" src="img/model.jpeg" alt="">
         </div>
@@ -63,12 +66,12 @@
             <p class="text-sm mb-2">Menambah Stat keberuntungan sebesar 1</p>
             <h2>$120.99</h2>
         </div>
-        <div class="flex p-2  bg-blue-400">
-            <a class="flex handphone:ml-[3rem] tablet:ml-[2.5rem] laptop:ml-[3rem] lg:ml-[5rem] xl:ml-24 ml-12 text-white" href="#"><p class="text-sm">Add To Cart</p><img class="tablet:flex hidden" src="img/arrow.svg" width="13%" alt=""></a>
+        <div class="flex p-2 xl:hover:bg-blue-600 transition-all duration-150 bg-blue-400">
+            <a class="flex handphone:mx-auto tablet:mx-[22%] laptop:justify-center lg:justify-center xl:ml-[5rem] text-white" href="#"><p class="text-sm laptop:text-xs lg:text-sm">Add To Cart</p><img class="tablet:flex hidden laptop:w-[15%]" src="img/arrow.svg" width="13%" alt=""></a>
         </div>
     </div>
-    <div class="bg-slate-50 tablet:-mt-[0.5rem] ml-3 w-1/2 h-3/4">
-        <a href="#" class="relative z-10 top-2 lg:top-0 lg:left-1 laptop:top-0 left-2"><img class="tablet:w-[15%] xl:w-[10%] laptop:w-[12%]" src="img/heart.svg" width="10%" alt=""></a>
+    <div class="bg-slate-50 tablet:-mt-[0.5rem] xl:hover:shadow-lg transition-all duration-150 xl:hover:shadow-purple-700/50 ml-3 w-1/2 h-3/4 group">
+        <a href="#" class="relative z-10 top-2 lg:top-0 lg:left-1 laptop:top-0 left-2"><img class="tablet:w-[15%] xl:w-[10%] xl:-translate-x-9 xl:opacity-1 xl:group-hover:opacity-100 xl:group-hover:translate-x-1 transition-all duration-150 handphone:w-[13%] laptop:w-[15%] lg:w-[10%]" src="img/heart.svg" width="10%" alt=""></a>
         <div class="relative tablet:-mt-[1.90rem] laptop:-mt-[2.3rem] handphone:-mt-7 -mt-5 z-1">
             <img class="w-full" src="img/model.jpeg" alt="">
         </div>
@@ -77,12 +80,12 @@
             <p class="text-sm mb-2">Menambah Stat keberuntungan sebesar 1</p>
             <h2>$120.99</h2>
         </div>
-        <div class="flex p-2  bg-blue-400">
-            <a class="flex handphone:ml-[3rem] tablet:ml-[2.3rem] laptop:ml-[3rem] lg:ml-[5rem] xl:ml-24 ml-12 text-white" href="#"><p class="text-sm">Add To Cart</p><img class="tablet:flex hidden" src="img/arrow.svg" width="13%" alt=""></a>
+        <div class="flex p-2 xl:hover:bg-blue-600  transition-all duration-150 bg-blue-400">
+            <a class="flex handphone:mx-auto tablet:mx-[22%] laptop:justify-center lg:justify-center xl:ml-[5rem] ml-12 text-white" href="#"><p class="text-sm laptop:text-xs lg:text-sm">Add To Cart</p><img class="tablet:flex hidden laptop:w-[15%]" src="img/arrow.svg" width="13%" alt=""></a>
         </div>
     </div>
-    <div class="hidden tablet:block tablet:-mt-[0.5rem] bg-slate-50 ml-3 w-1/2 h-3/4">
-        <a href="#" class="relative z-10 top-2 lg:top-0 lg:left-1 laptop:top-0 left-2"><img class="tablet:w-[15%] xl:w-[10%] laptop:w-[12%]" src="img/heart.svg" width="10%" alt=""></a>
+    <div class="hidden tablet:block xl:hover:shadow-lg transition-all duration-150 xl:hover:shadow-purple-700/50 tablet:-mt-[0.5rem] bg-slate-50 ml-3 w-1/2 h-3/4 group">
+        <a href="#" class="relative z-10 top-2 lg:top-0 lg:left-1 laptop:top-0 left-2"><img class="tablet:w-[15%] xl:w-[10%] xl:-translate-x-9 xl:opacity-1 xl:group-hover:opacity-100 xl:group-hover:translate-x-1 transition-all duration-150 laptop:w-[15%] lg:w-[10%]" src="img/heart.svg" width="10%" alt=""></a>
         <div class="relative tablet:-mt-[1.90rem] laptop:-mt-[2.3rem] -mt-4 z-1">
             <img class="w-full" src="img/model.jpeg" alt="">
         </div>
@@ -91,12 +94,12 @@
             <p class="text-sm mb-2">Menambah Stat keberuntungan sebesar 1</p>
             <h2>$120.99</h2>
         </div>
-        <div class="flex p-2  bg-blue-400">
-            <a class="flex handphone:ml-[4rem] tablet:ml-[2.3rem] laptop:ml-[3rem] lg:ml-[5rem] xl:ml-24 ml-12 text-white" href="#"><p class="text-sm">Add To Cart</p><img class="tablet:flex hidden" src="img/arrow.svg" width="13%" alt=""></a>
+        <div class="flex p-2 xl:hover:bg-blue-600 transition-all duration-150 bg-blue-400">
+            <a class="flex handphone:mx-auto tablet:mx-[22%] laptop:justify-center lg:justify-center xl:ml-[5rem] ml-12 text-white" href="#"><p class="text-sm laptop:text-xs lg:text-sm">Add To Cart</p><img class="tablet:flex hidden laptop:w-[15%]" src="img/arrow.svg" width="13%" alt=""></a>
         </div>
     </div>
-    <div class="hidden laptop:block laptop:-mt-[0.5rem] bg-slate-50 ml-3 w-1/2 h-3/4">
-        <a href="#" class="relative z-10 top-2 lg:top-0 lg:left-1 laptop:top-0 left-2"><img class="tablet:w-[15%] xl:w-[10%] laptop:w-[12%]" src="img/heart.svg" width="10%" alt=""></a>
+    <div class="hidden xl:hover:shadow-lg transition-all duration-150 xl:hover:shadow-purple-700/50 laptop:block laptop:-mt-[0.5rem] bg-slate-50 ml-3 w-1/2 h-3/4 group">
+        <a href="#" class="relative z-10 top-2 lg:top-0 lg:left-1 laptop:top-0 left-2"><img class="tablet:w-[15%] xl:w-[10%] xl:-translate-x-9 xl:opacity-1 xl:group-hover:opacity-100 xl:group-hover:translate-x-1 transition-all duration-150 laptop:w-[15%] lg:w-[10%]" src="img/heart.svg" width="10%" alt=""></a>
         <div class="relative tablet:-mt-[1.90rem] laptop:-mt-[2.3rem] -mt-4 z-1">
             <img class="w-full" src="img/model.jpeg" alt="">
         </div>
@@ -105,8 +108,8 @@
             <p class="text-sm mb-2">Menambah Stat keberuntungan sebesar 1</p>
             <h2>$120.99</h2>
         </div>
-        <div class="flex p-2  bg-blue-400">
-            <a class="flex handphone:ml-[4rem] tablet:ml-[3.3rem] laptop:ml-[3rem] lg:ml-[5rem] xl:ml-24 ml-12 text-white" href="#"><p class="text-sm">Add To Cart</p><img class="tablet:flex hidden" src="img/arrow.svg" width="13%" alt=""></a>
+        <div class="flex p-2 xl:hover:bg-blue-600 transition-all duration-150 bg-blue-400">
+            <a class="flex handphone:mx-auto tablet:mx-[22%] laptop:justify-center lg:justify-center xl:ml-[5rem] ml-12 text-white" href="#"><p class="text-sm laptop:text-xs lg:text-sm">Add To Cart</p><img class="tablet:flex hidden laptop:w-[15%]" src="img/arrow.svg" width="13%" alt=""></a>
         </div>
     </div>
 </div>
