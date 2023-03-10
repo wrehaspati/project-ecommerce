@@ -39,7 +39,11 @@ Route::middleware('auth', 'verified', 'admin')->group(function () {
             Route::post('/store', [ItemController::class, 'store'])->name('product.store');
             Route::post('/update', [ItemController::class, 'update'])->name('product.update');
         });
-        Route::get('/blogs', function(){ return view('admin.blog-manage'); })->name('show.blog');
+        Route::prefix('blogs')->group(function () {
+            Route::get('/', function(){ return view('admin.blog-manage'); })->name('show.blog');
+            Route::get('/add', function(){ return view('admin.blog-add'); })->name('show.add.blog');
+            Route::get('/store', function(){ return view('admin.blog-add'); })->name('blog.store');
+        });
     });
     Route::prefix('products')->group(function () {
         Route::get('/{name}/edit', [ItemController::class, 'edit'])->name('product.edit');
