@@ -13,6 +13,7 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet" />
 
         <!-- Scripts -->
+        @stack('styles') 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
     </head>
@@ -74,6 +75,7 @@
                 single.classList.toggle("hidden");
             }
         </script>
+        @stack('scripts')
         @livewireScripts
     </body>
 </html>

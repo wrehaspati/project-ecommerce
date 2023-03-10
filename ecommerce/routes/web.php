@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
@@ -41,7 +42,7 @@ Route::middleware('auth', 'verified', 'admin')->group(function () {
         });
         Route::prefix('blogs')->group(function () {
             Route::get('/', function(){ return view('admin.blog-manage'); })->name('show.blog');
-            Route::get('/add', function(){ return view('admin.blog-add'); })->name('show.add.blog');
+            Route::get('/add', [BlogController::class, 'create']);
             Route::get('/store', function(){ return view('admin.blog-add'); })->name('blog.store');
         });
     });

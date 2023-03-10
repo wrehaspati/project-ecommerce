@@ -1,4 +1,7 @@
 <x-admin-layout>
+    @push('styles')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
+    @endpush
     <div class="py-6">
         <div class="mx-auto sm:px-6 lg:px-8">
             <div class="px-10 py-5 bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -43,4 +46,12 @@
             </div>
         </div>
     </div>
+    @push('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
+    <script>
+        const easyMDE = new EasyMDE({
+            showIcons: ['strikethrough', 'code', 'table', 'redo', 'heading', 'undo', 'heading-1', 'heading-2', 'heading-3', 'upload-image', 'clean-block', 'horizontal-rule'],
+            element: document.getElementById('markdown-editor')});
+    </script>
+    @endpush
 </x-admin-layout>
