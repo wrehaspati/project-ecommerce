@@ -28,8 +28,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ItemController::class, 'homepage'])->name('homepage');
 
-Route::get('products/{name}', [ItemController::class, 'show'])->name('product.overview');
-
+Route::prefix('products')->group(function () {
+    Route::get('/', function(){ return view('products.products-dashboard');})->name('products.dashboard');
+    Route::get('/{name}', [ItemController::class, 'show']);
+})->name('products.group');
 
 Route::middleware('auth', 'verified', 'admin')->group(function () {
     Route::prefix('admin')->group(function () {
