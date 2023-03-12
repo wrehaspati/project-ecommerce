@@ -1,7 +1,38 @@
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.swiper-card', {
     speed: 400,
-    spaceBetween: 1,
-    slidesPerView: 1,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        400: {
+            slidesPerView: 2.1,
+            spaceBetween: -5
+        },
+        600: {
+            slidesPerView: 2.8,
+            spaceBetween: 5
+        },
+        700: {
+            slidesPerView: 2,
+            spaceBetween: 5
+        },
+        800: {
+            slidesPerView: 3.7,
+            spaceBetween: 5
+        },
+        1000: {
+            slidesPerView: 4.7,
+            spaceBetween: 10
+        },
+        1200: {
+            slidesPerView: 5.6,
+            spaceBetween: 10
+        },
+    }
+});  
+const swipe = new Swiper('.swiper-item', {
+    speed: 400,
     pagination: {
         el: '.swiper-pagination',
         type: 'bullets',
@@ -13,23 +44,35 @@ const swiper = new Swiper('.swiper', {
     },
     breakpoints: {
         400: {
-            slidesPerView: 2,
-            spaceBetween: -50
+            slidesPerView: 1.89,
+            spaceBetween: -5
         },
         600: {
-            slidesPerView: 3,
-            spaceBetween: -50
+            slidesPerView: 2.31,
+            spaceBetween: -5
+        },
+        700: {
+            slidesPerView: 2.7,
+            spaceBetween: -5
         },
         800: {
-            slidesPerView: 4,
-            spaceBetween: -50
+            slidesPerView: 3.1,
+            spaceBetween: -5
+        },
+        900: {
+            slidesPerView: 3.5,
+            spaceBetween: -5
         },
         1000: {
-            slidesPerView: 5,
-            spaceBetween: -50
+            slidesPerView: 4.1,
+            spaceBetween: 10
+        },
+        1200: {
+            slidesPerView: 4.7,
+            spaceBetween: 10
         },
     }
-});
+});  
 // let test= screen.width;
 // console.log(test);
 
