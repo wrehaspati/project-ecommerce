@@ -26,7 +26,7 @@ class DataItems extends DataTableComponent
                 $name = $object->name;
             endforeach;
 
-            return route('product.edit', Str::slug($name));
+            return route('products.edit', Str::slug($name));
         });
         $this->setBulkActions([
             'deleteSelected' => 'Delete',
@@ -53,7 +53,7 @@ class DataItems extends DataTableComponent
         $this->setDefaultSort('id', 'desc');
 
         $this->setConfigurableAreas([
-            'toolbar-left-end' => 'admin.partials.insert-button',
+            'toolbar-left-end' => ['admin.partials.insert-button',['route' => 'products.create', 'title' => 'Add New Product'],],
           ]);
     }
 

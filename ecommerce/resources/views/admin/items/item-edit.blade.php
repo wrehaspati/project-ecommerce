@@ -1,13 +1,9 @@
 <x-admin-layout>
-    {{-- <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Product Overview Edit') }}
-        </h2>
-    </x-slot> --}}
 
-    <form action="{{ route('product.update') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('products.update', $item->id ) }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <input type="hidden" name='id' value="{{ $item->id }}">
+        @method('PATCH')
+        {{-- <input type="hidden" name='id' value="{{ $item->id }}"> --}}
         <div class="py-4">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-scroll shadow-sm sm:rounded-lg max-h-[46rem]">

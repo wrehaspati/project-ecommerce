@@ -13,6 +13,10 @@ class DataBlog extends DataTableComponent
     public function configure(): void
     {
         $this->setPrimaryKey('id');
+
+        $this->setConfigurableAreas([
+            'toolbar-left-end' => ['admin.partials.insert-button',['route' => 'blogs.create', 'title' => 'Add New Blog'],],
+          ]);
     }
 
     public function columns(): array
@@ -20,6 +24,12 @@ class DataBlog extends DataTableComponent
         return [
             Column::make("Id", "id")
                 ->sortable(),
+            Column::make("title")
+            ->sortable(),
+            Column::make("slug")
+            ->sortable(),
+            Column::make("description")
+            ->sortable(),
             Column::make("Created at", "created_at")
                 ->sortable(),
             Column::make("Updated at", "updated_at")

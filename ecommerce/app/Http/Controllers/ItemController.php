@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Image;
 use App\Models\Item;
-use App\Models\ItemVariant;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
@@ -14,6 +13,12 @@ use Illuminate\Support\Facades\Storage;
 
 class ItemController extends Controller
 {
+    /**
+     * unslug and matching the route
+     * 
+     * @param name
+     * @return id
+     */
     private function urlConvertion($name)
     {
         $result = null;
@@ -38,12 +43,43 @@ class ItemController extends Controller
         return $id;
     }
 
+    /**
+     * show homepage
+     * 
+     * @return view
+     */
     public function homepage()
     {
         return view('homepage.homepage', ['Items' => Item::select('items.*', 'images.image')->join('images', 'items.id', '=', 'images.item_id')->get()]);
     }
 
-    public function index($name)
+    /**
+     * show index for admin side
+     * 
+     * @return view
+     */
+    public function index()
+    {
+        return view('admin.items.item-manage');
+    }
+
+    /**
+     * show create interface for admin side
+     * 
+     * @return view
+     */
+    public function create()
+    {
+        return view('admin.items.item-create');
+    }
+
+    /**
+     * show product overview interface
+     * 
+     * @param name
+     * @return view
+     */
+    public function show($name)
     {
         $item = $this->urlConvertion($name);
         $image = Item::find($item->id)->image;
@@ -51,17 +87,30 @@ class ItemController extends Controller
         return view('overview.overview', ['item' => $item,'images' => $image]);
     }
 
+    /**
+     * show product edit interface
+     * 
+     * @param name
+     * @return view
+     */
     public function edit($name)
     {
         $item = $this->urlConvertion($name);
         $image = Item::find($item->id)->image;
         
-        return view('admin.item-edit', ['item' => $item,'images' => $image]);
+        return view('admin.items.item-edit', ['item' => $item,'images' => $image]);
     }
 
-    public function update(Request $request): RedirectResponse
+    /**
+     * response to update the product
+     * 
+     * @param request
+     * @param name
+     * @return response
+     */
+    public function update(Request $request, $name): RedirectResponse
     {
-        $item = Item::find($request->id);
+        $item = Item::find($name);
  
         $item->name = $request->name;
 
@@ -72,7 +121,7 @@ class ItemController extends Controller
         $item->save();
 
 
-        for($i=1; $i<count(Image::where('item_id', $request->id)->get())+1;$i++):
+        for($i=1; $i<count(Image::where('item_id', $name)->get())+1;$i++):
 
             if(isset($request->image[$i])):
 
@@ -102,7 +151,13 @@ class ItemController extends Controller
  
         return redirect('admin/products/'.Str::slug($request->name).'/edit');
     }
-
+    
+    /**
+     * response to update the product
+     * 
+     * @param request
+     * @return response
+     */
     public function store(Request $request): RedirectResponse
     {
         $item = new Item;

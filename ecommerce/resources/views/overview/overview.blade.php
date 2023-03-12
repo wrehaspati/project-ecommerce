@@ -4,9 +4,11 @@
             {{ __('Product Overview') }}
         </h2>
     </x-slot>
-
     <div class="py-4">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+
+           @include('overview.partials.overview-message')
+
             <div class="bg-white overflow-scroll shadow-sm sm:rounded-lg max-h-[46rem]">
                 <div class="p-6 text-gray-900">
                     @include('overview.partials.overview-breadcrumb')
@@ -40,10 +42,14 @@
                                     <button class="mt-2 text-sm font-medium underline">Read More</button>
                                 </div>
 
-                                <form class="mt-8">
+                                <form class="mt-8" action="{{ route('cart.store') }}" method="POST">
+                                    @csrf
+
                                     @include('overview.partials.overview-color')
 
                                     @include('overview.partials.overview-size')
+
+                                    <input type="hidden" name="item_id" value="{{ $item->id }}">
 
                                     <div class="mt-8 flex gap-4">
                                         <div>

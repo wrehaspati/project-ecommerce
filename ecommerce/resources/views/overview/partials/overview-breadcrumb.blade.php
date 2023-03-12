@@ -22,7 +22,7 @@
         </li>
 
         <li class="text-sm">
-            <a href="{{ url('/product/' . Str::slug($item->name)) }}" aria-current="page"
+            <a href="{{ url('/products/' . Str::slug($item->name)) }}" aria-current="page"
                 class="font-medium text-gray-500 hover:text-gray-600">{{ $item->name }}</a>
         </li>
     </ol>

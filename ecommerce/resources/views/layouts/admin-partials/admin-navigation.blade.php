@@ -1,4 +1,4 @@
-<nav class="h-16 flex items-center lg:items-stretch justify-end lg:justify-between bg-white shadow relative z-10">
+<nav class="h-16 flex items-center lg:items-stretch justify-end lg:justify-between bg-white shadow relative">
     <div class="hidden lg:flex w-full pr-6">
         <div class="w-1/2 h-full hidden lg:flex items-center pl-6 pr-24">
             <div class="relative w-full">

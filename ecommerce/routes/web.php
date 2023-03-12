@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
@@ -27,22 +28,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ItemController::class, 'homepage'])->name('homepage');
 
-Route::get('products/{name}', [ItemController::class, 'index'])->name('product.overview');
-
+Route::prefix('products')->group(function () {
+    Route::get('/', function(){ return view('products.products-dashboard');})->name('products.dashboard');
+    Route::get('/{name}', [ItemController::class, 'show']);
+})->name('products.group');
 
 Route::middleware('auth', 'verified', 'admin')->group(function () {
     Route::prefix('admin')->group(function () {
         Route::get('/', function(){ return view('admin.index'); })->middleware(['auth', 'verified', 'admin']);
-        Route::prefix('products')->group(function () {
-            Route::get('/', function(){ return view('admin.item-manage'); })->name('show.items');
-            Route::get('/add', function(){ return view('admin.item-insert'); })->name('show.add.product');
-            Route::post('/store', [ItemController::class, 'store'])->name('product.store');
-            Route::post('/update', [ItemController::class, 'update'])->name('product.update');
-        });
-        Route::get('/blogs', function(){ return view('admin.blog-manage'); })->name('show.blog');
-    });
-    Route::prefix('products')->group(function () {
-        Route::get('/{name}/edit', [ItemController::class, 'edit'])->name('product.edit');
+        Route::resource('/products', ItemController::class);
+        Route::resource('/blogs', BlogController::class);
     });
 });
 
@@ -50,6 +45,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::resource('/cart', CartController::class);
 });
 
 
