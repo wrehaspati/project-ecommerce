@@ -1,5 +1,20 @@
 <x-app-layout>
-
+    <div id="popup" class="flex tablet:flex-row tablet:h-fit tablet:left-[15%] tablet:max-w-[35rem] laptop:max-w-[40rem] lg:left-[30%] lg:top-34 handphone:flex-col h-[20rem] max-w-[25rem] fixed -z-1 opacity-1 left-20 top-52 rounded-xl bg-gradient-to-br from-black to bg-red-900">
+        <img id="close" src="img/close.svg" class="border cursor-pointer w-[12%] tablet:w-[7%] laptop:w-[5%] lg:w-[8%] rounded-full absolute right-2 top-2  border-white" alt="">
+        <div class="object-cover">
+            <img src="img/model4.jpg" class="rounded-lg tablet:w-[26rem] w-[17rem] lg:w-[30rem]" alt="">
+        </div>
+        <div class="text-white font-mono tablet:mt-4 laptop:mt-10 lg:absolute lg:w-full lg:bottom-0 lg:z-10 p-2">
+            <p class="text-xl font-bold">BIG Sale</p>
+            <p class="text-sm tablet:text-lg mb-3">Get 75% Discount only This Month</p>
+            <button class="bg-red-500 w-full rounded-md p-2">
+                <a href="#">Go Now</a>
+            </button>
+            <button id="close" class="bg-gray-400 w-full mt-2 hidden tablet:block rounded-md p-2">
+                <a href="#">Maybe Later</a>
+            </button>
+        </div>
+    </div>
         {{-- Corousel --}}
         @include('homepage.partials.homepage-carousel')
 
@@ -9,7 +24,6 @@
         {{-- Weekly product --}}
         @include('homepage.partials.homepage-weekly-product')
 
-        <!-- Slider main container -->
         <div class="swiper swiper-item">
                 <div class="swiper-wrapper">
                     <x-item-card title="Kibutsuji"/>
