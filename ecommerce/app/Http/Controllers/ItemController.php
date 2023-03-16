@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Image;
 use App\Models\Item;
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
@@ -50,7 +52,9 @@ class ItemController extends Controller
      */
     public function homepage()
     {
-        return view('homepage.homepage', ['Items' => Item::select('items.*', 'images.image')->join('images', 'items.id', '=', 'images.item_id')->get()]);
+        return view('homepage.homepage', [
+            'Items' => Item::select('items.*', 'images.image')->join('images', 'items.id', '=', 'images.item_id')->get(),
+        ]);
     }
 
     /**

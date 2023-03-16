@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cart;
+use App\Models\CartUser;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class CartController extends Controller
+class CartUserController extends Controller
 {
     /**
      * show default or index interface
@@ -27,11 +27,18 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        $new = new Cart();
+        $new = new CartUser();
         $new->item_id = $request->item_id;
         $new->user_id = Auth::user()->id;
         $new->save();
 
         return redirect()->back()->with('status','Berhasil Ditambahkan Ke Keranjang !');
+    }
+
+    public function destroy($id)
+    {
+        CartUser::destroy($id);
+        
+        return redirect()->back();
     }
 }

@@ -47,4 +47,5 @@
         <script src="js/homepage.js"></script>
     </body>
         @include('layouts.footer')
+        
 </html>

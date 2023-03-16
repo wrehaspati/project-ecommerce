@@ -130,6 +130,7 @@
                                                 Back
                                             </a>
                                         </div>
+                                        <a href="{{ url('products/'.Str::slug($item->name)) }}">Preview</a>
                                     </div>
                                 </div>
                             </div>
