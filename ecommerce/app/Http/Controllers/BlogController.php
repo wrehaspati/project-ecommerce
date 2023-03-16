@@ -13,12 +13,12 @@ class BlogController extends Controller
     {
         $blog = BlogPost::latest()->paginate(10);
 
-        return view('admin.blog-manage', compact('blog'));
+        return view('admin.blogs.blog-manage', compact('blog'));
     }
 
     public function create()
     {
-        return view('admin.blog-add');
+        return view('admin.blogs.blog-add');
     }
 
    

@@ -5,7 +5,7 @@
         @method('PATCH')
         {{-- <input type="hidden" name='id' value="{{ $item->id }}"> --}}
         <div class="py-4">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class=" mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-scroll shadow-sm sm:rounded-lg max-h-[46rem]">
                     <div class="p-6 text-gray-900">
 
@@ -56,7 +56,7 @@
                         </nav> --}}
 
 
-                        <div class="relative mx-auto max-w-screen-xl px-4 py-8">
+                        <div class="relative mx-auto px-4 py-8">
                             <div class="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
                                 <div class="grid grid-cols-2 gap-4 md:grid-cols-1 sticky top-5 ">
 
