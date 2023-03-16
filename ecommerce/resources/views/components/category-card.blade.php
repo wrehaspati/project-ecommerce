@@ -12,65 +12,55 @@
         </div>
      </a>    
 </div> --}}
-<!-- Slider main container -->
-    <div class="swiper">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper max-w-xs">
-        <!-- Slides -->
-        <div class="swiper-slide max-w-[12rem] overflow-hidden ml-5">
-            <div class="w-[100%] group">
-            <a href="#"><img src="img/model.jpeg" class="xl:group-hover:scale-105 transition-all duration-200" alt="">
-                <p class="absolute top-0 ml-5 h-[86.9%] -rotate-12 border-r-2 border-white/80"></p>
-                <p class="absolute top-0 right-[4.8rem] ml-5 h-[86.9%] xl:group-hover:right-[1.5rem] transition-all duration-200 rotate-12 border-r-2 border-white/80"></p>
-                <p class="font-bold font-sans z-10 relative text-center">Necklace</p>
-            </a>
-            </div>
-        </div>
-        <div class="swiper-slide max-w-[15.8rem] ml-16">
-            <div class="w-[100%] group">
-                <a href="#"><img src="img/model2.jpeg" class="xl:group-hover:scale-105 transition-all duration-200" alt="">
-                <p class="absolute top-0 ml-5 h-[86.9%] -rotate-12 border-r-2 border-white/80"></p>
-                <p class="absolute top-0 right-[4.8rem] ml-5 h-[86.9%] xl:group-hover:right-[1.5rem] transition-all duration-200 rotate-12 border-r-2 border-white/80"></p>
-                <p class="font-bold font-sans z-10 relative text-center">Ring</p></a>
-            </div>
-        </div>
-        <div class="swiper-slide max-w-[15.8rem] ml-16">
-            <div class="w-[100%] group">
-                <a href="#"><img src="img/model3.jpeg" class="xl:group-hover:scale-105 transition-all duration-200" alt="">
-                <p class="absolute top-0 ml-5 h-[86.9%] -rotate-12 border-r-2 border-white/80"></p>
-                <p class="absolute top-0 right-[4.8rem] ml-5 h-[86.9%] xl:group-hover:right-[1.5rem] transition-all duration-200 rotate-12 border-r-2 border-white/80"></p>
-                <p class="font-bold font-sans z-10 relative text-center">Necklace</p></a>
-            </div>
-        </div>
-        <div class="swiper-slide max-w-[15.8rem] ml-16">
-            <div class="w-[100%] group">
-                <a href="#"><img src="img/model3.jpeg" class="xl:group-hover:scale-105 transition-all duration-200" alt="">
-                <p class="absolute top-0 ml-5 h-[86.9%] -rotate-12 border-r-2 border-white/80"></p>
-                <p class="absolute top-0 right-[4.8rem] ml-5 h-[86.9%] xl:group-hover:right-[1.5rem] transition-all duration-200 rotate-12 border-r-2 border-white/80"></p>
-                <p class="font-bold font-sans z-10 relative text-center">Necklace</p></a>
-            </div>
-        </div>
-        <div class="swiper-slide max-w-[15.8rem] ml-16">
-            <div class="w-[100%] group">
-                <a href="#"><img src="img/model3.jpeg" class="xl:group-hover:scale-105 transition-all duration-200" alt="">
-                <p class="absolute top-0 ml-5 h-[86.9%] -rotate-12 border-r-2 border-white/80"></p>
-                <p class="absolute top-0 right-[4.8rem] ml-5 h-[86.9%] xl:group-hover:right-[1.5rem] transition-all duration-200 rotate-12 border-r-2 border-white/80"></p>
-                <p class="font-bold font-sans z-10 relative text-center">Necklace</p></a>
-            </div>
-        </div>
-        <div class="swiper-slide max-w-[15.8rem] ml-16">
-            <div class="w-[100%] group">
-                <a href="#"><img src="img/model3.jpeg" class="xl:group-hover:scale-105 transition-all duration-200" alt="">
-                <p class="absolute top-0 ml-5 h-[86.9%] -rotate-12 border-r-2 border-white/80"></p>
-                <p class="absolute top-0 right-[4.8rem] ml-5 h-[86.9%] xl:group-hover:right-[1.5rem] transition-all duration-200 rotate-12 border-r-2 border-white/80"></p>
-                <p class="font-bold font-sans z-10 relative text-center">Necklace</p></a>
-            </div>
-        </div>
-        </div>
-        <div class="pagination">
-         <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev ml-5"><img src="img/prev.svg" alt=""></div>
-        <div class="swiper-button-next mr-5"><img src="img/next.svg" alt=""></div>
+  
+    <div class="swiper-slide max-w-[12rem] overflow-hidden ml-5">
+        <div class="w-fit group">
+        <a href="#"><img src="img/model.jpeg" class="xl:group-hover:scale-105 transition-all duration-200" alt="">
+            <p class="absolute top-0 ml-5 h-[86.9%] -rotate-12 border-r-2 border-white/80"></p>
+            <p class="absolute top-0 right-[4.8rem] ml-5 h-[86.9%] xl:group-hover:right-[1.5rem] transition-all duration-200 rotate-12 border-r-2 border-white/80"></p>
+            <p class="font-bold font-sans z-10 relative text-center"> {{ $title }} </p>
+        </a>
         </div>
     </div>
-  
+    
+
+    {{-- <div class="swiper-slide max-w-[15.8rem] ml-16">
+        <div class="w-fit group">
+            <a href="#"><img src="img/model2.jpeg" class="xl:group-hover:scale-105 transition-all duration-200" alt="">
+            <p class="absolute top-0 ml-5 h-[86.9%] -rotate-12 border-r-2 border-white/80"></p>
+            <p class="absolute top-0 right-[4.8rem] ml-5 h-[86.9%] xl:group-hover:right-[1.5rem] transition-all duration-200 rotate-12 border-r-2 border-white/80"></p>
+            <p class="font-bold font-sans z-10 relative text-center">Ring</p></a>
+        </div>
+    </div>
+    <div class="swiper-slide max-w-[15.8rem] ml-16">
+        <div class="w-[100%] group">
+            <a href="#"><img src="img/model3.jpeg" class="xl:group-hover:scale-105 transition-all duration-200" alt="">
+            <p class="absolute top-0 ml-5 h-[86.9%] -rotate-12 border-r-2 border-white/80"></p>
+            <p class="absolute top-0 right-[4.8rem] ml-5 h-[86.9%] xl:group-hover:right-[1.5rem] transition-all duration-200 rotate-12 border-r-2 border-white/80"></p>
+            <p class="font-bold font-sans z-10 relative text-center">Necklace</p></a>
+        </div>
+    </div>
+    <div class="swiper-slide max-w-[15.8rem] ml-16">
+        <div class="w-[100%] group">
+            <a href="#"><img src="img/promot.jpeg" class="xl:group-hover:scale-105 transition-all duration-200" alt="">
+            <p class="absolute top-0 ml-5 h-[86.9%] -rotate-12 border-r-2 border-white/80"></p>
+            <p class="absolute top-0 right-[4.8rem] ml-5 h-[86.9%] xl:group-hover:right-[1.5rem] transition-all duration-200 rotate-12 border-r-2 border-white/80"></p>
+            <p class="font-bold font-sans z-10 relative text-center">Necklace</p></a>
+        </div>
+    </div>
+    <div class="swiper-slide max-w-[15.8rem] ml-16">
+        <div class="w-fit group">
+            <a href="#"><img src="img/model2.jpeg" class="xl:group-hover:scale-105 transition-all duration-200" alt="">
+            <p class="absolute top-0 ml-5 h-[86.9%] -rotate-12 border-r-2 border-white/80"></p>
+            <p class="absolute top-0 right-[4.8rem] ml-5 h-[86.9%] xl:group-hover:right-[1.5rem] transition-all duration-200 rotate-12 border-r-2 border-white/80"></p>
+            <p class="font-bold font-sans z-10 relative text-center">Necklace</p></a>
+        </div>
+    </div>
+    <div class="swiper-slide max-w-[12rem] ml-16">
+        <div class="w-fit group">
+            <a href="#"><img src="img/model.jpeg" class="xl:group-hover:scale-105 transition-all duration-200" alt="">
+            <p class="absolute top-0 ml-5 h-[86.9%] -rotate-12 border-r-2 border-white/80"></p>
+            <p class="absolute top-0 right-[4.8rem] ml-5 h-[86.9%] xl:group-hover:right-[1.5rem] transition-all duration-200 rotate-12 border-r-2 border-white/80"></p>
+            <p class="font-bold font-sans z-10 relative text-center">Necklace</p></a>
+        </div>
+    </div> --}}

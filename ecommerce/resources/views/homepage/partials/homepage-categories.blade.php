@@ -7,5 +7,19 @@
     {{-- <div class="flex flex-row">
         <x-category-card/>
     </div> --}}
-    <x-category-card/>
+    <div class="swiper swiper-card">
+        <div class="swiper-wrapper">
+            <x-category-card title="kalung"/>
+            <x-category-card title="Mutiara"/>
+            <x-category-card title="Kotak"/>
+            <x-category-card title="Segitiga"/>
+            <x-category-card title="hmm"/>
+            <x-category-card title="ya"/>
+            <x-category-card title="itu"/>
+        </div>
+        <div class="pagination">
+        <div class="swiper-button-prev ml-5"><img src="img/prev.svg" alt=""></div>
+        <div class="swiper-button-next mr-5"><img src="img/next.svg" alt=""></div>
+        </div>
+    </div>
 </div>
