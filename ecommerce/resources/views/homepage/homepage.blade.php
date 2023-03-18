@@ -1,4 +1,5 @@
 <x-app-layout>
+    <div id="contain" class="absolute bg-black/50 opacity-1 z-10 h-[300%] w-full"></div>
     <div id="popup" class="flex tablet:flex-row tablet:h-fit tablet:left-[15%] tablet:max-w-[35rem] laptop:max-w-[40rem] lg:left-[30%] lg:top-34 handphone:flex-col h-[20rem] max-w-[25rem] fixed -z-1 opacity-1 left-20 top-52 rounded-xl bg-gradient-to-br from-black to bg-red-900">
         <img id="close" src="img/close.svg" class="border cursor-pointer w-[12%] tablet:w-[7%] laptop:w-[5%] lg:w-[8%] rounded-full absolute right-2 top-2  border-white" alt="">
         <div class="object-cover">

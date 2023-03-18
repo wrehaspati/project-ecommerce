@@ -74,11 +74,14 @@ const swipe = new Swiper('.swiper-item', {
     }
 });  
 const pop=document.getElementById('popup');
+const backimg=document.getElementById('contain')
 window.onload=function(){
     setTimeout(function(){
         pop.style.opacity="1";
         pop.style.zIndex="50";
         pop.style.transition="all 0.5s";
+        backimg.style.opacity="1";
+        backimg.style.transition="all 0.5s";
     },1000)
 }
 const close=document.getElementById('close');
@@ -86,4 +89,7 @@ close.addEventListener('click',function(){
     pop.style.opacity="0";
     pop.style.zIndex="-1";
     pop.style.transition="all 0.7s";
+    backimg.style.opacity="0";
+    backimg.style.zIndex="-1"
+    backimg.style.transition="all 0.9s";
 })
