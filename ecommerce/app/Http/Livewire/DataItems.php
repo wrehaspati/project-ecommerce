@@ -34,10 +34,10 @@ class DataItems extends DataTableComponent
 
         $this->setAdditionalSelects(['items.id as id', 'items.general_description as general_description', 'items.display_price as display_price']);
 
-        $this->setTableWrapperAttributes([
-            'default' => false,
-            'class' => 'shadow border-b border-gray-200 dark:border-gray-700 sm:rounded-lg added these classes',
-          ]);
+        // $this->setTableWrapperAttributes([
+        //     'default' => false,
+        //     'class' => 'shadow border-b border-gray-200 dark:border-gray-700 sm:rounded-lg added these classes',
+        //   ]);
 
         $this->setTdAttributes(function(Column $column, $row, $columnIndex, $rowIndex) {
             if ($column->isField('name')) {

@@ -19,72 +19,28 @@
                             alt="cross">
                     </button>
                 </div>
-                <ul class="py-6">
-                    <li
-                        class="pl-6 cursor-pointer text-sm leading-3 tracking-normal pb-4 pt-5 text-indigo-700 focus:text-indigo-700 focus:outline-none">
-                        <div class="flex items-center">
-                            <div class="w-6 h-6 md:w-8 md:h-8">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-grid"
-                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" />
-                                    <rect x="4" y="4" width="6" height="6" rx="1" />
-                                    <rect x="14" y="4" width="6" height="6" rx="1" />
-                                    <rect x="4" y="14" width="6" height="6" rx="1" />
-                                    <rect x="14" y="14" width="6" height="6" rx="1" />
-                                </svg>
-                            </div>
-                            <a href="javascript:void(0)" class="ml-2 xl:text-base md:text-2xl text-base">Dashboard</a>
-                        </div>
+                
+                <ul class="py-4">
+                    <li class="pl-6 cursor-pointer text-sm leading-3 tracking-normal pb-4 pt-5 text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                        <a href="{{ url('admin') }}" class="flex items-center text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700 {{ request()->is('admin') ? 'text-indigo-700' : 'text-gray-600' }}">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <span class="ml-3" sidebar-toggle-item>Dashboard</span>
+                        </a>
                     </li>
-                    <li
-                        class="pl-6 cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mt-4 mb-4 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
-                        <div class="flex items-center">
-                            <div class="w-6 h-6 md:w-8 md:h-8">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-puzzle"
-                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" />
-                                    <path
-                                        d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1" />
-                                </svg>
-                            </div>
-                            <a href="javascript:void(0)" class="ml-2 xl:text-base md:text-2xl text-base">Products</a>
-                        </div>
+                    <li class="pl-6 cursor-pointer text-sm leading-3 tracking-normal pb-4 pt-5 text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                        <a href="{{ route('products.index') }}" class="flex items-center text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700 {{ Request::segment(2) === 'products' ? 'text-indigo-700' : 'text-gray-600' }}">
+                            <i class="fa-solid fa-gem"></i>
+                            <span class="ml-3" sidebar-toggle-item>Products</span>
+                        </a>
                     </li>
-                    <li
-                        class="pl-6 cursor-pointer text-gray-600 text-sm leading-3 tracking-normal mb-4 py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
-                        <div class="flex items-center">
-                            <div class="w-6 h-6 md:w-8 md:h-8">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-compass"
-                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" />
-                                    <polyline points="8 16 10 10 16 8 14 14 8 16" />
-                                    <circle cx="12" cy="12" r="9" />
-                                </svg>
-                            </div>
-                            <a href="javascript:void(0)" class="ml-2 xl:text-base md:text-2xl text-base">Performance</a>
-                        </div>
-                    </li>
-                    <li
-                        class="pl-6 cursor-pointer text-gray-600 text-sm leading-3 tracking-normal py-2 hover:text-indigo-700 focus:text-indigo-700 focus:outline-none">
-                        <div class="flex items-center">
-                            <div class="w-6 h-6 md:w-8 md:h-8">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-code"
-                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" />
-                                    <polyline points="7 8 3 12 7 16" />
-                                    <polyline points="17 8 21 12 17 16" />
-                                    <line x1="14" y1="4" x2="10" y2="20" />
-                                </svg>
-                            </div>
-                            <a href="javascript:void(0)"
-                                class="ml-2 xl:text-base md:text-2xl text-base">Deliverables</a>
-                        </div>
+                    <li class="pl-6 cursor-pointer text-sm leading-3 tracking-normal pb-4 pt-5 text-indigo-700 focus:text-indigo-700 focus:outline-none">
+                        <a href="{{ route('blogs.index') }}" class="flex items-center text-base text-gray-900 rounded-lg hover:bg-gray-100 group dark:text-gray-200 dark:hover:bg-gray-700  {{ Request::segment(2) === 'blogs' ? 'text-indigo-700' : 'text-gray-600' }}">
+                            <i class="fa-solid fa-blog"></i>
+                            <span class="ml-3" sidebar-toggle-item>Blogs</span>
+                        </a>
                     </li>
                 </ul>
+
             </div>
             <div class="w-full">
                 <div class="flex justify-center mb-4 w-full px-6">
@@ -101,10 +57,10 @@
                 <div class="border-t border-gray-300">
                     <div class="w-full flex items-center justify-between px-6 pt-1">
                         <div class="flex items-center">
-                            <img alt="profile-pic" role="img"
-                                src="https://tuk-cdn.s3.amazonaws.com/assets/components/boxed_layout/bl_1.png"
-                                class="w-8 h-8 rounded-md" />
-                            <p class="md:text-xl text-gray-800 text-base leading-4 ml-2">Jane Doe</p>
+                            <div class="rounded-md w-8 h-8 bg-green-200 text-center leading-[2.2rem] font-black text-xl select-none">
+                                {{ Str::title(Str::limit(Auth::user()->name, 1, $end = '')) }}
+                            </div>
+                            <p class="md:text-xl text-gray-800 text-base leading-4 ml-3">{{ Str::words(Auth::user()->name, 2, '') }}</p>
                         </div>
                         <ul class="flex">
                             <li class="cursor-pointer text-white pt-5 pb-3">

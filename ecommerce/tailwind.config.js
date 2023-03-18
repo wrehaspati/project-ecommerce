@@ -8,6 +8,7 @@ module.exports = {
         './storage/framework/views/*.php',
         './resources/views/*.blade.php',
         './resources/views/**/*.blade.php',
+        "./node_modules/flowbite/**/*.js",
     ],
 
     theme: {
@@ -56,7 +57,7 @@ module.exports = {
             },
             zIndex: {
                 '1': '2',
-            }
+            },
         },
     },
     corePlugins: {
@@ -66,5 +67,6 @@ module.exports = {
         require('@tailwindcss/forms'),
         require('@tailwindcss/aspect-ratio'),
         require('@tailwindcss/typography'),
+        require('flowbite/plugin'),
     ],
 };

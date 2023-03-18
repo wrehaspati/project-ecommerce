@@ -62,10 +62,13 @@
                                 </div>
                             </li>
                         </ul>
-                        <div class="relative">
-                            <img class="rounded-full h-10 w-10 object-cover"
+                        <div class="relative select-none">
+                            <div class="rounded-full h-10 w-10 bg-green-200 text-center leading-[2.5rem] font-black text-xl">
+                                {{ Str::limit(Auth::user()->name, 1, $end = '') }}
+                            </div>
+                            {{-- <img class="rounded-full h-10 w-10 object-cover"
                                 src="https://tuk-cdn.s3.amazonaws.com/assets/components/sidebar_layout/sl_1.png"
-                                alt="display avatar" role="img" />
+                                alt="display avatar" role="img" /> --}}
                             <div
                                 class="w-2 h-2 rounded-full bg-green-400 border border-white absolute inset-0 mb-0 mr-0 m-auto">
                             </div>
