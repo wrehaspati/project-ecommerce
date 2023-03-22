@@ -35,7 +35,7 @@
                     <x-item-card title="testing"/>
                     <x-item-card title="some"/>
                 </div>
-                <div class="swiper-pagination relative bottom-0 mb-10"></div>
+                <div class="swiper-pagination relative top-1 mb-10"></div>
                 <div class="pagination">
                 <div class="swiper-button-prev ml-5"><img src="img/prev.svg" class="handphone:-ml-7" alt=""></div>
                 <div class="swiper-button-next mr-5"><img src="img/next.svg" class="handphone:ml-10 tablet:ml-2 laptop:mr-10" alt=""></div>
@@ -58,7 +58,7 @@
                     <x-item-card title="disini"/>
                     <x-item-card title="welp"/>
                 </div>
-                <div class="swiper-pagination relative bottom-0"></div>
+                <div class="swiper-pagination relative top-1"></div>
                 <div class="pagination">
                 <div class="swiper-button-prev ml-5"><img src="img/prev.svg" class="handphone:-ml-7" alt=""></div>
                 <div class="swiper-button-next mr-5"><img src="img/next.svg" class="handphone:ml-10 tablet:ml-2 laptop:mr-10" alt=""></div>
