@@ -31,3 +31,11 @@ document.getElementById('background').addEventListener('click',function(){
     document.getElementById('sidebar').style.left="-3rem"
     document.getElementById('scrol').style.overflow="scroll"
  })
+ document.getElementById('single').addEventListener('click',function(){
+   document.getElementById('sort').style.display="grid"
+   document.getElementById('solo').style.display="none"
+ })
+ document.getElementById('multiple').addEventListener('click',function(){
+   document.getElementById('solo').style.display="grid"
+   document.getElementById('sort').style.display="none"
+ })

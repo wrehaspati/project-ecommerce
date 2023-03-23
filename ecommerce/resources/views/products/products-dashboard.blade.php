@@ -44,18 +44,78 @@
    {{-- Filter --}}
    <div class="container max-w-full bg-slate-300">
       <div class="flex p-4">
-         <span class="material-symbols-rounded cursor-pointer">grid_view</span>
-         <span class="material-symbols-rounded cursor-pointer ml-3">view_list</span>
+         <span id="single" class="material-symbols-rounded cursor-pointer">grid_view</span>
+         <span id="multiple" class="material-symbols-rounded cursor-pointer ml-3">view_list</span>
          <a href="#" id="filter" class="text-md font-serif ml-auto"><span class="material-symbols-rounded">filter_alt</span><span class="relative -top-1">Filters</span></a>
       </div>
    </div>
    {{-- Content --}}
    <div class="container mt-6 ml-5 handphone:max-w-[90%] tablet:max-w-[92%] laptop:max-w-[95%]">
-      <div class="grid grid-cols-2 tablet:grid-cols-3 gap-4">
+      <div id="sort" class="grid grid-cols-2 tablet:grid-cols-3 gap-4">
         <x-content-product konten="Necklace"/>
         <x-content-product konten="Ring"/>
         <x-content-product konten="Liontin"/>
         <x-content-product konten="Bracelet"/>
+      </div>
+   </div>
+   <div id="solo" class="container hidden mt-6 ml-10 handphone:max-w-[80%] tablet:max-w-[82%] laptop:max-w-[95%]">
+      <div class="grid grid-cols-1 tablet:grid-cols-1 gap-4">
+         <div class="bg-slate-200 handphone:grid tablet:hidden">
+            <span class="material-symbols-rounded absolute text-3xl bg-slate-100 mt-3 ml-[0.5rem] cursor-pointer handphone:rounded-full tablet:rounded-none">favorite</span>
+            <img class="w-full" src="img/model2.jpeg" alt="">
+            <p class="p-2">Cincin</p>
+            <p class="text-sm text-black/85 p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam neque repellat, non ex cumque, quis obcaecati tempora porro hic consequatur impedit facere nisi numquam repudiandae ullam corrupti. Non accusamus a incidunt nulla eos, cumque sint et. Eos harum unde dolorem deserunt tempora accusantium, quod dolore molestias, voluptate quis et aperiam.</p>
+            <p class="p-2">$192.80</p>
+            <p class="text-md bg-blue-400 p-2 text-center text-white"><a href="#">Add To Cart</a></p>
+         </div>
+         <div class="bg-slate-200 handphone:hidden tablet:flex">
+            <div class="w-fit my-auto block">
+            <span class="material-symbols-rounded absolute text-2xl bg-slate-100 mt-3 ml-[0.5rem] cursor-pointer handphone:rounded-full tablet:rounded-none">favorite</span>
+            <img class="w-full" src="img/model2.jpeg" alt="">
+            </div>
+            <div class="inline-block w-[75%]">
+            <p class="p-2">Batu</p>
+            <p class="text-sm text-black/85 p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam neque repellat, non ex cumque, quis obcaecati tempora porro hic consequatur impedit facere nisi numquam repudiandae ullam corrupti. Non accusamus a incidunt nulla eos, cumque sint et. Eos harum unde dolorem deserunt tempora accusantium, quod dolore molestias, voluptate quis et aperiam.</p>
+            <p class="p-2">$192.80</p>
+            <p class="text-md flex-row bg-blue-400 p-2 text-center text-white"><a href="#">Add To Cart</a></p>
+            </div>
+         </div>
+         <div class="bg-slate-200 handphone:hidden tablet:flex">
+            <div class="w-fit my-auto block">
+            <span class="material-symbols-rounded absolute text-2xl bg-slate-100 mt-3 ml-[0.5rem] cursor-pointer handphone:rounded-full tablet:rounded-none">favorite</span>
+            <img class="w-full" src="img/model.jpeg" alt="">
+            </div>
+            <div class="inline-block w-[75%]">
+            <p class="p-2">Besi</p>
+            <p class="text-sm text-black/85 p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam neque repellat, non ex cumque, quis obcaecati tempora porro hic consequatur impedit facere nisi numquam repudiandae ullam corrupti. Non accusamus a incidunt nulla eos, cumque sint et. Eos harum unde dolorem deserunt tempora accusantium, quod dolore molestias, voluptate quis et aperiam.</p>
+            <p class="p-2">$192.80</p>
+            <p class="text-md flex-row bg-blue-400 p-2 text-center text-white"><a href="#">Add To Cart</a></p>
+            </div>
+         </div>
+         <div class="bg-slate-200 handphone:hidden tablet:flex">
+            <div class="w-fit my-auto block">
+            <span class="material-symbols-rounded absolute text-2xl bg-slate-100 mt-3 ml-[0.5rem] cursor-pointer handphone:rounded-full tablet:rounded-none">favorite</span>
+            <img class="w-full" src="img/model3.jpeg" alt="">
+            </div>
+            <div class="inline-block w-[75%]">
+            <p class="p-2">Emas</p>
+            <p class="text-sm text-black/85 p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam neque repellat, non ex cumque, quis obcaecati tempora porro hic consequatur impedit facere nisi numquam repudiandae ullam corrupti. Non accusamus a incidunt nulla eos, cumque sint et. Eos harum unde dolorem deserunt tempora accusantium, quod dolore molestias, voluptate quis et aperiam.</p>
+            <p class="p-2">$192.80</p>
+            <p class="text-md flex-row bg-blue-400 p-2 text-center text-white"><a href="#">Add To Cart</a></p>
+            </div>
+         </div>
+         <div class="bg-slate-200 handphone:hidden tablet:flex">
+            <div class="w-[50%] my-auto block">
+            <span class="material-symbols-rounded absolute text-2xl bg-slate-100 mt-3 ml-[0.5rem] cursor-pointer handphone:rounded-full tablet:rounded-none">favorite</span>
+            <img class="w-fit" src="img/model4.jpg" alt="">
+            </div>
+            <div class="inline-block w-[60%]">
+            <p class="p-2">Perak</p>
+            <p class="text-sm text-black/85 p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam neque repellat, non ex cumque, quis obcaecati tempora porro hic consequatur impedit facere nisi numquam repudiandae ullam corrupti. Non accusamus a incidunt nulla eos, cumque sint et. Eos harum unde dolorem deserunt tempora accusantium, quod dolore molestias, voluptate quis et aperiam.</p>
+            <p class="p-2">$192.80</p>
+            <p class="text-md flex-row bg-blue-400 p-2 text-center text-white"><a href="#">Add To Cart</a></p>
+            </div>
+         </div>
       </div>
    </div>
    {{-- Sidebar Content --}}
