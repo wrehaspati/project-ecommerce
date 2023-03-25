@@ -39,3 +39,40 @@ document.getElementById('background').addEventListener('click',function(){
    document.getElementById('solo').style.display="grid"
    document.getElementById('sort').style.display="none"
  })
+ document.getElementById('filter2').addEventListener('click',function(){
+   document.getElementById('siding').style.transition="all 0.5s"
+   document.getElementById('siding').style.height="11rem"
+   document.getElementById('filter2').style.display="none"
+   document.getElementById('filter3').style.display="inline-block"
+ })
+ document.getElementById('filter3').addEventListener('click',function(){
+   document.getElementById('siding').style.transition="all 0.5s"
+   document.getElementById('siding').style.height="4px"
+   document.getElementById('filter2').style.display="inline-block"
+   document.getElementById('filter3').style.display="none"
+ })
+ function handphone(x) {
+   if (x.matches) { // If media query matches
+     document.getElementById('filter2').style.display="none"
+   } else {
+     document.getElementById('filter2').style.display="inline-block"
+   }
+ }
+ 
+ let x = window.matchMedia("(min-width: 400px)")
+ handphone(x) // Call listener function at run time
+ x.addListener(handphone) // Attach listener function on state changes
+ 
+ function tablet(y) {
+   if (y.matches) { // If media query matches
+     document.getElementById('filter2').style.display="inline-block"
+   } else {
+     document.getElementById('filter2').style.display="none"
+     document.getElementById('filter3').style.display="none"
+     document.getElementById('siding').style.height="1px"
+   }
+ }
+ 
+ let y = window.matchMedia("(min-width: 600px)")
+ tablet(y) // Call listener function at run time
+ y.addListener(tablet) // Attach listener function on state changes

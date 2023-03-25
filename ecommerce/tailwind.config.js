@@ -51,6 +51,8 @@ module.exports = {
                 'laptop':'700px',
                 'handphone':'400px',
                 'tablet':'600px',
+                'pc':'1400px',
+                'mac':'1300px',
             },
             borderWidth: {
                 '1': '1.2px',

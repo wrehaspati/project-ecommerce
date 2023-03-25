@@ -12,19 +12,22 @@
         </div>
      </a>    
 </div> --}}
-  
-    <div class="swiper-slide max-w-[12rem] overflow-hidden ml-5">
-        <div class="w-fit group">
-        <a href="#"><img src="img/model.jpeg" class="xl:group-hover:scale-105 transition-all duration-200" alt="">
+
+<div class="swiper-slide max-w-[12rem] overflow-hidden ml-5">
+    <div class="w-full group">
+        <a href="#"><img src="img/model.jpeg" class="xl:group-hover:scale-105 transition-all duration-200"
+                alt="">
             <p class="absolute top-0 ml-5 h-[86.9%] -rotate-12 border-r-2 border-white/80"></p>
-            <p class="absolute top-0 right-[4.8rem] ml-5 h-[86.9%] xl:group-hover:right-[1.5rem] transition-all duration-200 rotate-12 border-r-2 border-white/80"></p>
+            <p
+                class="absolute top-0 right-[4.8rem] ml-5 h-[86.9%] xl:group-hover:right-[1.5rem] transition-all duration-200 rotate-12 border-r-2 border-white/80">
+            </p>
             <p class="font-bold font-sans z-10 relative text-center"> {{ $title }} </p>
         </a>
-        </div>
     </div>
-    
+</div>
 
-    {{-- <div class="swiper-slide max-w-[15.8rem] ml-16">
+
+{{-- <div class="swiper-slide max-w-[15.8rem] ml-16">
         <div class="w-fit group">
             <a href="#"><img src="img/model2.jpeg" class="xl:group-hover:scale-105 transition-all duration-200" alt="">
             <p class="absolute top-0 ml-5 h-[86.9%] -rotate-12 border-r-2 border-white/80"></p>

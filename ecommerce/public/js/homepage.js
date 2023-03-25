@@ -29,6 +29,10 @@ const swiper = new Swiper('.swiper-card', {
             slidesPerView: 5.6,
             spaceBetween: 10
         },
+        1400: {
+            slidesPerView: 11,
+            spaceBetween: 10   
+        }
     }
 });  
 const swipe = new Swiper('.swiper-item', {
@@ -71,6 +75,14 @@ const swipe = new Swiper('.swiper-item', {
             slidesPerView: 4.7,
             spaceBetween: 10
         },
+        1300: {
+            slidesPerView: 7,
+            spaceBetween: 10   
+        },
+        1400: {
+            slidesPerView: 8.9,
+            spaceBetween: 10
+        }
     }
 });  
 const pop=document.getElementById('popup');
