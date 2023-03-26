@@ -28,9 +28,9 @@ class DataItems extends DataTableComponent
 
             return route('products.edit', Str::slug($name));
         });
-        $this->setBulkActions([
-            'deleteSelected' => 'Delete',
-        ]);
+        // $this->setBulkActions([
+        //     'deleteSelected' => 'Delete',
+        // ]);
 
         $this->setAdditionalSelects(['items.id as id', 'items.general_description as general_description', 'items.display_price as display_price']);
 

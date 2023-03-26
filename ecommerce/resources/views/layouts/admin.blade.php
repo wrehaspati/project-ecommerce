@@ -32,7 +32,7 @@
                     @include('layouts.admin-partials.admin-navigation')
                     <!-- Navigation ends -->
                     <!-- Remove class [ h-64 ] when adding a card block -->
-                    <div class="container mx-auto py-10 h-screen w-11/12 px-6">
+                    <div class="container mx-auto py-10 h-screen mid:w-11/12 mid:px-6">
                         <!-- Remove class [ border-dashed border-2 border-gray-300 ] to remove dotted border -->
                         <div class="w-full h-full rounded overflow-scroll pb-6">
                             {{ $slot }}

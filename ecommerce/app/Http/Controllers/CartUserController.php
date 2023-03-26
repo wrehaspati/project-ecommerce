@@ -39,6 +39,6 @@ class CartUserController extends Controller
     {
         CartUser::destroy($id);
         
-        return redirect()->back();
+        return redirect()->back()->with('status','Berhasil Menghapus Item !');
     }
 }

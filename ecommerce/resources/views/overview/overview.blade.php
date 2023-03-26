@@ -61,7 +61,11 @@
 
                                         <button type="submit"
                                             class="block rounded bg-green-600 px-5 py-3 text-xs font-medium text-white hover:bg-green-500">
-                                            Add to Cart
+                                            @if ($carts) 
+                                                Telah masuk ke keranjang
+                                            @else
+                                                Add to Cart
+                                            @endif
                                         </button>
                                     </div>
                                 </form>

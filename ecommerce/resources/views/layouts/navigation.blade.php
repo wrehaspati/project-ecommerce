@@ -1,3 +1,20 @@
+<style>
+    /* width */
+    #scroll::-webkit-scrollbar {
+        width: 1px;
+    }
+
+    /* Track */
+    #scroll::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    /* Handle */
+    #scroll::-webkit-scrollbar-thumb {
+        background: rgb(133, 132, 132);
+    }
+</style>
+
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,7 +39,7 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="'#'" :active="false">
+                    <x-nav-link :href="route('learn')" :active="request()->routeIs('learn')">
                         {{ __('Learn') }}
                     </x-nav-link>
                 </div>
@@ -46,7 +63,7 @@
                         <i class="fa-solid fa-cart-shopping"></i>
                         {{ __('MyCart') }}
                     </x-nav-link> --}}
-                    <x-cart-sidebar/>
+                    <livewire:cart-sidebar />
                 </div>
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">

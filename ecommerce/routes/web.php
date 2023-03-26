@@ -4,6 +4,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CartUserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\WishlistController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +28,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [ItemController::class, 'homepage'])->name('homepage');
+Route::get('/learn', function(){ return view('general.learn');})->name('learn');
 
 Route::prefix('products')->group(function () {
     Route::get('/', function(){ return view('products.products-dashboard');})->name('products.dashboard');
@@ -46,6 +48,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('/cart', CartUserController::class);
+    Route::resource('/wishlist', WishlistController::class);
 });
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CartUser;
 use App\Models\Image;
 use App\Models\Item;
 use App\Models\User;
@@ -87,8 +88,9 @@ class ItemController extends Controller
     {
         $item = $this->urlConvertion($name);
         $image = Item::find($item->id)->image;
+        $cart = CartUser::where('item_id',$item->id)->first();
         
-        return view('overview.overview', ['item' => $item,'images' => $image]);
+        return view('overview.overview', ['item' => $item,'images' => $image, 'carts' => $cart]);
     }
 
     /**
