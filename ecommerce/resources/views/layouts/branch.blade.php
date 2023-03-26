@@ -38,6 +38,7 @@
         </main>
     </div>
     <script src="js/product.js"></script>
+    <script src="js/learn.js"></script>
     @livewireScripts
 </body>
 

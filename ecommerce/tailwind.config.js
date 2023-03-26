@@ -48,6 +48,7 @@ module.exports = {
                 '4': '0.80rem',
             },
             screens: {
+                'miniphone':'300px',
                 'laptop':'700px',
                 'handphone':'400px',
                 'tablet':'600px',

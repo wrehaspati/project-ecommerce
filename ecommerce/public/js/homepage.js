@@ -5,6 +5,10 @@ const swiper = new Swiper('.swiper-card', {
         prevEl: '.swiper-button-prev',
     },
     breakpoints: {
+        300:{
+            slidesPerView: 1.7,
+            spaceBetween: -5
+        },
         400: {
             slidesPerView: 2.1,
             spaceBetween: -5
@@ -55,8 +59,12 @@ const swipe = new Swiper('.swiper-item', {
         prevEl: '.swiper-button-prev',
     },
     breakpoints: {
+        300:{
+            slidesPerView: 1.58,
+            spaceBetween: -5
+        },
         400: {
-            slidesPerView: 1.89,
+            slidesPerView: 2,
             spaceBetween: -5
         },
         600: {
