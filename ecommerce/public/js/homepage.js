@@ -30,9 +30,17 @@ const swiper = new Swiper('.swiper-card', {
             spaceBetween: 10
         },
         1400: {
-            slidesPerView: 11,
-            spaceBetween: 10   
-        }
+            slidesPerView: 5,
+            spaceBetween: -150   
+        },
+        1600: {
+            slidesPerView: 6,
+            spaceBetween: -150
+        },
+        1900: {
+            slidesPerView: 7,
+            spaceBetween: -150
+        },
     }
 });  
 const swipe = new Swiper('.swiper-item', {
@@ -72,16 +80,28 @@ const swipe = new Swiper('.swiper-item', {
             spaceBetween: 10
         },
         1200: {
-            slidesPerView: 4.7,
+            slidesPerView: 5.6,
             spaceBetween: 10
-        },
-        1300: {
-            slidesPerView: 7,
-            spaceBetween: 10   
         },
         1400: {
-            slidesPerView: 8.9,
-            spaceBetween: 10
+            slidesPerView: 5,
+            spaceBetween: 20   
+        },
+        1600: {
+            slidesPerView: 5.7,
+            spaceBetween: 20
+        },
+        1900: {
+            slidesPerView: 6.8,
+            spaceBetween: 20
+        },
+        2500: {
+            slidesPerView: 9,
+            spaceBetween: 20
+        },
+        4000: {
+            slidesPerView: 12,
+            spaceBetween: 20
         }
     }
 });  
@@ -105,3 +125,5 @@ close.addEventListener('click',function(){
     backimg.style.zIndex="-1"
     backimg.style.transition="all 0.9s";
 })
+console.log(innerHeight);
+console.log(innerWidth);

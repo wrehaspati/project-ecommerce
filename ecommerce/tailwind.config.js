@@ -53,6 +53,7 @@ module.exports = {
                 'tablet':'600px',
                 'pc':'1400px',
                 'mac':'1300px',
+                'ultra':'4000px',
             },
             borderWidth: {
                 '1': '1.2px',

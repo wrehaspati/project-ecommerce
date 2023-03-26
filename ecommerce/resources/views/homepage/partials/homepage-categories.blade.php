@@ -16,13 +16,6 @@
             <x-category-card title="hmm" />
             <x-category-card title="ya" />
             <x-category-card title="itu" />
-            <x-category-card title="kalung" />
-            <x-category-card title="Mutiara" />
-            <x-category-card title="Kotak" />
-            <x-category-card title="Segitiga" />
-            <x-category-card title="hmm" />
-            <x-category-card title="ya" />
-            <x-category-card title="itu" />
         </div>
         <div class="pagination">
             <div class="swiper-button-prev ml-5"><img src="img/prev.svg" alt=""></div>

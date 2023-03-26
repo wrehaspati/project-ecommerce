@@ -49,8 +49,10 @@
     {{-- Filter --}}
     <div class="container max-w-full bg-slate-300">
         <div class="flex p-4">
-            <span id="single" class="material-symbols-rounded cursor-pointer">grid_view</span>
-            <span id="multiple" class="material-symbols-rounded cursor-pointer ml-3">view_list</span>
+            <span id="single"
+                class="material-symbols-rounded cursor-pointer text-slate-700 hover:text-black">grid_view</span>
+            <span id="multiple"
+                class="material-symbols-rounded cursor-pointer ml-3 text-slate-700 hover:text-black">view_list</span>
             <a href="#" id="filter"
                 class="text-md handphone:inline-block tablet:hidden font-serif ml-auto"><span
                     class="material-symbols-rounded">filter_alt</span><span class="relative -top-1">Filters</span></a>
@@ -61,7 +63,8 @@
         </div>
     </div>
     {{-- Sidebar(Fitur Tablet ++) --}}
-    <div id="siding" class="container flex flex-wrap overflow-scroll max-w-full bg-slate-300/20 h-1">
+    <div id="siding"
+        class="container flex mac:justify-center flex-wrap overflow-scroll max-w-full bg-slate-300/20 h-1">
         <div class="p-4">
             <h1 class="font-serif text-xl ml-3">Search</h1>
             <a href="#"><span
@@ -73,15 +76,15 @@
         <div class="p-4 overflow-hidden lg:ml-7">
             <h1 class="font-serif text-xl">Categories</h1>
             <div class="overflow-scroll text-sm h-32 w-[8rem]">
-                <ul class="mt-2 ml-4 text-black/80">
-                    <li class="mt-4"><a href="#">Necklace </a></li>
-                    <li class="mt-4"><a href="#">Necklace Dark</a></li>
-                    <li class="mt-4"><a href="#">Liontin Purif</a></li>
-                    <li class="mt-4"><a href="#">Alchemist</a></li>
-                    <li class="mt-4"><a href="#">Necklace Light</a></li>
-                    <li class="mt-4"><a href="#">Necklace Dark</a></li>
-                    <li class="mt-4"><a href="#">Liontin Purif</a></li>
-                    <li class="mt-4"><a href="#">Summoner</a></li>
+                <ul class="mt-2 ml-4 text-black/75">
+                    <li class="mt-4 hover:text-black"><a href="#">Necklace </a></li>
+                    <li class="mt-4 hover:text-black"><a href="#">Necklace Dark</a></li>
+                    <li class="mt-4 hover:text-black"><a href="#">Liontin Purif</a></li>
+                    <li class="mt-4 hover:text-black"><a href="#">Alchemist</a></li>
+                    <li class="mt-4 hover:text-black"><a href="#">Necklace Light</a></li>
+                    <li class="mt-4 hover:text-black"><a href="#">Necklace Dark</a></li>
+                    <li class="mt-4 hover:text-black"><a href="#">Liontin Purif</a></li>
+                    <li class="mt-4 hover:text-black"><a href="#">Summoner</a></li>
                 </ul>
             </div>
         </div>
@@ -90,23 +93,23 @@
             <div class="overflow-scroll h-32 w-[9rem]">
                 <ul class="mt-2 ml-4 text-sm text-black/80">
                     <li class="mt-4"><span class="bg-red-400 pl-4 rounded-[100%] w-full"></span><a href="#"
-                            class="ml-1">Red
+                            class="ml-1 hover:text-red-400">Red
                             Rose</a></li>
-                    <li class="mt-4"><span class="bg-blue-400 pl-4 rounded-[100%] w-full"></span><a
-                            href="#">Blue
+                    <li class="mt-4"><span class="bg-blue-400 pl-4 rounded-[100%] w-full"></span><a href="#"
+                            class="ml-1 hover:text-blue-400">Blue
                             Sky</a></li>
                     <li class="mt-4"><span class="bg-yellow-400 pl-4 rounded-[100%] w-full"></span><a
-                            href="#">Liontin Purif</a></li>
-                    <li class="mt-4"><span class="bg-green-400 pl-4 rounded-[100%] w-full"></span><a
-                            href="#">Hunter</a></li>
+                            href="#" class="ml-1 hover:text-yellow-400">Liontin Purif</a></li>
+                    <li class="mt-4"><span class="bg-green-400 pl-4 rounded-[100%] w-full"></span><a href="#"
+                            class="ml-1 hover:text-green-400">Hunter</a></li>
                     <li class="mt-4"><span class="bg-purple-400 pl-4 rounded-[100%] w-full"></span><a
-                            href="#">Necklace Light</a></li>
-                    <li class="mt-4"><span class="bg-pink-400 pl-4 rounded-[100%] w-full"></span><a
-                            href="#">Necklace Dark</a></li>
-                    <li class="mt-4"><span class="bg-black pl-4 rounded-[100%] w-full"></span><a
-                            href="#">Liontin Purif</a></li>
-                    <li class="mt-4"><span class="bg-white pl-4 rounded-[100%] w-full"></span><a
-                            href="#">Alchemist </a></li>
+                            href="#" class="ml-1 hover:text-purple-400">Necklace Light</a></li>
+                    <li class="mt-4"><span class="bg-pink-400 pl-4 rounded-[100%] w-full"></span><a href="#"
+                            class="ml-1 hover:text-pink-400">Necklace Dark</a></li>
+                    <li class="mt-4"><span class="bg-black pl-4 rounded-[100%] w-full"></span><a href="#"
+                            class="ml-1">Liontin Purif</a></li>
+                    <li class="mt-4"><span class="bg-white pl-4 rounded-[100%] w-full"></span><a href="#"
+                            class="ml-1">Alchemist </a></li>
                 </ul>
             </div>
         </div>
@@ -134,14 +137,20 @@
         </div>
     </div>
     {{-- Content --}}
-    <div class="container flex mt-6 ml-5 handphone:max-w-[90%] tablet:max-w-[92%] laptop:max-w-[95%]">
-        <div id="sort" class="grid grid-cols-2 tablet:grid-cols-3 laptop:grid-cols-4 lg:grid-cols-5 gap-4">
+    <div
+        class="container mac:justify-center flex mt-6 ml-5 handphone:max-w-[90%] tablet:max-w-[92%] laptop:max-w-[95%]">
+        <div id="sort"
+            class="grid grid-cols-2 tablet:grid-cols-3 laptop:grid-cols-4 lg:grid-cols-5 mac:grid-cols-6 gap-4">
             <x-content-product konten="Necklace" />
             <x-content-product konten="Ring" />
             <x-content-product konten="Liontin" />
             <x-content-product konten="Bracelet" />
             <x-content-product konten="Armada" />
             <x-content-product konten="Titan" />
+            <x-content-product konten="Archer" />
+            <x-content-product konten="Huntress" />
+            <x-content-product konten="Lux" />
+            <x-content-product konten="Sion" />
         </div>
     </div>
     <div id="solo"
