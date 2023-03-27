@@ -1,54 +1,44 @@
 const swiper = new Swiper('.swiper-card', {
     speed: 400,
+    slidesPerView: 2,
+    spaceBetween: 10,
+    loop:true,
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
     breakpoints: {
-        300:{
-            slidesPerView: 1.7,
-            spaceBetween: -5
-        },
         400: {
-            slidesPerView: 2.1,
-            spaceBetween: -5
+            slidesPerView: 3,
+            spaceBetween: 10
         },
         600: {
-            slidesPerView: 2.8,
-            spaceBetween: 5
-        },
-        700: {
-            slidesPerView: 2,
-            spaceBetween: 5
+            slidesPerView: 4,
+            spaceBetween: 10
         },
         800: {
-            slidesPerView: 3.7,
-            spaceBetween: 5
+            slidesPerView: 5,
+            spaceBetween: 10
         },
         1000: {
-            slidesPerView: 4.7,
+            slidesPerView: 6,
             spaceBetween: 10
         },
         1200: {
-            slidesPerView: 5.6,
+            slidesPerView: 7,
             spaceBetween: 10
         },
-        1400: {
-            slidesPerView: 5,
-            spaceBetween: -150   
-        },
-        1600: {
-            slidesPerView: 6,
-            spaceBetween: -150
-        },
-        1900: {
-            slidesPerView: 7,
-            spaceBetween: -150
-        },
+        2000: {
+            slidesPerView: 7.5,
+            spaceBetween: 20
+        }
     }
 });  
 const swipe = new Swiper('.swiper-item', {
     speed: 400,
+    loop:true,
+    slidesPerView: 2,
+    spaceBetween: 10,
     pagination: {
         el: '.swiper-pagination',
         type: 'bullets',
@@ -59,57 +49,29 @@ const swipe = new Swiper('.swiper-item', {
         prevEl: '.swiper-button-prev',
     },
     breakpoints: {
-        300:{
-            slidesPerView: 1.58,
-            spaceBetween: -5
-        },
         400: {
             slidesPerView: 2,
-            spaceBetween: -5
+            spaceBetween: 10
         },
         600: {
-            slidesPerView: 2.31,
-            spaceBetween: -5
-        },
-        700: {
-            slidesPerView: 2.7,
-            spaceBetween: -5
+            slidesPerView: 3,
+            spaceBetween: 10
         },
         800: {
-            slidesPerView: 3.1,
-            spaceBetween: -5
-        },
-        900: {
-            slidesPerView: 3.5,
-            spaceBetween: -5
+            slidesPerView: 4,
+            spaceBetween: 10
         },
         1000: {
-            slidesPerView: 4.1,
+            slidesPerView: 5,
             spaceBetween: 10
         },
         1200: {
-            slidesPerView: 5.6,
+            slidesPerView: 6,
             spaceBetween: 10
         },
-        1400: {
-            slidesPerView: 5,
-            spaceBetween: 20   
-        },
-        1600: {
-            slidesPerView: 5.7,
-            spaceBetween: 20
-        },
-        1900: {
-            slidesPerView: 6.8,
-            spaceBetween: 20
-        },
-        2500: {
-            slidesPerView: 9,
-            spaceBetween: 20
-        },
-        4000: {
-            slidesPerView: 12,
-            spaceBetween: 20
+        2000: {
+            slidesPerView: 10.5,
+            spaceBetween: 10
         }
     }
 });  

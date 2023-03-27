@@ -7,7 +7,7 @@
     {{-- <div class="flex flex-row">
         <x-category-card/>
     </div> --}}
-    <div class="swiper swiper-card">
+    <div class="swiper swiper-card w-[95%] ultra:justify-center z-10">
         <div class="swiper-wrapper">
             @foreach ($Categories as $category) 
                 <x-category-card :title="$category->name" />

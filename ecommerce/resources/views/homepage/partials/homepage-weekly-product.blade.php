@@ -5,5 +5,5 @@
         <a href="#" class="text-sm font-mono justify-end mt-2 flex">View all <img src="img/arrow.svg"
                 class="-mt-[7px] hidden tablet:flex" width="16%" alt=""></a>
     </div>
-    <p class="w-full bg-black/20 h-[2px] mb-2"></p>
+    <p class="w-full max-w-full bg-black/20 h-[2px] mb-2"></p>
 </div>

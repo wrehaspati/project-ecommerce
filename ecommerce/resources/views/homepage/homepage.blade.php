@@ -1,6 +1,6 @@
 <x-app-layout>
     <div id="contain"
-        class="absolute bg-black/50 opacity-1 z-10 h-[240%] mac:h-[100%] pc:h-[120%] overflow-x-hidden w-full"></div>
+        class="absolute bg-black/50 opacity-1 z-20 h-[240%] mac:h-[100%] pc:h-[120%] overflow-x-hidden w-full"></div>
     <div id="popup"
         class="flex tablet:flex-row miniphone:flex-col miniphone:top-[10%] miniphone:left-[14%] miniphone:max-w-[20rem] handphone:top-44 handphone:left-24 tablet:h-fit tablet:left-[15%] tablet:max-w-[35rem] laptop:max-w-[40rem] lg:left-[30%] lg:top-34 mac:-ml-96 mac:-mt-20 pc:left-[35%] pc:top-[15%] pc:translate-x-[50%] pc:translate-y-[50%] handphone:flex-col h-[20rem] max-w-[25rem] fixed -z-1 opacity-1 left-20 top-52 rounded-xl bg-gradient-to-br from-black to bg-red-900">
         <img id="close" src="img/close.svg"
@@ -30,8 +30,8 @@
     {{-- Weekly product --}}
     @include('homepage.partials.homepage-weekly-product')
 
-    <div class="swiper swiper-item pc:mt-7">
-        <div class="swiper-wrapper pc:max-w-[80rem]">
+    <div class="swiper swiper-item w-[95%] pc:mt-7">
+        <div class="swiper-wrapper mt-5 pc:max-w-[80rem]">
             <x-item-card title="Kibutsuji" />
             <x-item-card title="Muzan" />
             <x-item-card title="Freind" />
@@ -39,8 +39,8 @@
             <x-item-card title="tester" />
             <x-item-card title="testing" />
             <x-item-card title="some" />
-            <x-item-card title="Kibutsuji" />
-            <x-item-card title="Muzan" />
+            <x-item-card title="Ketse" />
+            <x-item-card title="Diff" />
         </div>
         <div class="swiper-pagination relative top-1 mb-10"></div>
         <div class="pagination">
@@ -58,8 +58,8 @@
         </div>
         <p class="w-full bg-black/20 h-[2px] mb-2"></p>
     </div>
-    <div class="swiper swiper-item pc:mt-7">
-        <div class="swiper-wrapper">
+    <div class="swiper swiper-item w-[95%] pc:mt-7">
+        <div class="swiper-wrapper mt-5 pc:max-w-[80rem]">
             <x-item-card title="hmm" />
             <x-item-card title="apa" />
             <x-item-card title="men" />
