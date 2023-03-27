@@ -56,16 +56,14 @@
         </div>
     </div>
 </div> --}}
-  
-    <div class="swiper-slide hover:shadow-md hover:shadow-purple-600 transition-all duration-200 max-w-[13rem] tablet:max-w-[15rem] ml-5 bg-slate-100 overflow-hidden">
-        <img src="img/model2.jpeg" class="w-full" alt="">
-        <div class="p-2">
-            <p class="font-sans text-md font-bold"> {{$title}} </p>
-            <p class="mb-2">Seorang Main Villian di Animek</p>
-            <p class="text-end">$19.50</p>
-        </div>
-        <p class="bg-red-500 p-2 text-center text-white rounded-sm hover:bg-red-600"><a href="#">Add To Cart</a></p>
-    </div>
-  
 
-  
+<div
+    class="swiper-slide ultra:ml-[10%] hover:shadow-md hover:shadow-purple-600 transition-all duration-200 max-w-[13rem] tablet:max-w-[15rem] ml-5 bg-slate-100 overflow-hidden">
+    <img src="img/model2.jpeg" class="w-full" alt="">
+    <div class="p-2">
+        <p class="font-sans text-md font-bold"> {{ $title }} </p>
+        <p class="mb-2">Seorang Main Villian di Animek</p>
+        <p class="text-end">$19.50</p>
+    </div>
+    <p class="bg-red-500 p-2 text-center text-white rounded-sm hover:bg-red-600"><a href="#">Add To Cart</a></p>
+</div>

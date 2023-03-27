@@ -19,7 +19,7 @@
     @livewireStyles
 </head>
 
-<body id="scrol" class="font-sans overflow-x-hidden antialiased">
+<body id="scrol" class="font-sans overflow-x-hidden scroll-smooth antialiased">
     <div class="min-h-screen bg-gray-100">
         @include('layouts.navigation')
 
