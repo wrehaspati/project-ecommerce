@@ -11,10 +11,10 @@ class ContentProduct extends Component
     /**
      * Create a new component instance.
      */
-    public $konten;
-    public function __construct($konten)
+    
+    public function __construct(public $item)
     {
-        $this->konten=$konten;
+        // 
     }
 
     /**

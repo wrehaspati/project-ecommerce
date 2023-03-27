@@ -141,7 +141,10 @@
         class="container mac:justify-center flex mt-6 ml-5 handphone:max-w-[90%] tablet:max-w-[92%] laptop:max-w-[95%]">
         <div id="sort"
             class="grid grid-cols-2 tablet:grid-cols-3 laptop:grid-cols-4 lg:grid-cols-5 mac:grid-cols-6 gap-4">
-            <x-content-product konten="Necklace" />
+            @foreach ($items as $item) 
+                <x-content-product :$item />   
+            @endforeach
+            {{-- <x-content-product konten="Necklace" />
             <x-content-product konten="Ring" />
             <x-content-product konten="Liontin" />
             <x-content-product konten="Bracelet" />
@@ -150,7 +153,8 @@
             <x-content-product konten="Archer" />
             <x-content-product konten="Huntress" />
             <x-content-product konten="Lux" />
-            <x-content-product konten="Sion" />
+            <x-content-product konten="Sion" /> --}}
+            
         </div>
     </div>
     <div id="solo"

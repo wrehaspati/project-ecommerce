@@ -3,7 +3,14 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Category;
+use App\Models\Image;
+use App\Models\Item;
+use App\Models\ItemVariant;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,29 +19,31 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\User::factory(10)->create();
-        \App\Models\Item::factory(25)->create();
-        \App\Models\ItemVariant::factory(50)->create();
-        \App\Models\Image::factory(25)->create();
+        User::factory(10)->create();
+        Item::factory(25)->create();
+        ItemVariant::factory(50)->create();
+        Image::factory(25)->create();
 
         for($x=0;$x<4;$x++)
         {
             for($i=1;$i<25+1;$i++)
             {
-                \App\Models\Image::factory()->create([
+                Image::factory()->create([
                     'image'=> 'https://via.placeholder.com/300.png',
                     'item_id' => $i,
                 ]);
             }
         }
 
-        \App\Models\User::factory()->create([
+        Category::factory(5)->create();
+
+        User::factory()->create([
             'name' => 'Test Admin',
             'email' => 'testadmin@example.com',
             'role' => 'admin'
         ]);
 
-        \App\Models\User::factory()->create([
+        User::factory()->create([
             'name' => 'Test User',
             'email' => 'testuser@example.com'
         ]);

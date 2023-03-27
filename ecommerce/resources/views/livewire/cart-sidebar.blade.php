@@ -8,7 +8,7 @@
         {{ __('MyCart') }}
     </button>
 
-        <div class="absolute top-0 z-10 left-0" :class="{'block': open, 'hidden': ! open}">
+        <div class="absolute top-0 z-10 left-0 hidden" :class="{'block': open, 'hidden': ! open}">
             <div class="w-full h-full bg-black dark:bg-gray-900 bg-opacity-90 top-0 overflow-y-auto overflow-x-hidden fixed sticky-0"
                 id="chec-div">
                 <div class="w-full absolute z-10 right-0 h-full overflow-x-hidden transform translate-x-0 transition ease-in-out duration-700"

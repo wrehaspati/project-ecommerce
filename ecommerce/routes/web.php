@@ -18,20 +18,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/welcome', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-
 Route::get('/', [ItemController::class, 'homepage'])->name('homepage');
 Route::get('/learn', function(){ return view('general.learn');})->name('learn');
 
 Route::prefix('products')->group(function () {
-    Route::get('/', function(){ return view('products.products-dashboard');})->name('products.dashboard');
+    Route::get('/', [ItemController::class, 'collection'])->name('products.dashboard');
     Route::get('/{name}', [ItemController::class, 'show']);
 })->name('products.group');
 

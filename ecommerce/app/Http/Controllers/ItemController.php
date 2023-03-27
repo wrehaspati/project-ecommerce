@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CartUser;
+use App\Models\Category;
 use App\Models\Image;
 use App\Models\Item;
 use App\Models\User;
@@ -53,8 +54,11 @@ class ItemController extends Controller
      */
     public function homepage()
     {
+        $categories = Category::all();
+
         return view('homepage.homepage', [
             'Items' => Item::select('items.*', 'images.image')->join('images', 'items.id', '=', 'images.item_id')->get(),
+            'Categories' => $categories,
         ]);
     }
 
@@ -91,6 +95,20 @@ class ItemController extends Controller
         $cart = CartUser::where('item_id',$item->id)->first();
         
         return view('overview.overview', ['item' => $item,'images' => $image, 'carts' => $cart]);
+    }
+
+    /**
+     * show product collections interface
+     * 
+     * @param name
+     * @return view
+     */
+    public function collection()
+    {
+        $items = Item::select('items.*', 'images.image', 'cart_users.item_id')->join('images', 'items.id', '=', 'images.item_id')->leftjoin('cart_users', 'items.id', '=', 'cart_users.item_id')->get();
+        $items = $items->unique('id');
+        
+        return view('products.products-dashboard', ['items' => $items]);
     }
 
     /**
