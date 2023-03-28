@@ -14,7 +14,7 @@
 </div> --}}
 
 <div class="swiper-slide max-w-[16rem] pc:max-w-[60rem] ml-5 mac:-ml-10">
-    <div class="group ultra:w-[50%] mac:w-[70%] h-full">
+    <div class="group ultra:w-[50%] xl:max-w-[80%] mac:w-[70%] h-full">
         <a href="#"><img src="img/model.jpeg"
                 class="xl:group-hover:scale-105 transition-all w-full object-fill duration-200" alt="">
             <p class="absolute top-0 ml-5 h-[86.9%] -rotate-12 border-r-2 border-white/80"></p>

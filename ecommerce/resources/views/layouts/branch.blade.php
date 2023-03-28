@@ -20,7 +20,7 @@
 </head>
 
 <body id="scrol" class="font-sans overflow-x-hidden scroll-smooth antialiased">
-    <div class="min-h-screen bg-gray-100">
+    <div class="min-h-screen">
         @include('layouts.navigation')
 
         <!-- Page Heading -->
@@ -41,5 +41,6 @@
     <script src="js/learn.js"></script>
     @livewireScripts
 </body>
+@include('layouts.footer')
 
 </html>

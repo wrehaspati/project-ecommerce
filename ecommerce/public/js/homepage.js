@@ -25,8 +25,8 @@ const swiper = new Swiper('.swiper-card', {
             spaceBetween: 10
         },
         1200: {
-            slidesPerView: 7,
-            spaceBetween: 10
+            slidesPerView: 5,
+            spaceBetween: -30
         },
         2000: {
             slidesPerView: 7.5,
