@@ -19,12 +19,12 @@
 <body class="font-sans text-gray-900 antialiased">
     <div class="lg:flex">
         <div class="lg:w-1/2 xl:max-w-screen-sm">
-            <div class="py-12 bg-indigo-100 lg:bg-white flex justify-center lg:justify-start lg:px-12">
+            <div class="md:py-12 py-6 md:bg-indigo-100 lg:bg-white flex justify-center lg:justify-start lg:px-12">
                 <div class="cursor-pointer flex items-center">
                     <div>
                         <div class="shrink-0 flex items-center">
                             <a href="{{ route('homepage') }}">
-                                <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+                                <x-application-logo class="block md:h-9 h-12 w-auto fill-current text-gray-800" />
                             </a>
                         </div>
                     </div>
