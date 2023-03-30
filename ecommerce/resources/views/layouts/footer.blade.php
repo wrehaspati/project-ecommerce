@@ -1,11 +1,11 @@
 <footer class="p-4 bg-white sm:p-6 dark:bg-gray-900 mt-4">
-    <div class="md:flex md:justify-between">
         <div class="mb-10 md:mb-0">
             <a href="{{ url('/') }}" class="flex justify-center">
                 <x-application-logo class="block h-9 w-auto fill-current text-gray-800"/>
             </a>
         </div>
-        <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+    <div class="md:flex md:justify-center">
+        <div class="grid grid-cols-3 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
                 <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
                 <ul class="text-gray-600 dark:text-gray-400">

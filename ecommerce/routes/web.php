@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ItemController::class, 'homepage'])->name('homepage');
 Route::get('/learn', function(){ return view('general.learn');})->name('learn');
+Route::get('/contact', function(){ return view('general.contact');})->name('contact');
 
 Route::prefix('products')->group(function () {
     Route::get('/', [ItemController::class, 'collection'])->name('products.dashboard');
