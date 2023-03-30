@@ -26,11 +26,23 @@ const swiper = new Swiper('.swiper-card', {
         },
         1200: {
             slidesPerView: 5,
-            spaceBetween: -30
+            spaceBetween: 10
+        },
+        1300: {
+            slidesPerView: 4.3,
+            spaceBetween: 90
+        },
+        1500: {
+            slidesPerView: 5.5,
+            spaceBetween: 90
         },
         2000: {
-            slidesPerView: 7.5,
-            spaceBetween: 20
+            slidesPerView: 5.5,
+            spaceBetween: 50
+        },
+        4000: {
+            slidesPerView: 9,
+            spaceBetween: 50
         }
     }
 });  
@@ -69,9 +81,17 @@ const swipe = new Swiper('.swiper-item', {
             slidesPerView: 6,
             spaceBetween: 10
         },
-        2000: {
-            slidesPerView: 10.5,
+        1300: {
+            slidesPerView: 8,
             spaceBetween: 10
+        },
+        2000: {
+            slidesPerView: 10,
+            spaceBetween: 10
+        },
+        4000: {
+            slidesPerView: 9,
+            spaceBetween: -50
         }
     }
 });  

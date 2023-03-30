@@ -7,18 +7,11 @@
     {{-- <div class="flex flex-row">
         <x-category-card/>
     </div> --}}
-    <div class="swiper swiper-card w-[95%] ultra:justify-center">
+    <div class="swiper swiper-card w-[95%] ultra:justify-center mac:w-full mac:max-w-full pc:w-full">
         <div class="swiper-wrapper">
             @foreach ($Categories as $category)
                 <x-category-card :title="$category->name" />
             @endforeach
-            {{-- <x-category-card title="kalung" />
-            <x-category-card title="Mutiara" />
-            <x-category-card title="Kotak" />
-            <x-category-card title="Segitiga" />
-            <x-category-card title="hmm" />
-            <x-category-card title="ya" />
-            <x-category-card title="itu" /> --}}
         </div>
         <div class="pagination">
             <div class="swiper-button-prev ml-5"><img src="img/prev.svg" alt=""></div>

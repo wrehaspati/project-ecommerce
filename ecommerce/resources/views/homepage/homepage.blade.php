@@ -31,7 +31,7 @@
     @include('homepage.partials.homepage-weekly-product')
 
     <div class="swiper swiper-item w-[95%] pc:mt-7">
-        <div class="swiper-wrapper mt-5 pc:max-w-[80rem]">
+        <div class="swiper-wrapper mt-5 pc:max-w-[80rem] ultra:max-w-[90rem]">
             <x-item-card title="Kibutsuji" />
             <x-item-card title="Muzan" />
             <x-item-card title="Freind" />
@@ -59,7 +59,7 @@
         <p class="w-full bg-black/20 h-[2px] mb-2"></p>
     </div>
     <div class="swiper swiper-item w-[95%] pc:mt-7">
-        <div class="swiper-wrapper mt-5 pc:max-w-[80rem]">
+        <div class="swiper-wrapper mt-5 pc:max-w-[80rem] ultra:max-w-[90rem]">
             <x-item-card title="hmm" />
             <x-item-card title="apa" />
             <x-item-card title="men" />
