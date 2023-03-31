@@ -171,19 +171,6 @@
 
     <!-- Responsive Navigation Menu -->
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
-        @auth
-        @else
-            @if (Route::has('login'))
-                <x-responsive-nav-link :href="route('login')" :active="false">
-                    {{ __('Log in') }}
-                </x-responsive-nav-link>
-                @if (Route::has('register'))
-                    <x-responsive-nav-link :href="route('register')" :active="false">
-                        {{ __('Register') }}
-                    </x-responsive-nav-link>
-                @endif
-            @endif
-        @endauth
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('homepage')" :active="request()->routeIs('homepage')">
                 {{ __('Homepage') }}
@@ -204,6 +191,19 @@
                 {{ __('Contact') }}
             </x-responsive-nav-link>
         </div>
+        @auth
+        @else
+            @if (Route::has('login'))
+            <div class="border-t pt-2 pb-3 space-y-1 border-gray-200">
+                <x-responsive-nav-link :href="route('login')" :active="false">
+                    {{ __('Log in') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('register')" :active="false">
+                    {{ __('Register') }}
+                </x-responsive-nav-link>
+            </div>
+            @endif
+        @endauth
 
         <!-- Responsive Settings Options -->
         @auth
@@ -216,6 +216,11 @@
                     <x-responsive-nav-link :href="route('profile.edit')">
                         {{ __('Profile') }}
                     </x-responsive-nav-link>
+                    @if(Auth::user()->role=='admin')
+                        <x-responsive-nav-link :href="route('profile.edit')">
+                            {{ __('Admin') }}
+                        </x-responsive-nav-link>
+                    @endif
 
                     <!-- Authentication -->
                     <form method="POST" action="{{ route('logout') }}">
