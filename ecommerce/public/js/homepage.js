@@ -108,7 +108,7 @@ const splide = new Splide('.splide', {
     arrows: true,
     pagination: true,
     pauseOnHover: true,
-    wheel: true,
+    wheel: false,
     breakpoints: {
         1000: {
             perPage: 4,
@@ -145,7 +145,7 @@ const splide = new Splide('.splide', {
     arrows: true,
     pagination: true,
     pauseOnHover: true,
-    wheel: true,
+    wheel: false,
     breakpoints: {
         1000: {
             perPage: 4,
