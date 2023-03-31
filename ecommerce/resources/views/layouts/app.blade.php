@@ -38,7 +38,7 @@
             </header>
         @endif
 
-        <main class="bg-white shadow md:pb-[4rem]">
+        <main class="bg-white shadow md:pb-[#rem]">
             {{ $slot }}
         </main>
     </div>
