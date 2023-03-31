@@ -21,9 +21,9 @@
             {{-- search bar --}}
             <div class="flex xl:w-96 hidden md:block">
                 <div class="flex justify-end h-full py-2 xl:w-96">
-                    <div class="relative flex w-full flex-wrap items-stretch">
+                    <div class="relative flex w-full flex-wrap items-stretch content-center">
                         <input type="search"
-                            class="relative m-0 block w-[1%] min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-1.5 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
+                            class="relative m-0 block w-[1%] min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
                             placeholder="Search" aria-label="Search" aria-describedby="button-addon2" />
                         <span
                             class="input-group-text flex items-center whitespace-nowrap rounded px-3 py-1.5 text-center text-base font-normal text-neutral-700 dark:text-neutral-200"
@@ -115,8 +115,8 @@
 
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex md:justify-center justify-between h-16">
+    <div class="max-w-7xl mx-auto pr-4 md:px-6 lg:px-8">
+        <div class="flex md:justify-center justify-between h-16 md:h-12">
             <div class="flex md:hidden content-center">
                 <a href="{{ route('homepage') }}">
                     <x-application-logo class="block h-14 pt-2 w-auto fill-current text-gray-800" />
@@ -124,27 +124,27 @@
             </div>
             <div class="flex">
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-8 md:-my-px md:ml-10 md:flex">
                     <x-nav-link :href="route('homepage')" :active="request()->routeIs('homepage')">
                         {{ __('Homepage') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-8 md:-my-px md:ml-10 md:flex">
                     <x-nav-link :href="route('products.dashboard')" :active="request()->routeIs('products.dashboard')">
                         {{ __('Collections') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-8 md:-my-px md:ml-10 md:flex">
                     <x-nav-link :href="route('learn')" :active="request()->routeIs('learn')">
                         {{ __('Learn') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-8 md:-my-px md:ml-10 md:flex">
                     <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
                         {{ __('Contact') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-8 md:-my-px md:ml-10 md:flex">
                     <x-nav-link :href="'#'" :active="false">
                         {{ __('Currency') }}
                     </x-nav-link>
@@ -154,7 +154,7 @@
 
 
             <!-- Hamburger -->
-            <div class="-mr-2 flex items-center sm:hidden">
+            <div class="-mr-2 flex items-center md:hidden">
                 <button @click="open = ! open"
                     class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">

@@ -1,7 +1,7 @@
 <x-app-layout>
-    <div id="contain"
-        class="absolute bg-black/50 opacity-1 z-10 mac:h-[100%] pc:h-[120%] overflow-x-hidden w-full"></div>
-    <div id="popup"
+    {{-- <div id="contain"
+        class="absolute bg-black/50 opacity-1 z-10 mac:h-[100%] pc:h-[120%] overflow-x-hidden w-full"></div> --}}
+    {{-- <div id="popup"
         class="flex tablet:flex-row miniphone:flex-col miniphone:top-[10%] miniphone:left-[14%] miniphone:max-w-[20rem] handphone:top-44 handphone:left-24 tablet:h-fit tablet:left-[15%] tablet:max-w-[35rem] laptop:max-w-[40rem] lg:left-[30%] lg:top-34 mac:-ml-96 mac:-mt-20 pc:left-[35%] pc:top-[15%] pc:translate-x-[50%] pc:translate-y-[50%] handphone:flex-col h-[20rem] max-w-[25rem] fixed -z-1 opacity-1 left-20 top-52 rounded-xl bg-gradient-to-br from-black to bg-red-900">
         <img id="close" src="img/close.svg"
             class="border cursor-pointer w-[12%] tablet:w-[7%] laptop:w-[5%] lg:w-[8%] rounded-full absolute right-2 top-2  border-white"
@@ -20,7 +20,7 @@
                 <a href="#" class="pc:text-4xl mac:text-xl">Maybe Later</a>
             </button>
         </div>
-    </div>
+    </div> --}}
     {{-- Corousel --}}
     @include('homepage.partials.homepage-carousel')
 

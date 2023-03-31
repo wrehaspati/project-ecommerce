@@ -14,10 +14,11 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                // scriptina: ["scriptina", "Great Vibes"],
             },
             colors: {
                 'black-pale':'rgba(0, 0, 0, 0.2)',
+                'pinkish-tan':'#c8a482',
             },
             inset: {
                 '17':'4.8rem',
