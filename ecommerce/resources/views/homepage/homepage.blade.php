@@ -1,6 +1,6 @@
 <x-app-layout>
-    <div id="contain"
-        class="absolute bg-black/50 opacity-1 z-10 mac:h-[100%] pc:h-[120%] overflow-x-hidden w-full"></div>
+    <div id="contain" class="absolute bg-black/50 opacity-1 z-10 mac:h-[100%] pc:h-[120%] overflow-x-hidden w-full">
+    </div>
     <div id="popup"
         class="flex tablet:flex-row miniphone:flex-col miniphone:top-[10%] miniphone:left-[14%] miniphone:max-w-[20rem] handphone:top-44 handphone:left-24 tablet:h-fit tablet:left-[15%] tablet:max-w-[35rem] laptop:max-w-[40rem] lg:left-[30%] lg:top-34 mac:-ml-96 mac:-mt-20 pc:left-[35%] pc:top-[15%] pc:translate-x-[50%] pc:translate-y-[50%] handphone:flex-col h-[20rem] max-w-[25rem] fixed -z-1 opacity-1 left-20 top-52 rounded-xl bg-gradient-to-br from-black to bg-red-900">
         <img id="close" src="img/close.svg"
@@ -25,12 +25,91 @@
     @include('homepage.partials.homepage-carousel')
 
     {{-- Category --}}
-    @include('homepage.partials.homepage-categories')
+    {{-- @include('homepage.partials.homepage-categories') --}}
 
     {{-- Weekly product --}}
     @include('homepage.partials.homepage-weekly-product')
 
-    <div class="swiper swiper-item w-[95%] pc:mt-7">
+    <div class="container max-w-full bg-white mt-4">
+        <div class="splide">
+            <div class="splide__slider">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <x-item-card title="Testing" />
+                        </li>
+                        <li class="splide__slide">
+                            <x-item-card title="Testing" />
+                        </li>
+                        <li class="splide__slide">
+                            <x-item-card title="Testing" />
+                        </li>
+                        <li class="splide__slide">
+                            <x-item-card title="Testing" />
+                        </li>
+                        <li class="splide__slide">
+                            <x-item-card title="Testing" />
+                        </li>
+                        <li class="splide__slide">
+                            <x-item-card title="Testing" />
+                        </li>
+                        <li class="splide__slide">
+                            <x-item-card title="Testing" />
+                        </li>
+                        <li class="splide__slide">
+                            <x-item-card title="Testing" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div
+        class="container  max-w-full w-full tablet:max-w-[40rem] laptop:max-w-[50rem] lg:max-w-[78rem] xl:max-w-[90rem] pc:max-w-[150rem] ultra:max-w-full">
+        <div class="flex justify-between">
+            <h1 class="font-bold font-sans mb-2 text-lg">Monthly Product</h1>
+            <a href="#" class="text-sm font-mono justify-end mt-2 flex">View all <img src="img/arrow.svg"
+                    class="-mt-[7px] hidden tablet:flex" width="16%" alt=""></a>
+        </div>
+        <p class="w-full max-w-full bg-black/20 h-[2px] mb-2"></p>
+    </div>
+
+    <div class="container max-w-full bg-white mt-20">
+        <div class="splide splide__month">
+            <div class="splide__slider">
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <x-item-card title="Testing" />
+                        </li>
+                        <li class="splide__slide">
+                            <x-item-card title="Testing" />
+                        </li>
+                        <li class="splide__slide">
+                            <x-item-card title="Testing" />
+                        </li>
+                        <li class="splide__slide">
+                            <x-item-card title="Testing" />
+                        </li>
+                        <li class="splide__slide">
+                            <x-item-card title="Testing" />
+                        </li>
+                        <li class="splide__slide">
+                            <x-item-card title="Testing" />
+                        </li>
+                        <li class="splide__slide">
+                            <x-item-card title="Testing" />
+                        </li>
+                        <li class="splide__slide">
+                            <x-item-card title="Testing" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- <div class="swiper swiper-item w-[95%] pc:mt-7">
         <div class="swiper-wrapper mt-5 pc:max-w-[80rem] ultra:max-w-[90rem]">
             <x-item-card title="Kibutsuji" />
             <x-item-card title="Muzan" />
@@ -76,5 +155,5 @@
             <div class="swiper-button-next mr-5"><img src="img/next.svg"
                     class="handphone:ml-10 tablet:ml-2 laptop:mr-10" alt=""></div>
         </div>
-    </div>
+    </div> --}}
 </x-app-layout>
