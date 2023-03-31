@@ -1,12 +1,88 @@
 <x-app-layout>
-    <section class="text-gray-600 body-font relative flex flex-col">
+    <div class="container max-w-full bg-slate-50/50">
+        <div class="flex flex-col justify-center">
+            <div class="flex justify-center mt-4">
+                <p class="text-md laptop:text-3xl text-black/60">Find Us</p>
+            </div>
+            <div class="flex justify-center mt-3 mb-8">
+                <p class="font-serif laptop:text-4xl text-xl">Store Locations</p>
+            </div>
+        </div>
+        <div class="flex flex-col laptop:flex-row laptop:flex-wrap laptop:p-0 tablet:ml-10 tablet:p-3">
+            <div class="flex flex-row p-2">
+                <div class="my-auto">
+                    <span class="material-symbols-rounded text-black/60">location_on</span>
+                </div>
+                <div class="ml-3">
+                    <h1 class="text-lg">Sunaka Jewlry Flagship Store</h1>
+                    <p>Jln.Tukad Ikan Mas Sari Gang 205 No 402 Badung Kuta</p>
+                    <p class="text-black/70">
+                        <span class="material-symbols-rounded text-base relative top-[2.5px]">
+                            schedule
+                        </span>
+                        Opening Hours: 10.00-11.00
+                    </p>
+                </div>
+            </div>
+            <div class="flex flex-row p-2 ml-10">
+                <div class="my-6 text-black/50">
+                    <span class="material-symbols-rounded">
+                        call
+                    </span>
+                    <p>
+                        <span class="material-symbols-rounded">
+                            mail
+                        </span>
+                    </p>
+                </div>
+                <div class="ml-3">
+                    <h1>Contact</h1>
+                    <p class="text-black/80 mb-[0.35rem]">Mobile:(+62)081201904</p>
+                    <p class="text-black/80">Mail:Tester@sunaka.com</p>
+                </div>
+            </div>
+            <div class="flex flex-row p-2">
+                <div class="my-auto">
+                    <span class="material-symbols-rounded text-black/60">location_on</span>
+                </div>
+                <div class="ml-3">
+                    <h1 class="text-lg">Sunaka Jewlry Ubud Store</h1>
+                    <p>Jln.Tukad Ikan Mujuair Mesra Gang 2 No 40 Denpasar Bali</p>
+                    <p class="text-black/70">
+                        <span class="material-symbols-rounded text-base relative top-[2.5px]">
+                            schedule
+                        </span>
+                        Opening Hours: 12.00-11.00
+                    </p>
+                </div>
+            </div>
+            <div class="flex flex-row p-2 ml-5">
+                <div class="my-6 text-black/50">
+                    <span class="material-symbols-rounded">
+                        call
+                    </span>
+                    <p>
+                        <span class="material-symbols-rounded">
+                            mail
+                        </span>
+                    </p>
+                </div>
+                <div class="ml-3">
+                    <h1>Contact</h1>
+                    <p class="text-black/80 mb-[0.35rem]">Mobile:(+62)081201904</p>
+                    <p class="text-black/80">Mail:Tester@sunaka.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="text-gray-600 body-font relative flex flex-col tablet:px-7 laptop:pb-[50%] laptop:-mb-52">
         <div class="md:absolute md:inset-0 md:bg-gray-300 h-[100vw] md:h-full order-last md:mt-0 mt-14">
             <iframe width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="map"
                 scrolling="no"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.0070117438972!2d115.26965899999998!3d-8.595322999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23e3a84abd837%3A0x20c252fa7f77bf06!2sJl.%20Jaga%20Raga%20No.28b%2C%20Celuk%2C%20Kec.%20Sukawati%2C%20Kabupaten%20Gianyar%2C%20Bali%2080582!5e0!3m2!1sid!2sid!4v1680101044875!5m2!1sid!2sid"
                 style=""></iframe>
         </div>
-        <div class="max-w-[95%] px-5 md:py-24 mx-auto flex">
+        {{-- <div class="max-w-[95%] px-5 md:py-24 mx-auto flex">
             <div
                 class="md:w-2/5 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md">
 
@@ -132,8 +208,9 @@
 
                             <div class="md:col-span-5">
                                 <label for="message">Message</label>
-                                <textarea name="message" class="transition-all flex items-center border mt-1 rounded px-4 w-full bg-gray-50" id="" cols="30" rows="4"></textarea>
-                                {{-- <label for="soda">Quantity</label>
+                                <textarea name="message" class="transition-all flex items-center border mt-1 rounded px-4 w-full bg-gray-50"
+                                    id="" cols="30" rows="4"></textarea>
+                                <label for="soda">Quantity</label>
                                 <div
                                     class="h-10 w-28 bg-gray-50 flex border border-gray-200 rounded items-center mt-1">
                                     <button tabindex="-1" for="show_more"
@@ -157,7 +234,7 @@
                                                 clip-rule="evenodd" />
                                         </svg>
                                     </button>
-                                </div> --}}
+                                </div>
                             </div>
 
                             <div class="md:col-span-5 text-right">
@@ -173,6 +250,32 @@
 
 
             </div>
-        </div>
+        </div> --}}
     </section>
+    <div class="contaianer tablet:mt-[10%] laptop:mt-[30%]">
+        <div class="flex justify-center mb-4 mt-5">
+            <h1 class="text-lg laptop:text-3xl text-black/80">Get In Touch</h1>
+        </div>
+        <div class="w-full">
+            <form action="#" method="POST" class="w-full p-3">
+                <div class="flex handphone:hidden laptop:flex">
+                    <input type="text" placeholder="Agus"
+                        class="w-full laptop:w-1/2 border-b-2 border-[0px] border-black/50 focus:ring-0 focus:ring-black focus:border-b-black">
+                    <input type="email" placeholder="Tester2@gmail.com" name="" id=""
+                        class="w-full laptop:ml-12 laptop:w-1/2 mt-3 border-b-2 border-[0px] border-black/50 focus:ring-0 focus:ring-black focus:border-b-black">
+                </div>
+                <input type="text" placeholder="Agus"
+                    class="w-full laptop:hidden handphone:inline-block laptop:w-1/2 border-b-2 border-[0px] border-black/50 focus:ring-0 focus:ring-black focus:border-b-black">
+                <input type="email" placeholder="Tester2@gmail.com" name="" id=""
+                    class="w-full laptop:hidden handphone:inline-block laptop:ml-12 laptop:w-1/2 mt-3 border-b-2 border-[0px] border-black/50 focus:ring-0 focus:ring-black focus:border-b-black">
+                <input type="text" placeholder="Subject"
+                    class="w-full mt-3 border-b-2 border-[0px] border-black/50 focus:ring-0 focus:ring-black focus:border-b-black">
+                <textarea name="" placeholder="Messege" id="" cols="30" rows="2"
+                    class="w-full mt-3 border-b-2 border-[0px] border-black/50 focus:ring-0 focus:ring-black focus:border-b-black">
+                </textarea>
+                <button type="submit"
+                    class="p-2 ml-[25%] mt-5 font-serif bg-black text-white w-1/2 hover:transition-all duration-200 hover:bg-white hover:text-black border border-black">Submit</button>
+            </form>
+        </div>
+    </div>
 </x-app-layout>

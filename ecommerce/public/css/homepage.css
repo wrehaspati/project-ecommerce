@@ -40,3 +40,12 @@
         transform: translate(-50%,-50%) rotate(360deg);
     }
 }
+/* Add numbers to pagination buttons by CSS */
+.splide__pagination {
+    counter-reset: pagination-num;
+  }
+  
+  .splide__pagination__page:before {
+    counter-increment: pagination-num;
+    content: counter( pagination-num );
+  }

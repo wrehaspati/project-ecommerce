@@ -19,7 +19,7 @@
     <div class="mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex md:grid-cols-3 justify-between">
             {{-- search bar --}}
-            <div class="flex xl:w-96 hidden md:block">
+            <div class="xl:w-96 hidden md:block">
                 <div class="flex justify-end h-full py-2 xl:w-96">
                     <div class="relative flex w-full flex-wrap items-stretch content-center">
                         <input type="search"
@@ -39,13 +39,13 @@
                 </div>
             </div>
             {{-- logo --}}
-            <div class="flex hidden md:block">
+            <div class="hidden md:block">
                 <a href="{{ route('homepage') }}">
                     <x-application-logo class="block h-14 pb-2 w-auto fill-current text-gray-800" />
                 </a>
             </div>
             {{-- login --}}
-            <div class="flex xl:w-96 hidden md:block">
+            <div class="xl:w-96 hidden md:block">
                 <div class="flex justify-end h-full">
                     <!-- Settings Dropdown -->
                     @auth
@@ -174,11 +174,11 @@
         @auth
         @else
             @if (Route::has('login'))
-                <x-responsive-nav-link :href="route('login')" :active="false" >
+                <x-responsive-nav-link :href="route('login')" :active="false">
                     {{ __('Log in') }}
                 </x-responsive-nav-link>
                 @if (Route::has('register'))
-                    <x-responsive-nav-link :href="route('register')" :active="false" >
+                    <x-responsive-nav-link :href="route('register')" :active="false">
                         {{ __('Register') }}
                     </x-responsive-nav-link>
                 @endif
