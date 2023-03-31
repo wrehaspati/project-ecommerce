@@ -1,9 +1,9 @@
-<x-app-layout>   
+<x-app-layout>
     {{-- Corousel --}}
     @include('homepage.partials.homepage-carousel')
 
     {{-- Category --}}
-    {{-- @include('homepage.partials.homepage-categories') --}}
+    @include('homepage.partials.homepage-categories')
 
     {{-- Weekly product --}}
     @include('homepage.partials.homepage-weekly-product')
@@ -52,7 +52,7 @@
         <p class="w-full max-w-full bg-black/20 h-[2px] mb-2"></p>
     </div>
 
-    <div class="container max-w-full bg-white mt-20">
+    <div class="container max-w-full bg-white mt-4">
         <div class="splide splide__month">
             <div class="splide__slider">
                 <div class="splide__track">

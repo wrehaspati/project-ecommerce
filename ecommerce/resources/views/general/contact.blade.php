@@ -8,7 +8,8 @@
                 <p class="font-serif laptop:text-4xl text-xl">Store Locations</p>
             </div>
         </div>
-        <div class="flex flex-col laptop:flex-row laptop:flex-wrap laptop:p-0 tablet:ml-10 tablet:p-3">
+        <div
+            class="flex flex-col laptop:flex-row laptop:flex-wrap laptop:p-0 lg:justify-center lg:grid lg:grid-flow-row lg:ml-[20%] lg:grid-cols-2 lg:flex-nowrap tablet:ml-10 tablet:p-3">
             <div class="flex flex-row p-2">
                 <div class="my-auto">
                     <span class="material-symbols-rounded text-black/60">location_on</span>
@@ -56,7 +57,7 @@
                     </p>
                 </div>
             </div>
-            <div class="flex flex-row p-2 ml-5">
+            <div class="flex flex-row p-2 ml-10">
                 <div class="my-6 text-black/50">
                     <span class="material-symbols-rounded">
                         call
@@ -75,7 +76,8 @@
             </div>
         </div>
     </div>
-    <section class="text-gray-600 body-font relative flex flex-col tablet:px-7 laptop:pb-[50%] laptop:-mb-52">
+    <section
+        class="text-gray-600 body-font relative flex flex-col tablet:px-7 laptop:pb-[50%] lg:pb-[10%] laptop:-mb-52 lg:mb-12 lg:relative lg:z-1">
         <div class="md:absolute md:inset-0 md:bg-gray-300 h-[100vw] md:h-full order-last md:mt-0 mt-14">
             <iframe width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="map"
                 scrolling="no"
@@ -251,8 +253,33 @@
 
             </div>
         </div> --}}
+        <div
+            class="contaianer tablet:mt-[10%] laptop:mt-[30%] lg:relative lg:z-10 bg-white lg:max-w-[30rem] lg:-top-44 lg:left-5 ultra:max-w-[25%] ultra:-top-[40rem] pc:left-5 ultra:left-5 mac:-ml-5  handphone:hidden lg:inline-block">
+            <div class="flex justify-center mb-4 mt-5">
+                <h1 class="text-lg laptop:text-3xl text-black/80">Get In Touch</h1>
+            </div>
+            <div class="w-full ultra:my-50">
+                <form action="#" method="POST" class="w-full p-3">
+                    <div class="flex handphone:hidden laptop:flex">
+                        <input type="text" placeholder="Agus"
+                            class="w-full bg-transparent laptop:w-1/2 border-b-2 border-[0px] border-black/50 focus:ring-0 focus:ring-black focus:border-b-black">
+                        <input type="text" placeholder="Widuyono" name="" id=""
+                            class="w-full bg-transparent laptop:ml-12 laptop:w-1/2 mt-3 border-b-2 border-[0px] border-black/50 focus:ring-0 focus:ring-black focus:border-b-black">
+                    </div>
+                    <input type="email" placeholder="Tester2@gmail.com" name="" id=""
+                        class="w-full bg-transparent handphone:inline-block laptop:w-full mt-3 border-b-2 border-[0px] border-black/50 focus:ring-0 focus:ring-black focus:border-b-black">
+                    <input type="text" placeholder="Subject"
+                        class="w-full bg-transparent mt-3 border-b-2 border-[0px] border-black/50 focus:ring-0 focus:ring-black focus:border-b-black">
+                    <textarea name="" placeholder="Messege" id="" cols="30" rows="2"
+                        class="w-full bg-transparent mt-3 border-b-2 border-[0px] border-black/50 focus:ring-0 focus:ring-black focus:border-b-black">
+                    </textarea>
+                    <button type="submit"
+                        class="p-2 ml-[25%] mt-5 font-serif bg-black text-white w-1/2 hover:transition-all duration-200 hover:bg-white hover:text-black border border-black">Submit</button>
+                </form>
+            </div>
+        </div>
     </section>
-    <div class="contaianer tablet:mt-[10%] laptop:mt-[30%]">
+    <div class="contaianer tablet:mt-[10%] laptop:mt-[30%] laptop:ml-[10%] handphone:inline-block lg:hidden">
         <div class="flex justify-center mb-4 mt-5">
             <h1 class="text-lg laptop:text-3xl text-black/80">Get In Touch</h1>
         </div>
