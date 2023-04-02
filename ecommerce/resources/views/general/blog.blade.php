@@ -1,4 +1,4 @@
-<x-branch-layout>
+<x-app-layout>
     <?php 
     if(!isset($_GET['page'])){    
     ?>
@@ -743,4 +743,4 @@
             </div>
         </div>
     </div>
-</x-branch-layout>
+</x-app-layout>

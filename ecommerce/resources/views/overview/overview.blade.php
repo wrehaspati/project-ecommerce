@@ -1,16 +1,11 @@
-<x-branch-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Product Overview') }}
-        </h2>
-    </x-slot>
-    <div class="py-4">
+<x-app-layout>
+    <div class="py-4 pb-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
            @include('overview.partials.overview-message')
 
-            <div class="bg-white overflow-scroll shadow-sm sm:rounded-lg max-h-[46rem]">
-                <div class="p-6 text-gray-900">
+            <div class="bg-white sm:rounded-lg max-h-[46rem]">
+                <div class="px-6 text-gray-900">
                     @include('overview.partials.overview-breadcrumb')
                     <div class="relative mx-auto max-w-screen-xl px-4 py-8">
                         <div class="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
@@ -77,4 +72,4 @@
             </div>
         </div>
     </div>
-</x-branch-layout>
+</x-app-layout>

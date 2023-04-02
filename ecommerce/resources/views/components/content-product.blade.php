@@ -1,10 +1,12 @@
 <div class="bg-slate-200 hover:shadow-2xl shadow-black">
     <span
         class="material-symbols-rounded absolute bg-slate-100 mt-3 ml-[0.5rem] cursor-pointer handphone:rounded-full tablet:rounded-none">favorite</span>
-    <img class="w-full" src="img/model.jpeg" alt="">
-    <p class="p-2">{{ $item->name }}</p>
-    <p class="text-sm text-black/85 p-2">none</p>
-    <p class="p-2">@idr($item->display_price)</p>
+    <a href="{{ url('products/'.Str::slug($item->name)) }}">
+        <img class="w-full" src="img/model.jpeg" alt="">
+        <p class="p-2">{{ $item->name }}</p>
+        <p class="text-sm text-black/85 p-2">none</p>
+        <p class="p-2">@idr($item->display_price)</p>
+    </a>
 
     {{-- FORM SUBMIT + BUTTON FOR ADDING ITEM TO CART --}}
     <form action="{{ route('cart.store') }}" method="POST">
