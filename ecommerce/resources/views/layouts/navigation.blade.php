@@ -20,13 +20,13 @@
         <div class="flex md:grid-cols-3 justify-between">
             {{-- search bar --}}
             <div class="xl:w-96 hidden md:block">
-                <div class="flex justify-end h-full py-2 xl:w-96">
+                <div class="flex justify-end h-full py-2 lg:w-80">
                     <div class="relative flex w-full flex-wrap items-stretch content-center">
                         <input type="search"
-                            class="relative m-0 block w-[1%] min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
+                            class="relative m-0 h-8 text-xs block w-[1%] min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
                             placeholder="Search" aria-label="Search" aria-describedby="button-addon2" />
                         <span
-                            class="input-group-text flex items-center whitespace-nowrap rounded px-3 py-1.5 text-center text-base font-normal text-neutral-700 dark:text-neutral-200"
+                            class="h-8 text-xs input-group-text flex items-center whitespace-nowrap rounded px-3 py-1.5 text-center text-base font-normal text-neutral-700 dark:text-neutral-200"
                             id="basic-addon2">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                                 class="h-5 w-5">
@@ -40,19 +40,17 @@
             </div>
             {{-- logo --}}
             <div class="hidden md:block">
-                <a href="{{ route('homepage') }}">
-                    <x-application-logo class="block h-14 pb-2 w-auto fill-current text-gray-800" />
-                </a>
+                <x-application-logo class="block h-10 w-auto fill-current text-gray-800" />
             </div>
             {{-- login --}}
             <div class="xl:w-96 hidden md:block">
                 <div class="flex justify-end h-full">
-                    <!-- Settings Dropdown Currency -->
-                    {{-- <div class="hidden sm:flex sm:items-center sm:ml-6">
+                    <!-- Settings Dropdown Currency -->        
+                    <div class="hidden sm:flex sm:items-center">
                         <x-dropdown align="right" width="48">
                             <x-slot name="trigger">
                                 <button
-                                    style="background: transparent; !important" class="bg-transparent inline-flex items-center px-3 py-2 text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                                    style="background: transparent; !important" class="bg-transparent inline-flex items-center px-3 py-2 text-xs leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
                                     <div>{{ __('Currency') }}</div>
 
                                     <div class="ml-1">
@@ -75,16 +73,13 @@
                                 </x-dropdown-link>
                             </x-slot>
                         </x-dropdown>
-                    </div> --}}
+                    </div>
                     @auth
-                        <div class="hidden sm:flex sm:items-center sm:ml-6">
-                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <livewire:cart-sidebar />
-                            </div>
+                        <div class="hidden sm:flex sm:items-center">
                             <x-dropdown align="right" width="48">
                                 <x-slot name="trigger">
                                     <button
-                                    style="background: transparent; !important" class="bg-transparent inline-flex items-center px-3 py-2 text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                                    style="background: transparent; !important" class="bg-transparent inline-flex items-center px-3 py-2 text-xs leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
                                         <div>{{ Auth::user()->name }}</div>
 
                                         <div class="ml-1">
@@ -102,6 +97,11 @@
                                     <x-dropdown-link :href="route('profile.edit')">
                                         {{ __('Profile') }}
                                     </x-dropdown-link>
+                                    @if(Auth::user()->role=='admin')
+                                        <x-dropdown-link :href="route('admin.dash')">
+                                            {{ __('Admin') }}
+                                        </x-dropdown-link>
+                                    @endif
 
                                     <!-- Authentication -->
                                     <form method="POST" action="{{ route('logout') }}">
@@ -116,15 +116,18 @@
                                 </x-slot>
                             </x-dropdown>
                         </div>
+                        <div class="hidden sm:flex sm:items-center">
+                            <livewire:cart-sidebar />
+                        </div>
                     @else
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
                             @if (Route::has('login'))
                                 <a href="{{ route('login') }}"
-                                    class="font-semibold text-sm text-gray-500 hover:text-gray-700 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log
+                                    class="font-semibold text-xs text-gray-500 hover:text-gray-700 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log
                                     in</a>
                                 @if (Route::has('register'))
                                     <a href="{{ route('register') }}"
-                                        class="ml-4 text-sm font-semibold text-gray-500 hover:text-gray-700 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                                        class="ml-4 text-xs font-semibold text-gray-500 hover:text-gray-700 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
                                 @endif
                             @endif
                         </div>
@@ -229,7 +232,7 @@
             <div class="pt-4 pb-1 border-t border-gray-200">
                 <div class="px-4">
                     <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                    <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
+                    <div class="font-medium text-xs text-gray-500">{{ Auth::user()->email }}</div>
                 </div>
                 <div class="mt-3 space-y-1">
                     <x-responsive-nav-link :href="route('profile.edit')">

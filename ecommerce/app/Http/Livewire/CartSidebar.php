@@ -4,7 +4,9 @@ namespace App\Http\Livewire;
 
 use App\Models\CartUser;
 use App\Models\User;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 
 class CartSidebar extends Component
@@ -35,9 +37,8 @@ class CartSidebar extends Component
         return view('livewire.cart-sidebar', ['cart_items' => $cart]);
     }
     
-    public function deleteItem($id)
+    public function delete($id)
     {
         CartUser::destroy($id);
-        $this->render();
     }
 }

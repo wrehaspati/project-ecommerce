@@ -1,101 +1,73 @@
-{{-- <button onclick="checkoutHandler(false)" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-    <i class="fa-solid fa-cart-shopping"></i>
-    {{ __('MyCart') }}
-</button> --}}
-<div>
-    <button type="button" x-on:click="open = ! open" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-        <i class="fa-solid fa-cart-shopping"></i>
-        {{ __('MyCart') }}
-    </button>
+    <div class="hidden sm:flex sm:items-center text-gray-500 text-xs">
+        <x-dropdown align="right" width="0" height="12">
+            <x-slot name="trigger">
+                <button type="button" style="background: transparent; !important" class="bg-transparent inline-flex items-center px-3 py-2 text-xs leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    {{ __('MyCart') }}
+                </button>
+            </x-slot>
 
-        <div class="absolute top-0 z-10 left-0 hidden" :class="{'block': open, 'hidden': ! open}">
-            <div class="w-full h-full bg-black dark:bg-gray-900 bg-opacity-90 top-0 overflow-y-auto overflow-x-hidden fixed sticky-0"
-                id="chec-div">
-                <div class="w-full absolute z-10 right-0 h-full overflow-x-hidden transform translate-x-0 transition ease-in-out duration-700"
-                    id="checkout">
-                    <div class="flex items-end lg:flex-row flex-col justify-end" id="cart">
-                        <div class="lg:w-1/2 md:w-8/12 w-full lg:px-8 lg:py-14 md:px-6 px-4 md:py-8 py-4 bg-white dark:bg-gray-800 overflow-y-scroll overflow-x-hidden lg:h-screen h-auto"
-                            id="scroll">
-                            <div class="flex items-center text-gray-500 hover:text-gray-600 dark:text-white cursor-pointer"
-                            x-on:click="open = ! open">
-                                <img class="dark:hidden"
-                                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/shopping-cart-1-svg1.svg"
-                                    alt="previous" />
-                                <img class="dark:block hidden"
-                                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/shopping-cart-1-svg1dark.svg"
-                                    alt="previous" />
-                                <p class="text-sm pl-2 leading-none dark:hover:text-gray-200">Back</p>
+            <x-slot name="content">
+                @php
+                    $total_price = 0;
+                @endphp
+                <div class="max-h-[65vh] overflow-y-scroll p-6">
+                @foreach ($cart_items as $item)
+                    @php
+                        $total_price += $item->display_price;
+                    @endphp
+                    <div class="flex w-[20rem] bg-white relative border-b-2 border-gray-200 py-4" wire:key="item-{{ $item->pivot->id }}">
+                        <div class="flex gap-2 w-full">
+                            <div class="block min-w-[5rem] min-h-[5rem] bg-cover bg-gray-100 rounded-md"
+                                style="background-image:url(img/kalung.png);background-position: center;">
                             </div>
-                            <p class="lg:text-4xl text-3xl font-black leading-10 text-gray-800 dark:text-white pt-3">My Cart</p>
-
-                            {{-- Items --}}
-                            
-                            @foreach ($cart_items as $item)
-                            
-                                <livewire:cart-items :item="$item" :wire:key="$item->pivot->id"/>
-                                
-                            @endforeach
-                            
-                        </div>
-                        <div class="lg:w-96 md:w-8/12 w-full bg-gray-100 dark:bg-gray-900 h-full">
-                            <div
-                                class="flex flex-col lg:h-screen h-auto lg:px-8 md:px-7 px-4 lg:py-20 md:py-10 py-6 justify-between overflow-y-auto">
-                                <div>
-                                    <p class="lg:text-4xl text-3xl font-black leading-9 text-gray-800 dark:text-white">Summary
-                                    </p>
-                                    <div class="flex items-center justify-between pt-16">
-                                        <p class="text-base leading-none text-gray-800 dark:text-white">Subtotal</p>
-                                        <p class="text-base leading-none text-gray-800 dark:text-white">$9,000</p>
-                                    </div>
-                                    <div class="flex items-center justify-between pt-5">
-                                        <p class="text-base leading-none text-gray-800 dark:text-white">Shipping</p>
-                                        <p class="text-base leading-none text-gray-800 dark:text-white">$30</p>
-                                    </div>
-                                    <div class="flex items-center justify-between pt-5">
-                                        <p class="text-base leading-none text-gray-800 dark:text-white">Tax</p>
-                                        <p class="text-base leading-none text-gray-800 dark:text-white">$35</p>
-                                    </div>
+                            <div class="flex flex-col justify-between w-full">
+                                <div class="flex pb-1 justify-between">
+                                    <div class="flex text-sm"> {{ Str::limit($item->name, 50) }} </div>
+                                    <div class="cursor-pointer select-none" wire:click="delete({{ $item->pivot->id }})"><i class="text-base fa-regular fa-trash-can hover:text-black hover:translate-y-1 transition ease-in-out delay-150" ></i></div>
                                 </div>
-                                <div>
-                                    <div class="flex items-center pb-6 justify-between lg:pt-5 pt-20">
-                                        <p class="text-2xl leading-normal text-gray-800 dark:text-white">Total</p>
-                                        <p class="text-2xl font-bold leading-normal text-right text-gray-800 dark:text-white">
-                                            $10,240</p>
-                                    </div>
-                                    <button 
-                                        class="text-base leading-none w-full py-5 bg-gray-800 border-gray-800 border focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-white dark:hover:bg-gray-700">Checkout</button>
+                                <div class="flex pb-1 justify-between">
+                                    <div class="select-none">{{ __("Quantity :") }} 1</div>
+                                    <div class="font-semibold">@idr($item->display_price)</div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                @endforeach
+                @if (count($cart_items) === 0) 
+                    <div class="flex w-[20rem] bg-white p-6 relative">
+                        <div class="font-serif text-center w-full font-semibold text-xs">
+                            {{ __("Your Cart is Empty") }}
+                        </div>
+                    </div>
+                @endif
+                    <div class="grid grid-cols-2 w-full pt-4 px-4">
+                        <div class="text-sm font-serif font-semibold">Total</div>
+                        <div class="text-sm font-sans font-bold text-end">@idr($total_price)</div>
+                    </div>
+                    <div class="w-full pt-4 px-4 text-center">
+                        <button type="button" class="w-full text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-md text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Checkout</button>
+                        <p class="text-center w-full pt-3">or, <a href="{{ route('products.dashboard') }}" class="hover:underline underline-offset-4 hover:text-gray-800">Continue Shopping</a></p>
+                    </div>
                 </div>
-
-            </div>
-        </div>
-
-</div>
-
-
+            </x-slot>
+        </x-dropdown>
+    </div>
 
 {{-- <script>
-    let checkout = document.getElementById("checkout");
-    let checdiv = document.getElementById("chec-div");
-    let flag3 = true;
-    const checkoutHandler = () => {
-        if (!flag3) {
-            // checkout.classList.add("translate-x-full");
-            // checkout.classList.remove("translate-x-0");
-            setTimeout(function() {
-                checdiv.classList.add("hidden");
-            }, 0);
-            flag3 = true;
-        } else {
-            setTimeout(function() {
-                // checkout.classList.remove("translate-x-full");
-                // checkout.classList.add("translate-x-0");
-            }, 0);
-            checdiv.classList.remove("hidden");
-            flag3 = false;
+    open = false;
+    function openNav() 
+    {   
+        pop = document.getElementById("pop").style.display;
+        if ( open == false )
+        {
+            pop = "block";
+            open=true;
         }
-    };
+        else
+        {
+            pop = "none";
+            open = false;
+        }
+    }
 </script> --}}

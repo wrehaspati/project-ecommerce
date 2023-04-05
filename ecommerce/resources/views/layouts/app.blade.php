@@ -18,10 +18,25 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.cdnfonts.com/css/scriptina" rel="stylesheet">
+    
+    <style>
+        @font-face {
+            font-family: 'Scriptina';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Scriptina'), url('https://fonts.cdnfonts.com/s/389/scriptina.woff') format('woff');
+        }
+        @font-face {
+            font-family: 'Scriptina - Alternates';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Scriptina - Alternates'), url('https://fonts.cdnfonts.com/s/389/scriptina_alt.woff') format('woff');
+        }
+    </style>
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
     <!-- Page Heading -->
     @if (isset($header))
         {{ $header }}
@@ -37,6 +52,7 @@
         </main>
     </div>
     <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+    @livewireScripts
 </body>
 @if (isset($footer))
         {{ $footer }}

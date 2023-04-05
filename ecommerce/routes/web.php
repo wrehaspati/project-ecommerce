@@ -29,7 +29,7 @@ Route::prefix('products')->group(function () {
 
 Route::middleware('auth', 'verified', 'admin')->group(function () {
     Route::prefix('admin')->group(function () {
-        Route::get('/', function(){ return view('admin.index'); })->middleware(['auth', 'verified', 'admin']);
+        Route::get('/', function(){ return view('admin.index'); })->middleware(['auth', 'verified', 'admin'])->name('admin.dash');
         Route::resource('/products', ItemController::class);
         Route::resource('/blogs', BlogController::class);
     });
