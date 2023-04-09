@@ -23,10 +23,10 @@
                 <div class="flex justify-end h-full py-2 lg:w-80">
                     <div class="relative flex w-full flex-wrap items-stretch content-center">
                         <input type="search"
-                            class="relative m-0 h-8 text-xs block w-[1%] min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 text-base font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
+                            class="relative m-0 h-8 text-xs block w-[1%] min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
                             placeholder="Search" aria-label="Search" aria-describedby="button-addon2" />
                         <span
-                            class="h-8 text-xs input-group-text flex items-center whitespace-nowrap rounded px-3 py-1.5 text-center text-base font-normal text-neutral-700 dark:text-neutral-200"
+                            class="h-8 text-xs input-group-text flex items-center whitespace-nowrap rounded px-3 py-1.5 text-center font-normal text-neutral-700 dark:text-neutral-200"
                             id="basic-addon2">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                                 class="h-5 w-5">
@@ -143,7 +143,7 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto pr-4 md:px-6 lg:px-8">
-        <div class="flex md:justify-center justify-between h-16 md:h-12">
+        <div class="flex md:justify-center justify-between h-12">
             <div class="flex md:hidden content-center">
                 <a href="{{ route('homepage') }}">
                     <x-application-logo class="block h-14 pt-2 w-auto fill-current text-gray-800" />

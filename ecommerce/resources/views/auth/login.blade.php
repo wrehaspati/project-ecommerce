@@ -11,6 +11,7 @@
     
     <form method="POST" action="{{ route('login') }}">
         @csrf
+        {{-- Google API --}}
         <a href="#"
             class="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-gray-100">
             <div class="px-4 py-3">

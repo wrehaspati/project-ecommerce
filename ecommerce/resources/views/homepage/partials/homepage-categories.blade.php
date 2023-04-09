@@ -1,6 +1,6 @@
 <div class="h-full mb-2 mt-12 overflow-hidden">
     <div class="category text-center mb-4">
-        <h1 class="font-serif text-2xl md:text-5xl font-normal mb-0">Check out our Collections</h1>
+        <h1 class="font-serif text-[2xl] md:text-5xl font-normal mb-0">Check out our Collections</h1>
         <div class="leading-none italic text-pinkish-tan text-sm md:text-xl font-serif">our passion is to fulfill your
             statisfaction</div>
     </div>

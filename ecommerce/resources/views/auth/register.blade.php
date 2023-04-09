@@ -2,13 +2,14 @@
 
     {{-- Header --}}
     <x-slot name="header">
-        Register
+        Welcome! 
+        <p class="text-xs text-center">We are happy to know every single one of our customers.</p>
     </x-slot>
 
     <form method="POST" action="{{ route('register') }}">
         @csrf
-
-        <a href="#"
+        {{-- Google API --}}
+        {{-- <a href="#"
             class="flex items-center justify-center mt-4 text-white rounded-lg shadow-md hover:bg-gray-100">
             <div class="px-4 py-3">
                 <svg class="h-6 w-6" viewBox="0 0 40 40">
@@ -32,7 +33,7 @@
             <span class="border-b w-1/5 lg:w-1/4"></span>
             <a href="#" class="text-xs text-center text-gray-500 uppercase">or fill to sign up</a>
             <span class="border-b w-1/5 lg:w-1/4"></span>
-        </div>
+        </div> --}}
         <div class="mt-4">
             <label class="block text-gray-700 text-sm font-bold mb-2">Name</label>
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />

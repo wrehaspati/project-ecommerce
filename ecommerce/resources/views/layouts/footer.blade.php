@@ -1,4 +1,4 @@
-<footer class="p-4 bg-white sm:p-6 dark:bg-gray-900 mt-4">
+<footer class="p-4 bg-white sm:p-6 dark:bg-gray-900 pt-8 border-t border-gray-300">
         <div class="mb-10 md:mb-0">
             <a href="{{ url('/') }}" class="flex justify-center">
                 <x-application-logo class="block h-9 w-auto fill-current text-gray-800"/>

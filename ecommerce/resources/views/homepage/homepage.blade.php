@@ -7,9 +7,12 @@
 
     {{-- Category --}}
     @include('homepage.partials.homepage-categories')
+    
+    {{-- Hero --}}
+    @include('homepage.partials.homepage-hero')
 
-    {{-- Weekly product --}}
-    @include('homepage.partials.homepage-weekly-product')
+    {{-- Highlight product --}}
+    @include('homepage.partials.homepage-highlight-product')
 
     <div class="container max-w-full bg-white mt-4">
         <div class="splide">
@@ -45,17 +48,11 @@
             </div>
         </div>
     </div>
-    <div
-        class="container  max-w-full w-full tablet:max-w-[40rem] laptop:max-w-[50rem] lg:max-w-[78rem] xl:max-w-[90rem] pc:max-w-[150rem] ultra:max-w-full">
-        <div class="flex justify-between">
-            <h1 class="font-bold font-sans mb-2 text-lg">Monthly Product</h1>
-            <a href="#" class="text-sm font-mono justify-end mt-2 flex">View all <img src="img/arrow.svg"
-                    class="-mt-[7px] hidden tablet:flex" width="16%" alt=""></a>
-        </div>
-        <p class="w-full max-w-full bg-black/20 h-[2px] mb-2"></p>
-    </div>
+    
+    {{-- Latest product --}}
+    @include('homepage.partials.homepage-latest-product')
 
-    <div class="container max-w-full bg-white mt-4">
+    <div class="container max-w-full bg-white mt-4 mb-24">
         <div class="splide splide__month">
             <div class="splide__slider">
                 <div class="splide__track">
