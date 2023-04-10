@@ -496,7 +496,7 @@
         </div>
     </div>
     <?php 
-        } else if($_GET['page']== 2){
+        } else if($_GET['page'] == 2){
     ?>
     <div class="container max-w-full handphone:hidden lg:flex lg:w-full">
         <div class="tablet:p-5 tablet:ml-[10%] lg:ml-0 mac:max-w-[60%] min-[2560px]:ml-[20%]">
@@ -669,10 +669,10 @@
      ?>
     <div class="justify-center flex">
         <div class="focus:text-black ultra:text-5xl pc:text-4xl">
-            <p><a href="learn?page=1">1</a></p>
+            <p><a href="blog?page=1">1</a></p>
         </div>
         <div class="ml-20 ultra:text-5xl pc:text-4xl ">
-            <p><a href="learn?page=2" class="text-black/75">2</a></p>
+            <p><a href="blog?page=2" class="text-black/75">2</a></p>
         </div>
     </div>
     <?php 
@@ -684,10 +684,10 @@
     ?>
     <div class="justify-center flex">
         <div>
-            <p><a href="learn?page=1" class="text-black/60">1</a></p>
+            <p><a href="blog?page=1" class="text-black/60">1</a></p>
         </div>
         <div class="ml-10 ">
-            <p><a href="learn?page=2" class="text-black">2</a></p>
+            <p><a href="blog?page=2" class="text-black">2</a></p>
         </div>
     </div>
     <?php 
@@ -695,10 +695,10 @@
     ?>
     <div class="justify-center flex">
         <div class="focus:text-black">
-            <p><a href="learn?page=1">1</a></p>
+            <p><a href="blog?page=1">1</a></p>
         </div>
         <div class="ml-10 ">
-            <p><a href="learn?page=2" class="text-black/75">2</a></p>
+            <p><a href="blog?page=2" class="text-black/75">2</a></p>
         </div>
     </div>
     <?php 

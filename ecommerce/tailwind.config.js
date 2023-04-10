@@ -63,6 +63,15 @@ module.exports = {
             zIndex: {
                 '1': '2',
             },
+            keyframes: {
+                fade: {
+                    '0%':{ opacity:'1'},
+                    '50%':{opacity:'0'},
+                },
+            },
+            animation: {
+                fade:'fade 5s infinite ease-in-out',
+            },
         },
     },
     corePlugins: {
