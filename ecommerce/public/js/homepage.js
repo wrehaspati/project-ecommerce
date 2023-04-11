@@ -1,47 +1,47 @@
-const splide = new Splide('.splide', {
-    type: 'slide',
-    rewind: false,
-    gap:'-2rem',
-    perPage:4,
-    speed: 500, 
-    autoplay: false,
-    interval: 3000,
-    arrows: true,
-    pagination: true,
-    pauseOnHover: true,
-    wheel: false,
-    breakpoints: {
-        1200:{
-            perPage: 3,
-            gap:'-2rem',
-        },
-        1000: {
-            perPage: 3,
-            gap:'-2rem',
-        },
-        900:{
-            perPage: 3,
-            gap:'1rem',
-        },
-        850:{
-            perPage: 2,
-            gap:'2rem',
-        },
-        780: {
-            perPage: 2,
-            gap:'1rem',
-          },
-        750: {
-          perPage: 2,
-          gap:'1%',
-        },
-        600: {
-          perPage: 1,
-          gap    : '1rem',
-        },
-      },
-  });
-  splide.mount();
+// const splide = new Splide('.splide', {
+//     type: 'slide',
+//     rewind: false,
+//     gap:'-2rem',
+//     perPage:4,
+//     speed: 500, 
+//     autoplay: false,
+//     interval: 3000,
+//     arrows: true,
+//     pagination: true,
+//     pauseOnHover: true,
+//     wheel: false,
+//     breakpoints: {
+//         1200:{
+//             perPage: 3,
+//             gap:'-2rem',
+//         },
+//         1000: {
+//             perPage: 3,
+//             gap:'-2rem',
+//         },
+//         900:{
+//             perPage: 3,
+//             gap:'1rem',
+//         },
+//         850:{
+//             perPage: 2,
+//             gap:'2rem',
+//         },
+//         780: {
+//             perPage: 2,
+//             gap:'1rem',
+//           },
+//         750: {
+//           perPage: 2,
+//           gap:'1%',
+//         },
+//         600: {
+//           perPage: 1,
+//           gap    : '1rem',
+//         },
+//       },
+//   });
+//   splide.mount();
 
   const splider = new Splide('.splide__month', {
     type: 'slide',
@@ -181,12 +181,12 @@ subasoka3.addEventListener('mouseleave',function(){
     asoka3.style.transition="all 0.5s";
 },true)
 
-document.getElementById('aso').addEventListener('mouseover',over);
+document.getElementById('asoka').addEventListener('mouseover',over)
 function over(){
     document.getElementById('vat').style.height="210px";
     document.getElementById('vat').style.transition="all 0.5s";
 }
-document.getElementById('aso').addEventListener('mouseout',dihover)
+document.getElementById('asoka').addEventListener('mouseout',dihover)
 function dihover(){
     document.getElementById('vat').style.height="0px";
     document.getElementById('vat').style.transition="all 0.5s";
@@ -222,8 +222,10 @@ function handphone(x) {
     } else {
         document.getElementById('conten').addEventListener('mouseover',hover)
         document.getElementById('conten').addEventListener('mouseout',dishover)
-        document.getElementById('asoka').removeEventListener('mouseover',over)
-        document.getElementById('asoka').removeEventListener('mouseout',dihover)
+        document.getElementById('asoka').addEventListener('mouseover',over)
+        document.getElementById('asoka').addEventListener('mouseout',dihover)
+        document.getElementById('vat').style.height="0px";
+        document.getElementById('ele').style.height="0px";
     }
   }
   
