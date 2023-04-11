@@ -13,37 +13,57 @@
     #scroll::-webkit-scrollbar-thumb {
         background: rgb(133, 132, 132);
     }
+
+    #searchlabel {
+        position: relative;
+    }
+
+    #searchlabel:before {
+        content: "";
+        position: absolute;
+        left: 10px;
+        top: 0;
+        bottom: 0;
+        width: 15px;
+        background: url("img/magnifying-glass-solid.svg") center / contain no-repeat;
+    }
+
+    .opacity-start {
+        animation-name: opacity-start;
+        animation-duration: 1s;
+    }
+
+    @keyframes opacity-start {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 100;
+        }
+    }
 </style>
 
-<nav class="border-b border-gray-100">
-    <div class="mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex md:grid-cols-3 justify-between">
+<div class="sticky top-0 z-50 transition-all ease-in-out duration-500" :class="{'shadow-md bg-gray-100': scrolledFromTop, 'shadow-none bg-white': !scrolledFromTop}">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8 flex justify-center min-w-full">
+        <div class="flex justify-between w-full max-w-[85rem] transition-all transition-all ease-in-out duration-500 ease-in-out md:grid-cols-3" :class="{'md:grid-cols-2': scrolledFromTop, 'md:grid-cols-3': !scrolledFromTop}">
             {{-- search bar --}}
-            <div class="xl:w-96 hidden md:block">
-                <div class="flex justify-end h-full py-2 lg:w-80">
-                    <div class="relative flex w-full flex-wrap items-stretch content-center">
-                        <input type="search"
-                            class="relative m-0 h-8 text-xs block w-[1%] min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
-                            placeholder="Search" aria-label="Search" aria-describedby="button-addon2" />
-                        <span
-                            class="h-8 text-xs input-group-text flex items-center whitespace-nowrap rounded px-3 py-1.5 text-center font-normal text-neutral-700 dark:text-neutral-200"
-                            id="basic-addon2">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                                class="h-5 w-5">
-                                <path fill-rule="evenodd"
-                                    d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </span>
+            <div class="hidden md:block" :class="{'xl:w-[48rem]': scrolledFromTop, '': !scrolledFromTop}">
+                <div class="flex justify-end h-full py-2">
+                    <div class="relative flex w-full flex-wrap items-stretch content-center min-w-[15rem]">
+                        <label for="" id="searchlabel" class="relative w-full">
+                            <input type="search"
+                                class="relative m-0 h-8 indent-5 text-xs w-full block max-w-full flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
+                                placeholder="Search" aria-label="Search" aria-describedby="button-addon2" />
+                        </label>
                     </div>
                 </div>
             </div>
             {{-- logo --}}
-            <div class="hidden md:block">
-                <x-application-logo class="block h-10 w-auto fill-current text-gray-800" />
+            <div class="hidden md:block" :class="{'order-first': scrolledFromTop, 'order-none': !scrolledFromTop}">
+                <x-application-logo class="py-2 block h-[3.5rem] 2xl:min-h-full 2xl:p-1 w-auto fill-current text-gray-800"/>
             </div>
             {{-- login --}}
-            <div class="xl:w-96 hidden md:block">
+            <div class="hidden md:block">
                 <div class="flex justify-end h-full">
                     <!-- Settings Dropdown Currency -->        
                     <div class="hidden sm:flex sm:items-center">
@@ -51,7 +71,7 @@
                             <x-slot name="trigger">
                                 <button
                                     style="background: transparent; !important" class="bg-transparent inline-flex items-center px-3 py-2 text-xs leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                                    <div>{{ __('Currency') }}</div>
+                                    <div>{{ __('$ IDR') }}</div>
 
                                     <div class="ml-1">
                                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
@@ -137,8 +157,7 @@
             </div>
         </div>
     </div>
-    <!-- Logo -->
-</nav>
+</div>
 
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
@@ -146,7 +165,7 @@
         <div class="flex md:justify-center justify-between h-12">
             <div class="flex md:hidden content-center">
                 <a href="{{ route('homepage') }}">
-                    <x-application-logo class="block h-14 pt-2 w-auto fill-current text-gray-800" />
+                    <x-application-logo class="block h-full py-2 pl-4 w-auto fill-current text-gray-800" />
                 </a>
             </div>
             <div class="flex">

@@ -6,7 +6,7 @@
     </div>
 </div>
 <!-- component -->
-<div class="min-h-screen bg-gray-100 flex flex-col justify-center">
+<div class="lg:min-h-screen bg-gray-100 flex flex-col justify-center md:p-12">
     <div class="relative flex flex-wrap mx-auto justify-center">
         <div class="min-w-[340px] grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 auto-cols-auto m-4">
 

@@ -43,15 +43,18 @@
     @endif
 </head>
 
-<body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100">
+<body class="font-sans antialiased" 
+x-data="{scrolledFromTop: false}" 
+x-init="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false"
+@scroll.window="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false">
+    <div class="min-h-screen bg-gray-100 relative opacity-start">
         @include('layouts.navigation')
 
         <main class="bg-white md:pb-[#rem]">
             {{ $slot }}
         </main>
     </div>
-    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+    {{-- <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script> --}}
     @livewireScripts
 </body>
 @if (isset($footer))

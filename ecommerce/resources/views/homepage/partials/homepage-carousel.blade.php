@@ -1,6 +1,35 @@
 {{-- new carousel --}}
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+{{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" /> --}}
+<style>
+    .data-\[te-carousel-fade\]\:opacity-100[data-te-carousel-fade] {
+        opacity: 1;
+    }
+    .data-\[te-carousel-fade\]\:z-\[1\][data-te-carousel-fade] {
+        z-index: 1;
+    }
+    .data-\[te-carousel-fade\]\:opacity-0[data-te-carousel-fade] {
+        opacity: 0;
+    }
+    .data-\[te-carousel-fade\]\:z-0[data-te-carousel-fade] {
+        z-index: 0;
+    }
+    .ease-in-out {
+        transition-timing-function: cubic-bezier(.4,0,.2,1);
+    }
+    .duration-\[600ms\] {
+        transition-duration: .6s;
+    }
+    .\!block {
+        display: block!important;
+    }
+    .\!opacity-100 {
+        opacity: 1!important;
+    }
+    .opacity-50 {
+        opacity: .5;
+    }
+</style>
 
 <div id="carouselExampleCrossfade" class="relative" data-te-carousel-init data-te-carousel-slide>
     <div class="absolute inset-x-0 bottom-[-1.4rem] md:bottom-0 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0"
