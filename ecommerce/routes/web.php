@@ -25,6 +25,7 @@ Route::get('/contact', function(){ return view('general.contact');})->name('cont
 Route::prefix('products')->group(function () {
     Route::get('/', [ItemController::class, 'collection'])->name('products.dashboard');
     Route::get('/{name}', [ItemController::class, 'show']);
+    Route::get('/{name}/edit', function($name){ return redirect('/admin/products/'.$name.'/edit'); });
 })->name('products.group');
 
 Route::middleware('auth', 'verified', 'admin')->group(function () {

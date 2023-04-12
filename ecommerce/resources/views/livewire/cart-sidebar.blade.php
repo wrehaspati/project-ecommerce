@@ -1,13 +1,3 @@
-    <style>
-        #cart-button
-        {
-            background-color: rgb(75 85 99 / var(--tw-bg-opacity));
-        }
-        #cart-button:hover
-        {
-            background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-        }
-    </style>
     <div class="hidden sm:flex sm:items-center text-gray-500 text-xs">
         <x-dropdown align="right" width="0" height="12">
             <x-slot name="trigger">
@@ -62,7 +52,7 @@
                     </div>
                     <div class="w-full pt-4 px-4 text-center">
                         <button type="button"
-                            class="text-white font-bold py-2 px-4 w-full rounded" id="cart-button">Checkout</button>
+                            class="text-white font-bold py-2 px-4 w-full rounded" style="background-color: rgb(75 85 99 / var(--tw-bg-opacity));">Checkout</button>
                         <p class="text-center w-full pt-3">or, <a href="{{ route('products.dashboard') }}"
                                 class="hover:underline underline-offset-4 hover:text-gray-800">Continue Shopping</a></p>
                     </div>

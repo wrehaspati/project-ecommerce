@@ -25,7 +25,7 @@
         top: 0;
         bottom: 0;
         width: 15px;
-        background: url("img/magnifying-glass-solid.svg") center / contain no-repeat;
+        background: url({{ url("img/magnifying-glass-solid.svg") }}) center / contain no-repeat;
     }
 
     .opacity-start {
@@ -43,23 +43,26 @@
     }
 </style>
 
-<div class="sticky top-0 z-50 transition-all ease-in-out duration-500" :class="{'shadow-md bg-gray-100': scrolledFromTop, 'shadow-none bg-white': !scrolledFromTop}">
+<div class="sticky top-0 z-50 transition-all ease-in-out delay-200 duration-500" :class="{'shadow-md bg-gray-100': scrolledFromTop, 'shadow-none bg-white': !scrolledFromTop}">
     <div class="mx-auto px-4 sm:px-6 lg:px-8 flex justify-center min-w-full">
-        <div class="flex justify-between w-full max-w-[85rem] transition-all transition-all ease-in-out duration-500 ease-in-out md:grid-cols-3" :class="{'md:grid-cols-2': scrolledFromTop, 'md:grid-cols-3': !scrolledFromTop}">
+        <div class="flex justify-between w-full max-w-[85rem] transition-all transition-all ease-in-out duration-500 ease-in-out md:grid-cols-3">
             {{-- search bar --}}
-            <div class="hidden md:block" :class="{'xl:w-[48rem]': scrolledFromTop, '': !scrolledFromTop}">
+            <div class="hidden md:block">
                 <div class="flex justify-end h-full py-2">
+                    <div class="transition-all ease-in-out delay-200 duration-500 opacity-0 w-0" :class="{'opacity-100 w-full': scrolledFromTop, 'opacity-0 w-0': !scrolledFromTop}">
+                        <x-application-logo class="h-[2.5rem] min-w-fit pr-8"/>
+                    </div>
                     <div class="relative flex w-full flex-wrap items-stretch content-center min-w-[15rem]">
                         <label for="" id="searchlabel" class="relative w-full">
                             <input type="search"
-                                class="relative m-0 h-8 indent-5 text-xs w-full block max-w-full flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
+                                class="transition-all ease-in-out delay-200 duration-500 relative m-0 h-8 indent-5 text-xs w-full block max-w-full flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
                                 placeholder="Search" aria-label="Search" aria-describedby="button-addon2" />
                         </label>
                     </div>
                 </div>
             </div>
             {{-- logo --}}
-            <div class="hidden md:block" :class="{'order-first': scrolledFromTop, 'order-none': !scrolledFromTop}">
+            <div class="hidden md:block" :class="{'opacity-100 min-w-fit transition-all ease-in-out delay-700 duration-500': !scrolledFromTop, 'opacity-0': scrolledFromTop}">
                 <x-application-logo class="py-2 block h-[3.5rem] 2xl:min-h-full 2xl:p-1 w-auto fill-current text-gray-800"/>
             </div>
             {{-- login --}}
@@ -168,7 +171,7 @@
                     <x-application-logo class="block h-full py-2 pl-4 w-auto fill-current text-gray-800" />
                 </a>
             </div>
-            <div class="flex">
+            <div class="flex" :class="{'pt-10': scrolledFromTop, 'pt-0 snap-start': !scrolledFromTop}">
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 md:-my-px md:ml-10 md:flex">
                     <x-nav-link :href="route('homepage')" :active="request()->routeIs('homepage')">

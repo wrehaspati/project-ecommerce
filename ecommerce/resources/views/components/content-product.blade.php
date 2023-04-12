@@ -5,7 +5,7 @@
         <img class="w-full" src="img/model.jpeg" alt="">
         <p class="p-2">{{ $item->name }}</p>
         <p class="text-sm text-black/85 p-2">none</p>
-        <p class="p-2">@idr($item->display_price)</p>
+        <p class="p-2">Rp. @idr($item->display_price)</p>
     </a>
 
     {{-- FORM SUBMIT + BUTTON FOR ADDING ITEM TO CART --}}

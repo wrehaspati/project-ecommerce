@@ -46,7 +46,8 @@
 <body class="font-sans antialiased" 
 x-data="{scrolledFromTop: false}" 
 x-init="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false"
-@scroll.window="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false">
+@scroll.window="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false"
+:class="{'snap-y': scrolledFromTop, 'snap-none': !scrolledFromTop}">
     <div class="min-h-screen bg-gray-100 relative opacity-start">
         @include('layouts.navigation')
 
