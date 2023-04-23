@@ -13,9 +13,6 @@ module.exports = {
 
     theme: {
         extend: {
-            fontFamily: {
-                // scriptina: ["scriptina", "Great Vibes"],
-            },
             colors: {
                 'black-pale':'rgba(0, 0, 0, 0.2)',
                 'pinkish-tan':'#c8a482',
