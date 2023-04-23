@@ -37,7 +37,7 @@
             {{ $slot }}
         </main>
     </div>
-    <script src="js/product.js"></script>
+    <script src="{{ url('js/product/product.js') }}"></script>
     @livewireScripts
 </body>
 @include('layouts.footer')

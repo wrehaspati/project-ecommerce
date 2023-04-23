@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\CartUser;
+use App\Models\Item;
 use App\Models\User;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
@@ -34,6 +35,8 @@ class CartSidebar extends Component
             $cart = null;
         endif;
         
+        Log::debug($cart);
+
         return view('livewire.cart-sidebar', ['cart_items' => $cart]);
     }
     

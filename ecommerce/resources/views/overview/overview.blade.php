@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="py-6">
+    <div class="py-6 min-h-screen">
         <!-- Breadcrumbs -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center space-x-2 text-gray-400 text-sm">
@@ -101,14 +101,17 @@
                 <div class="md:flex-1 px-4">
                     <h2 class="mb-2 leading-tight tracking-tight font-bold text-gray-800 text-2xl md:text-3xl">
                         {{ $item->name }}</h2>
-                    <p class="text-gray-500 text-sm">By <a href="#" class="text-indigo-600 hover:underline">Sunaka
-                            Workshop</a></p>
+                    <p class="text-gray-500 text-sm">By 
+                        <a href="{{ route('contact') }}" class="{{-- text-indigo-600 --}} text-yellow-500 hover:underline">
+                            {{ __('Sunaka Workshop')}}
+                        </a>
+                    </p>
 
                     <div class="flex items-center space-x-4 my-4">
                         <div>
-                            <div class="rounded-lg bg-gray-100 flex py-2 px-3">
-                                <span class="text-indigo-400 mr-1 mt-1">Rp.</span>
-                                <span class="font-bold text-indigo-600 text-3xl">@idr($item->display_price)</span>
+                            <div class="rounded-lg {{-- bg-gray-100 --}} flex py-2 px-3">
+                                <span class="{{-- text-indigo-400 --}} text-yellow-400 mr-1 mt-1">Rp.</span>
+                                <span class="font-bold {{-- text-indigo-600 --}} text-yellow-500 text-3xl">@idr($item->display_price)</span>
                             </div>
                         </div>
                         <div class="flex-1">
@@ -125,7 +128,7 @@
                                 class="text-center left-0 pt-2 right-0 absolute block text-xs uppercase text-gray-400 tracking-wide font-semibold">
                                 Qty</div>
                             <select style="background: none !important;"
-                                class="cursor-pointer appearance-none rounded-xl border border-gray-200 pl-4 pr-8 h-14 flex items-end pb-1">
+                                class="cursor-pointer appearance-none rounded-xl border border-gray-200 pl-4 pr-8 h-12 flex items-end pb-1">
                                 <option>1</option>
                                 <option>2</option>
                                 <option>3</option>
@@ -140,11 +143,14 @@
                                     d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
                             </svg>
                         </div>
-
-                        <button type="button"
-                            class="h-14 px-6 py-2 font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white">
-                            Add to Cart
-                        </button>
+                        <form action="{{ route('cart.store') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="item_id" value="{{ $item->id }}">
+                            <button type="submit"
+                                class="h-12 px-6 py-2 font-semibold rounded-xl {{-- bg-indigo-600 --}} bg-amber-500 {{-- hover:bg-indigo-500 --}} hover:bg-amber-400 text-white">
+                                Add to Cart
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -21,7 +21,9 @@
                             wire:key="item-{{ $item->pivot->id }}">
                             <div class="flex gap-2 w-full">
                                 <div class="block min-w-[5rem] min-h-[5rem] bg-cover bg-gray-100 rounded-md"
-                                    style="background-image:url(img/kalung.png);background-position: center;">
+                                    style="background-image:url(
+                                        {{ url('storage/images') . '/' . $item->image[0]->image; }}
+                                    );background-position: center;">
                                 </div>
                                 <div class="flex flex-col justify-between w-full">
                                     <div class="flex pb-1 justify-between">

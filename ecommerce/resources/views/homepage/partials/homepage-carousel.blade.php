@@ -84,5 +84,4 @@
         </button>
     </div>
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+<script src="{{ url('js/homepage/tw-elements.umd.min.js') }}"></script>
