@@ -1,12 +1,13 @@
 <x-app-layout>
     <x-slot name="header">
-        <link href="css/homepage.css" rel="stylesheet" />
+        <link href="{{ url('css/homepage/homepage.css') }}" rel="stylesheet" />
     </x-slot>
+
     {{-- Corousel --}}
     @include('homepage.partials.homepage-carousel')
 
     {{-- Category --}}
-    @include('homepage.partials.homepage-categories')
+    @include('homepage.partials.homepage-collections')
 
     {{-- Hero --}}
     @include('homepage.partials.homepage-hero')
@@ -436,7 +437,8 @@
             </div>
         </div>
     </div>
+
     <x-slot name="footer">
-        <script src="js/homepage.js"></script>
+        <script src="{{ url('js/homepage/homepage.js') }}"></script>
     </x-slot>
 </x-app-layout>

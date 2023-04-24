@@ -27,6 +27,10 @@
             src: local('Scriptina'), url('https://fonts.cdnfonts.com/s/389/scriptina.woff') format('woff');
         }
         @font-face {
+            font-family: 'Balinese Family';
+            src: url('font/balinesefamily.ttf');
+        }
+        @font-face {
             font-family: 'Scriptina - Alternates';
             font-style: normal;
             font-weight: 400;
