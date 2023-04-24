@@ -658,6 +658,6 @@
     {{-- Sidebar Content --}}
 
     <x-slot name="footer">
-        <script src="js/product.js"></script>
+        <script src="js/product/product.js"></script>
     </x-slot>
 </x-app-layout>
