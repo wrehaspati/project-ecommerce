@@ -32,14 +32,16 @@
                             @endphp
                             @foreach ($item->image as $images)
                                 <div x-show="image === {{ $iteration }}"
-                                    class="h-64 md:h-80 inline-block rounded-lg bg-gray-100 mb-4 flex items-center justify-center object-fill" onmousemove="zoom(event)" style="cursor:zoom-in; background-image: url({{ url('storage/images') . '/' . $images->image }})">
+                                    class="h-64 md:h-80 inline-block rounded-lg bg-gray-100 mb-4 flex items-center justify-center object-fill"
+                                    onmousemove="zoom(event)"
+                                    style="cursor:zoom-in; background-image: url({{ url('storage/images/products') . '/' . $images->image }})">
                                     <div class="w-full h-full bg-gray-100 hover:opacity-0 ">
-                                      <img class="object-contain h-full w-full"
-                                          src="
+                                        <img class="object-contain h-full w-full"
+                                            src="
                                           @if ($images->image) @if (Str::contains($images->image, 'http'))
                                                   {{ $images->image }}
                                               @else
-                                                  {{ url('storage/images') . '/' . $images->image }} @endif
+                                                  {{ url('storage/images/products') . '/' . $images->image }} @endif
                                           @endif
                                       " />
                                     </div>
@@ -85,7 +87,7 @@
                                                 @if ($images->image) @if (Str::contains($images->image, 'http'))
                                                         {{ $images->image }}
                                                     @else
-                                                        {{ url('storage/images') . '/' . $images->image }} @endif
+                                                        {{ url('storage/images/products') . '/' . $images->image }} @endif
                                                 @endif
                                             " />
                                     </button>
@@ -101,9 +103,9 @@
                 <div class="md:flex-1 px-4">
                     <h2 class="mb-2 leading-tight tracking-tight font-bold text-gray-800 text-2xl md:text-3xl">
                         {{ $item->name }}</h2>
-                    <p class="text-gray-500 text-sm">By 
+                    <p class="text-gray-500 text-sm">By
                         <a href="{{ route('contact') }}" class="{{-- text-indigo-600 --}} text-yellow-500 hover:underline">
-                            {{ __('Sunaka Workshop')}}
+                            {{ __('Sunaka Workshop') }}
                         </a>
                     </p>
 
@@ -111,7 +113,8 @@
                         <div>
                             <div class="rounded-lg {{-- bg-gray-100 --}} flex py-2 px-3">
                                 <span class="{{-- text-indigo-400 --}} text-yellow-400 mr-1 mt-1">Rp.</span>
-                                <span class="font-bold {{-- text-indigo-600 --}} text-yellow-500 text-3xl">@idr($item->display_price)</span>
+                                <span
+                                    class="font-bold {{-- text-indigo-600 --}} text-yellow-500 text-3xl">@idr($item->display_price)</span>
                             </div>
                         </div>
                         <div class="flex-1">
@@ -157,13 +160,13 @@
         </div>
     </div>
     <script>
-        function zoom(e){
-          var zoomer = e.currentTarget;
-          e.offsetX ? offsetX = e.offsetX : offsetX = e.touches[0].pageX
-          e.offsetY ? offsetY = e.offsetY : offsetX = e.touches[0].pageX
-          x = offsetX/zoomer.offsetWidth*100
-          y = offsetY/zoomer.offsetHeight*100
-          zoomer.style.backgroundPosition = x + '% ' + y + '%';
+        function zoom(e) {
+            var zoomer = e.currentTarget;
+            e.offsetX ? offsetX = e.offsetX : offsetX = e.touches[0].pageX
+            e.offsetY ? offsetY = e.offsetY : offsetX = e.touches[0].pageX
+            x = offsetX / zoomer.offsetWidth * 100
+            y = offsetY / zoomer.offsetHeight * 100
+            zoomer.style.backgroundPosition = x + '% ' + y + '%';
         }
     </script>
 </x-app-layout>
