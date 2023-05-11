@@ -11,10 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('feedback', function (Blueprint $table) {
+        Schema::create('stocks', function (Blueprint $table) {
             $table->id();
-            $table->string('email')->unique();
-            $table->text('text');
+            $table->foreignId('item_id')->constrained();
+            $table->string('created_by');
+            $table->date('manufacturer_date');
+            $table->string('weight');
+            $table->string('material');
+            $table->text('description');
+            $table->string('status');
             $table->timestamps();
         });
     }
@@ -24,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('feedback');
+        Schema::dropIfExists('stocks');
     }
 };
