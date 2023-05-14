@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
+use App\Models\CartItem;
 use App\Models\CartUser;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
@@ -27,9 +29,10 @@ class CartUserController extends Controller
      */
     public function store(Request $request)
     {
-        $new = new CartUser();
+        $new = new CartItem();
+        $cart_detail = Cart::where('user_id', Auth::user()->id)->orderBy('created_at', 'asc')->first();
+        $new->cart_id = $cart_detail->id;
         $new->item_id = $request->item_id;
-        $new->user_id = Auth::user()->id;
         $new->save();
 
         return redirect()->back()->with('status','Berhasil Ditambahkan Ke Keranjang !');
@@ -37,7 +40,7 @@ class CartUserController extends Controller
 
     public function destroy($id)
     {
-        CartUser::destroy($id);
+        CartItem::destroy($id);
         
         return redirect()->back()->with('status','Berhasil Menghapus Item !');
     }
