@@ -20,11 +20,17 @@
                         <div class="flex w-[20rem] bg-white relative border-b-2 border-gray-200 py-4"
                             wire:key="item-{{ $item->pivot->id }}">
                             <div class="flex gap-2 w-full">
-                                <div class="block min-w-[5rem] min-h-[5rem] bg-cover bg-gray-100 rounded-md"
-                                    style="background-image:url(
-                                        {{ url('storage/images') . '/' . $item->image[0]->image; }}
-                                    );background-position: center;">
-                                </div>
+                                @if (count($item->image) !== 0) 
+                                    <div class="block min-w-[5rem] min-h-[5rem] max-w-[5rem] max-h-[5rem] bg-cover bg-gray-100 rounded-md"
+                                        style="background-image:url(
+                                            {{ url('storage/images') . '/' . $item->image[0]->image; }}
+                                        );background-position: center;">
+                                    </div>
+                                @else
+                                    <div class="block min-w-[5rem] min-h-[5rem] max-w-[5rem] max-h-[5rem] bg-cover bg-gray-100 rounded-md bg-gray-200 animate-pulse text-center content-center grid">
+                                        Couldn't load <br> the image
+                                    </div>
+                                @endif
                                 <div class="flex flex-col justify-between w-full">
                                     <div class="flex pb-1 justify-between">
                                         <div class="flex text-sm"> {{ Str::limit($item->name, 50) }} </div>

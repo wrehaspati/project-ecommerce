@@ -2,7 +2,8 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\CartUser;
+use App\Models\Cart;
+use App\Models\CartItem;
 use App\Models\Item;
 use App\Models\User;
 use Illuminate\Support\Arr;
@@ -30,18 +31,28 @@ class CartSidebar extends Component
     public function render()
     {
         if(Auth::user()):
-            $cart = User::find(Auth::user()->id)->carts;
+            $cart_detail = Cart::where('user_id', Auth::user()->id)->orderBy('created_at', 'asc')->first();
+            if($cart_detail):
+                $cart = Cart::find($cart_detail->id)->items;
+            else:
+                $cart_new = new Cart;
+                $cart_new->user_id = Auth::user()->id;
+                $cart_new->status = 'open';
+                $cart_new->save();
+                
+                $cart_detail = Cart::where('user_id', Auth::user()->id)->orderBy('created_at', 'asc')->first();
+                
+                $cart = Cart::find($cart_detail->id)->items;
+            endif;
         else:
             $cart = null;
         endif;
-        
-        Log::debug($cart);
 
         return view('livewire.cart-sidebar', ['cart_items' => $cart]);
     }
     
     public function delete($id)
     {
-        CartUser::destroy($id);
+        CartItem::destroy($id);
     }
 }
