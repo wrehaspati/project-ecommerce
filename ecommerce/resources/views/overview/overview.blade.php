@@ -1,4 +1,8 @@
 <x-app-layout>
+    <x-slot name="header">  
+        @include('overview.partials.overview-message')
+    </x-slot>
+
     <div class="py-6 min-h-screen">
         <!-- Breadcrumbs -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

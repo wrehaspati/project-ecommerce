@@ -12,6 +12,6 @@ class Cart extends Model
 
     public function items(): BelongsToMany
     {
-        return $this->belongsToMany(Item::class, 'cart_items')->with('Image')->withPivot('id');
+        return $this->belongsToMany(Item::class, 'cart_items')->with('Image')/* ->withPivot('id') */;
     }
 }

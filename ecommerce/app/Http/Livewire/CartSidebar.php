@@ -53,6 +53,7 @@ class CartSidebar extends Component
     
     public function delete($id)
     {
-        CartItem::destroy($id);
+        $cart_detail = Cart::where('user_id', Auth::user()->id)->orderBy('created_at', 'asc')->first();
+        CartItem::where('cart_id', $cart_detail->id, 'and')->where('item_id', $id)->delete();
     }
 }

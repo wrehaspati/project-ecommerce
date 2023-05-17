@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('blog_images', function (Blueprint $table) {
-            $table->id();
             $table->foreignId('blog_post_id')->constrained();
             $table->foreignId('image_id')->constrained();
             $table->timestamps();
+            $table->primary(array('blog_post_id', 'image_id'));
         });
     }
 

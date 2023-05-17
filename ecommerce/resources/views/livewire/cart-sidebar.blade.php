@@ -18,7 +18,7 @@
                             $total_price += $item->display_price;
                         @endphp
                         <div class="flex w-[20rem] bg-white relative border-b-2 border-gray-200 py-4"
-                            wire:key="item-{{ $item->pivot->id }}">
+                            wire:key="item-{{ $item->id }}">
                             <div class="flex gap-2 w-full">
                                 @if (count($item->image) !== 0) 
                                     <div class="block min-w-[5rem] min-h-[5rem] max-w-[5rem] max-h-[5rem] bg-cover bg-gray-100 rounded-md"
@@ -35,7 +35,7 @@
                                     <div class="flex pb-1 justify-between">
                                         <div class="flex text-sm"> {{ Str::limit($item->name, 50) }} </div>
                                         <div class="cursor-pointer select-none"
-                                            wire:click="delete({{ $item->pivot->id }})"><i
+                                            wire:click="delete({{ $item->id }})"><i
                                                 class="text-base fa-regular fa-trash-can hover:text-black hover:translate-y-1 transition ease-in-out delay-150"></i>
                                         </div>
                                     </div>
