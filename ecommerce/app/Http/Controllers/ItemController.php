@@ -62,6 +62,19 @@ class ItemController extends Controller
     }
 
     /**
+     * Remove attached images
+     * 
+     * @param image_id
+     * @return view
+     */
+    public function rmimage($id)
+    {
+        Image::destroy($id);
+
+        return redirect()->back();
+    }
+
+    /**
      * show index for admin side
      * 
      * @return view
@@ -121,7 +134,7 @@ class ItemController extends Controller
     {
         $item = $this->urlConvertion($name);
         $image = Item::find($item->id)->image;
-        
+
         return view('admin.items.item-edit', ['item' => $item,'images' => $image]);
     }
 
@@ -145,10 +158,10 @@ class ItemController extends Controller
         $item->save();
 
 
-        for($i=1; $i<count(Image::where('item_id', $name)->get())+1;$i++):
+        for($i=1; $i <= 4;$i++):
 
             if(isset($request->image[$i])):
-
+                
                 $image = Image::find($request->id_image[$i]);
 
                 if(!isset($image)):
@@ -157,17 +170,24 @@ class ItemController extends Controller
 
                     $image->item_id = $item->id;
 
-                else:
+
+                // Option to delete old image when replace it.
+                
+                // else:
                     
-                    Storage::disk('public')->delete('images/'.$image->name);
+                //     Storage::disk('public')->delete('images/'.$image->name);
 
                 endif; 
                 
-                $path = $request->image[$i]->store('images', 'public');
+                $filename = $request->image[$i]->getClientOriginalName();
+
+                $path = $request->image[$i]->storeAs('images', $filename, 'public');
 
                 $image->image = basename($path);
 
                 $image->save();
+
+                Log::debug($filename);
 
             endif;
 

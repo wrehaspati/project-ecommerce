@@ -18,6 +18,8 @@ class ImageUpload extends Component
 
     public $image_preview;
 
+    public $type;
+
     public function updatedImage()
     {
         $this->validate([

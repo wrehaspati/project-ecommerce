@@ -38,14 +38,14 @@
                                 <div x-show="image === {{ $iteration }}"
                                     class="h-64 md:h-80 inline-block rounded-lg bg-gray-100 mb-4 flex items-center justify-center object-fill"
                                     onmousemove="zoom(event)"
-                                    style="cursor:zoom-in; background-image: url({{ url('storage/images/products') . '/' . $images->image }})">
+                                    style="cursor:zoom-in; background-image: url({{ url('storage/images') . '/' . $images->image }})">
                                     <div class="w-full h-full bg-gray-100 hover:opacity-0 ">
                                         <img class="object-contain h-full w-full"
                                             src="
                                           @if ($images->image) @if (Str::contains($images->image, 'http'))
                                                   {{ $images->image }}
                                               @else
-                                                  {{ url('storage/images/products') . '/' . $images->image }} @endif
+                                                  {{ url('storage/images') . '/' . $images->image }} @endif
                                           @endif
                                       " />
                                     </div>
@@ -81,17 +81,17 @@
                             @endphp
                             @foreach ($item->image as $images)
                                 {{-- <template x-for="i in 4"> --}}
-                                <div class="flex-1 px-2">
+                                <div class="flex px-2">
                                     <button x-on:click="image = {{ $i }}"
                                         :class="{ 'ring-2 ring-indigo-300 ring-inset': image === {{ $i }} }"
-                                        class="relevant focus:outline-none w-full rounded-lg h-24 md:h-32 bg-gray-100 flex items-center justify-center">
+                                        class="relevant focus:outline-none {{-- w-full --}} rounded-lg h-24 md:h-32 bg-gray-100 flex items-center justify-center">
                                         <span x-text="{{ $i }}" class="text-2xl absolute text-white"></span>
                                         <img class="object-cover h-full w-full rounded-lg"
                                             src="
                                                 @if ($images->image) @if (Str::contains($images->image, 'http'))
                                                         {{ $images->image }}
                                                     @else
-                                                        {{ url('storage/images/products') . '/' . $images->image }} @endif
+                                                        {{ url('storage/images') . '/' . $images->image }} @endif
                                                 @endif
                                             " />
                                     </button>

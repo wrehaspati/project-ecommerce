@@ -10,7 +10,8 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet" />
+        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css'>
 
         <!-- Scripts -->
         @stack('styles') 
@@ -20,21 +21,21 @@
     <body class="font-sans antialiased overflow-hidden">
 
         <div class="w-full h-full bg-gray-200">
-            <div class="flex flex-no-wrap">
+            <div class="flex flex-no-wrap static">
               <!-- Sidebar starts -->
                 @include('layouts.admin-partials.admin-sidebar')
-                
+
                 @include('layouts.admin-partials.admin-mobile-sidebar')
 
                 <!-- Sidebar ends -->
                 <div class="w-full">
                     <!-- Navigation starts -->
-                    @include('layouts.admin-partials.admin-navigation')
+                    {{-- @include('layouts.admin-partials.admin-navigation') --}}
                     <!-- Navigation ends -->
                     <!-- Remove class [ h-64 ] when adding a card block -->
-                    <div class="container mx-auto py-10 h-screen mid:w-11/12 mid:px-6">
+                    <div class="container mx-auto {{-- py-10 --}} h-screen {{-- mid:w-11/12 mid:px-6 --}}">
                         <!-- Remove class [ border-dashed border-2 border-gray-300 ] to remove dotted border -->
-                        <div class="w-full h-full rounded overflow-scroll pb-6">
+                        <div class="w-full h-full rounded-lg overflow-y-scroll py-4">
                             {{ $slot }}
                         </div>
                     </div>

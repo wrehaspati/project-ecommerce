@@ -28,16 +28,8 @@ class DataItems extends DataTableComponent
 
             return route('products.edit', Str::slug($name));
         });
-        // $this->setBulkActions([
-        //     'deleteSelected' => 'Delete',
-        // ]);
-
+        
         $this->setAdditionalSelects(['items.id as id', 'items.general_description as general_description', 'items.display_price as display_price']);
-
-        // $this->setTableWrapperAttributes([
-        //     'default' => false,
-        //     'class' => 'shadow border-b border-gray-200 dark:border-gray-700 sm:rounded-lg added these classes',
-        //   ]);
 
         $this->setTdAttributes(function(Column $column, $row, $columnIndex, $rowIndex) {
             if ($column->isField('name')) {
@@ -82,28 +74,31 @@ class DataItems extends DataTableComponent
                     if(Str::contains($image, 'http')):
                         return $image;
                     else:
-                        return url('storage/images/'.$image);
+                        return url('storage/images'.$image);
                     endif;
                 } 
                 )->attributes(fn() => [
                     'alt' => 'image',
+                    'style' => 'max-width:100px;',
                 ]),
-            Column::make("Product Information", 'name')
+            Column::make("Product Name", 'name')
                 ->sortable()
-                ->searchable()
-                ->view('admin/partials/database-item-data')
-                ->collapseOnTablet(),
-            Column::make("Display Price", "display_price")
-                ->format( function($value, $row, Column $column){
-                    return 'Rp. '.number_format($row->display_price,0,',','.');
-                })
-                ->sortable()
-                ->searchable()
-                ->collapseOnTablet(),
-            // Column::make("General Description", "general_description")
+                ->searchable(),
+                // ->view('admin/partials/database-item-data')
+                // ->collapseOnTablet(),
+
+            // Column::make("Display Price", "display_price")
+            //     ->format( function($value, $row, Column $column){
+            //         return 'Rp. '.number_format($row->display_price,0,',','.');
+            //     })
             //     ->sortable()
             //     ->searchable()
             //     ->collapseOnTablet(),
+
+            Column::make("Stock Keeping Unit", "sku")
+                ->sortable()
+                ->searchable()
+                ->collapseOnTablet(),
             Column::make("Created at", "created_at")
                 ->sortable()
                 ->collapseOnTablet(),
