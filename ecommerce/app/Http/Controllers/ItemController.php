@@ -152,6 +152,8 @@ class ItemController extends Controller
         $item->name = $request->name;
 
         $item->display_price = $request->price;
+        
+        $item->sku = $request->sku;
 
         $item->general_description = $request->description;
  
@@ -187,8 +189,6 @@ class ItemController extends Controller
 
                 $image->save();
 
-                Log::debug($filename);
-
             endif;
 
         endfor;
@@ -208,6 +208,7 @@ class ItemController extends Controller
  
         $item->name = $request->name;
 
+        $item->sku = $request->sku;
 
         $item->display_price = $request->price;
 
@@ -215,26 +216,25 @@ class ItemController extends Controller
  
         $item->save();
 
-        $image = new Image;
-        $path = $request->thumbnail->store('images', 'public');
+        for($i=1; $i <= 4;$i++):
 
-        $image->image = basename($path);
-        $image->item_id = $item->id;
+            if(isset($request->image[$i])):
+                
+                $image = new Image;
 
-        $image->save();
+                $filename = $request->image[$i]->getClientOriginalName();
 
-        $x=0;
-        while($x < 4):
+                $path = $request->image[$i]->storeAs('images', $filename, 'public');
 
-        $image = new Image;
+                $image->image = basename($path);
 
-        $image->image = 'https://via.placeholder.com/300.png';
-        $image->item_id = $item->id;
+                $image->item_id = $item->id;
 
-        $image->save();
+                $image->save();
 
-        $x++;
-        endwhile;
+            endif;
+
+        endfor;
  
         return redirect('admin/products');
     }

@@ -52,7 +52,8 @@
                                             class="pl-16 appearance-none block w-full text-gray-700 border-b-2 border-0 focus:border-b-indigo-500 focus:rounded font-bold"
                                             id="sku" type="text"
                                             placeholder="SKU: {{ $item->sku }} (Default)" value="{{ $item->sku }}"
-                                            name="price">
+                                            required
+                                            name="sku">
                                     </div>
                                 </div>
                                 <div class="sticky top-0">
@@ -63,6 +64,7 @@
                                                 class="pl-16 appearance-none block w-full text-gray-700 border-b-2 border-0 focus:border-b-indigo-500 focus:rounded font-bold"
                                                 id="name" type="text"
                                                 placeholder="Name: {{ $item->name }} (Default)"
+                                                required
                                                 value="{{ $item->name }}" name="name">
                                         </div>
                                         <div class="static flex mt-4">
@@ -71,6 +73,7 @@
                                                 class="pl-16 appearance-none block w-full text-gray-700 border-b-2 border-0 focus:border-b-indigo-500 focus:rounded font-bold"
                                                 id="price" type="text"
                                                 placeholder="Price: {{ $item->display_price }} (Default)"
+                                                required
                                                 value="{{ $item->display_price }}" name="price">
                                         </div>
                                     </div>
@@ -78,7 +81,7 @@
                                     <div class="mt-4">
                                         <div class="prose max-w-none">
                                             <p>
-                                                <textarea id="message" rows="15" name="description"
+                                                <textarea id="message" rows="15" name="description" required
                                                     class="appearance-none block w-full text-gray-700 border-b-2 border-0 focus:border-b-indigo-500  focus:rounded"
                                                     placeholder="{{ $item->general_description }}">{{ $item->general_description }}</textarea>
                                             </p>

@@ -42,7 +42,7 @@
                 </div>
                 <li class="w-full flex items-center text-center p-4">
                     <button @click="open = ! open" class="rounded-lg w-full">
-                        <i class="fi fi-ss-layers w-full text-gray-500 hover:text-indigo-700"></i>
+                        <i class="fi fi-ss-layers w-full text-gray-500 hover:text-indigo-700 {{ Request::segment(2) === 'products' ? 'text-indigo-700' : 'text-gray-600' }}"></i>
                     </button>
                 </li>
             </div>

@@ -74,7 +74,7 @@ class DataItems extends DataTableComponent
                     if(Str::contains($image, 'http')):
                         return $image;
                     else:
-                        return url('storage/images'.$image);
+                        return url('storage/images/'.$image);
                     endif;
                 } 
                 )->attributes(fn() => [
@@ -84,16 +84,6 @@ class DataItems extends DataTableComponent
             Column::make("Product Name", 'name')
                 ->sortable()
                 ->searchable(),
-                // ->view('admin/partials/database-item-data')
-                // ->collapseOnTablet(),
-
-            // Column::make("Display Price", "display_price")
-            //     ->format( function($value, $row, Column $column){
-            //         return 'Rp. '.number_format($row->display_price,0,',','.');
-            //     })
-            //     ->sortable()
-            //     ->searchable()
-            //     ->collapseOnTablet(),
 
             Column::make("Stock Keeping Unit", "sku")
                 ->sortable()
