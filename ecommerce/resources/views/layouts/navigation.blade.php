@@ -45,7 +45,7 @@
 
 <div class="sticky top-0 z-50 transition-all ease-in-out delay-200 duration-500" :class="{'shadow-md bg-gray-100': scrolledFromTop, 'shadow-none bg-white': !scrolledFromTop}">
     <div class="mx-auto px-4 sm:px-6 lg:px-8 flex justify-center min-w-full">
-        <div class="flex justify-between w-full max-w-[85rem] transition-all transition-all ease-in-out duration-500 ease-in-out md:grid-cols-3">
+        <div class="flex justify-between w-full max-w-[85rem]  transition-all duration-500 ease-in-out md:grid-cols-3">
             {{-- search bar --}}
             <div class="hidden md:block">
                 <div class="flex justify-end h-full py-2">
@@ -55,7 +55,7 @@
                     <div class="relative flex w-full flex-wrap items-stretch content-center min-w-[15rem]">
                         <label for="" id="searchlabel" class="relative w-full">
                             <input type="search"
-                                class="transition-all ease-in-out delay-200 duration-500 relative m-0 h-8 indent-5 text-xs w-full block max-w-full flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
+                                class=" delay-200 relative m-0 h-8 indent-5 text-xs w-full block max-w-full flex-auto rounded border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 font-normal text-neutral-700 outline-none transition duration-300 ease-in-out focus:border-primary-600 focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200"
                                 placeholder="Search" aria-label="Search" aria-describedby="button-addon2" />
                         </label>
                     </div>

@@ -18,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet" />
-    
+
     <style>
         @font-face {
             font-family: 'Scriptina';
@@ -26,10 +26,12 @@
             font-weight: 400;
             src: local('Scriptina'), url('https://fonts.cdnfonts.com/s/389/scriptina.woff') format('woff');
         }
+
         @font-face {
             font-family: 'Balinese Family';
             src: url('font/balinesefamily.ttf');
         }
+
         @font-face {
             font-family: 'Scriptina - Alternates';
             font-style: normal;
@@ -47,12 +49,10 @@
     @endif
 </head>
 
-<body class="font-sans antialiased" 
-x-data="{scrolledFromTop: false}" 
-x-init="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false"
-@scroll.window="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false"
-:class="{'snap-y': scrolledFromTop, 'snap-none': !scrolledFromTop}">
-    <div class="min-h-screen bg-gray-100 relative opacity-start">
+<body id="scrol" class="font-sans antialiased overflow-x-hidden" x-data="{ scrolledFromTop: false }" x-init="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false"
+    @scroll.window="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = false"
+    :class="{ 'snap-y': scrolledFromTop, 'snap-none': !scrolledFromTop }">
+    <div class="min-h-screen relative opacity-start">
         @include('layouts.navigation')
 
         <main class="bg-white md:pb-[#rem]">
@@ -63,8 +63,8 @@ x-init="window.pageYOffset > 60 ? scrolledFromTop = true : scrolledFromTop = fal
     @livewireScripts
 </body>
 @if (isset($footer))
-        {{ $footer }}
-    @endif
+    {{ $footer }}
+@endif
 @include('layouts.footer')
 
 </html>

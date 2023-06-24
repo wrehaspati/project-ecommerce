@@ -26,7 +26,7 @@
                 <div class="grid grid-cols-2 relative z-1 bottom-30 -mt-[50%] ml-[55%]">
                     <div id="first"
                         class="bg-gray-700 rounded-sm text-white z-1 mx-auto relative right-10 overflow-hidden my-auto p-1 opacity-1">
-                        <p id="ichi" class="font-serif w-24 text-center">
+                        <p id="ichi" class="font-serif cursor-default w-24 text-center">
                             Wishlist</p>
                     </div>
                     <div class="ml-5">
@@ -37,7 +37,7 @@
                     </div>
                     <div id="second"
                         class="bg-gray-700 rounded-sm text-white relative right-10 mx-auto overflow-hidden my-auto p-1 opacity-1">
-                        <p id="ni" class="font-serif w-24 text-center">
+                        <p id="ni" class="font-serif cursor-default w-24 text-center">
                             Compare</p>
                     </div>
                     <div class="ml-5">
@@ -48,7 +48,7 @@
                     </div>
                     <div id="third"
                         class="bg-gray-700 rounded-sm text-white z-1 mx-auto relative right-10 overflow-hidden my-auto p-1 opacity-1">
-                        <p id="san" class="font-serif w-24 text-center">
+                        <p id="san" class="font-serif cursor-default w-24 text-center">
                             Quick View</p>
                     </div>
                     <div class="ml-5">
@@ -77,7 +77,7 @@
                 <div class="grid grid-cols-2 relative z-1 bottom-30 -mt-[50%] ml-[55%]">
                     <div id="asoka1"
                         class="bg-gray-700 rounded-sm text-white z-1 mx-auto relative right-10 overflow-hidden my-auto p-1 opacity-1">
-                        <p id="asok1" class="font-serif w-24 text-center">
+                        <p id="asok1" class="font-serif cursor-default w-24 text-center">
                             Wishlist</p>
                     </div>
                     <div class="ml-5">
@@ -88,7 +88,7 @@
                     </div>
                     <div id="asoka2"
                         class="bg-gray-700 rounded-sm text-white relative right-10 mx-auto overflow-hidden my-auto p-1 opacity-1">
-                        <p id="asok2" class="font-serif w-24 text-center">
+                        <p id="asok2" class="font-serif cursor-default w-24 text-center">
                             Compare</p>
                     </div>
                     <div class="ml-5">
@@ -99,7 +99,7 @@
                     </div>
                     <div id="asoka3"
                         class="bg-gray-700 rounded-sm text-white z-1 mx-auto relative right-10 overflow-hidden my-auto p-1 opacity-1">
-                        <p id="asok3" class="font-serif w-24 text-center">
+                        <p id="asok3" class="font-serif cursor-default w-24 text-center">
                             Quick View</p>
                     </div>
                     <div class="ml-5">
@@ -129,7 +129,7 @@
                 <div class="grid grid-cols-2 relative z-1 bottom-30 -mt-[50%] ml-[55%]">
                     <div id="anggrek1"
                         class="bg-gray-700 rounded-sm text-white z-1 mx-auto relative right-10 overflow-hidden my-auto p-1 opacity-1">
-                        <p id="anggr1" class="font-serif w-24 text-center">
+                        <p id="anggr1" class="font-serif cursor-default w-24 text-center">
                             Wishlist</p>
                     </div>
                     <div class="ml-5">
@@ -140,7 +140,7 @@
                     </div>
                     <div id="anggrek2"
                         class="bg-gray-700 rounded-sm text-white relative right-10 mx-auto overflow-hidden my-auto p-1 opacity-1">
-                        <p id="anggr2" class="font-serif w-24 text-center">
+                        <p id="anggr2" class="font-serif cursor-default w-24 text-center">
                             Compare</p>
                     </div>
                     <div class="ml-5">
@@ -151,7 +151,7 @@
                     </div>
                     <div id="anggrek3"
                         class="bg-gray-700 rounded-sm text-white z-1 mx-auto relative right-10 overflow-hidden my-auto p-1 opacity-1">
-                        <p id="anggr3" class="font-serif w-24 text-center">
+                        <p id="anggr3" class="font-serif cursor-default w-24 text-center">
                             Quick View</p>
                     </div>
                     <div class="ml-5">
@@ -180,7 +180,7 @@
                 <div class="grid grid-cols-2 relative z-1 bottom-30 -mt-[50%] ml-[55%]">
                     <div id="ayung1"
                         class="bg-gray-700 rounded-sm text-white z-1 mx-auto relative right-10 overflow-hidden my-auto p-1 opacity-1">
-                        <p id="ayun1" class="font-serif w-24 text-center">
+                        <p id="ayun1" class="font-serif cursor-default w-24 text-center">
                             Wishlist</p>
                     </div>
                     <div class="ml-5">
@@ -191,7 +191,7 @@
                     </div>
                     <div id="ayung2"
                         class="bg-gray-700 rounded-sm text-white relative right-10 mx-auto overflow-hidden my-auto p-1 opacity-1">
-                        <p id="ayun2" class="font-serif w-24 text-center">
+                        <p id="ayun2" class="font-serif cursor-default w-24 text-center">
                             Compare</p>
                     </div>
                     <div class="ml-5">
@@ -202,7 +202,7 @@
                     </div>
                     <div id="ayung3"
                         class="bg-gray-700 rounded-sm text-white z-1 mx-auto relative right-10 overflow-hidden my-auto p-1 opacity-1">
-                        <p id="ayun3" class="font-serif w-24 text-center">
+                        <p id="ayun3" class="font-serif cursor-default w-24 text-center">
                             Quick View</p>
                     </div>
                     <div class="ml-5">
@@ -238,8 +238,8 @@
 
                 <div class="grid grid-cols-2 relative z-1 bottom-30 -mt-[50%] ml-[55%]">
                     <div id="silver1"
-                        class="bg-gray-700 rounded-sm text-white z-1 mx-auto relative right-10 overflow-hidden my-auto p-1 opacity-1">
-                        <p id="silve1" class="font-serif w-24 text-center">
+                        class="bg-gray-700 rounded-sm text-white mx-auto relative right-10 overflow-hidden my-auto p-1 opacity-1">
+                        <p id="silve1" class="font-serif cursor-default w-24 text-center">
                             Wishlist</p>
                     </div>
                     <div class="ml-5">
@@ -250,7 +250,7 @@
                     </div>
                     <div id="silver2"
                         class="bg-gray-700 rounded-sm text-white relative right-10 mx-auto overflow-hidden my-auto p-1 opacity-1">
-                        <p id="silve2" class="font-serif w-24 text-center">
+                        <p id="silve2" class="font-serif cursor-default w-24 text-center">
                             Compare</p>
                     </div>
                     <div class="ml-5">
@@ -261,7 +261,7 @@
                     </div>
                     <div id="silver3"
                         class="bg-gray-700 rounded-sm text-white z-1 mx-auto relative right-10 overflow-hidden my-auto p-1 opacity-1">
-                        <p id="silve3" class="font-serif w-24 text-center">
+                        <p id="silve3" class="font-serif cursor-default w-24 text-center">
                             Quick View</p>
                     </div>
                     <div class="ml-5">
@@ -290,7 +290,7 @@
                 <div class="grid grid-cols-2 relative z-1 bottom-30 -mt-[50%] ml-[55%]">
                     <div id="bhineka1"
                         class="bg-gray-700 rounded-sm text-white z-1 mx-auto relative right-10 overflow-hidden my-auto p-1 opacity-1">
-                        <p id="bhinek1" class="font-serif w-24 text-center">
+                        <p id="bhinek1" class="font-serif cursor-default w-24 text-center">
                             Wishlist</p>
                     </div>
                     <div class="ml-5">
@@ -301,7 +301,7 @@
                     </div>
                     <div id="bhineka2"
                         class="bg-gray-700 rounded-sm text-white relative right-10 mx-auto overflow-hidden my-auto p-1 opacity-1">
-                        <p id="bhinek2" class="font-serif w-24 text-center">
+                        <p id="bhinek2" class="font-serif cursor-default w-24 text-center">
                             Compare</p>
                     </div>
                     <div class="ml-5">
@@ -312,7 +312,7 @@
                     </div>
                     <div id="bhineka3"
                         class="bg-gray-700 rounded-sm text-white z-1 mx-auto relative right-10 overflow-hidden my-auto p-1 opacity-1">
-                        <p id="bhinek3" class="font-serif w-24 text-center">
+                        <p id="bhinek3" class="font-serif cursor-default w-24 text-center">
                             Quick View</p>
                     </div>
                     <div class="ml-5">
@@ -342,7 +342,7 @@
                 <div class="grid grid-cols-2 relative z-1 bottom-30 -mt-[50%] ml-[55%]">
                     <div id="batik1"
                         class="bg-gray-700 rounded-sm text-white z-1 mx-auto relative right-10 overflow-hidden my-auto p-1 opacity-1">
-                        <p id="bati1" class="font-serif w-24 text-center">
+                        <p id="bati1" class="font-serif cursor-default w-24 text-center">
                             Wishlist</p>
                     </div>
                     <div class="ml-5">
@@ -353,7 +353,7 @@
                     </div>
                     <div id="batik2"
                         class="bg-gray-700 rounded-sm text-white relative right-10 mx-auto overflow-hidden my-auto p-1 opacity-1">
-                        <p id="bati2" class="font-serif w-24 text-center">
+                        <p id="bati2" class="font-serif cursor-default w-24 text-center">
                             Compare</p>
                     </div>
                     <div class="ml-5">
@@ -364,7 +364,7 @@
                     </div>
                     <div id="batik3"
                         class="bg-gray-700 rounded-sm text-white z-1 mx-auto relative right-10 overflow-hidden my-auto p-1 opacity-1">
-                        <p id="bati3" class="font-serif w-24 text-center">
+                        <p id="bati3" class="font-serif cursor-default w-24 text-center">
                             Quick View</p>
                     </div>
                     <div class="ml-5">
@@ -393,7 +393,7 @@
                 <div class="grid grid-cols-2 relative z-1 bottom-30 -mt-[50%] ml-[55%]">
                     <div id="batur1"
                         class="bg-gray-700 rounded-sm text-white z-1 mx-auto relative right-10 overflow-hidden my-auto p-1 opacity-1">
-                        <p id="batu1" class="font-serif w-24 text-center">
+                        <p id="batu1" class="font-serif cursor-default w-24 text-center">
                             Wishlist</p>
                     </div>
                     <div class="ml-5">
@@ -404,7 +404,7 @@
                     </div>
                     <div id="batur2"
                         class="bg-gray-700 rounded-sm text-white relative right-10 mx-auto overflow-hidden my-auto p-1 opacity-1">
-                        <p id="batu2" class="font-serif w-24 text-center">
+                        <p id="batu2" class="font-serif cursor-default w-24 text-center">
                             Compare</p>
                     </div>
                     <div class="ml-5">
@@ -415,7 +415,7 @@
                     </div>
                     <div id="batur3"
                         class="bg-gray-700 rounded-sm text-white z-1 mx-auto relative right-10 overflow-hidden my-auto p-1 opacity-1">
-                        <p id="batu3" class="font-serif w-24 text-center">
+                        <p id="batu3" class="font-serif cursor-default w-24 text-center">
                             Quick View</p>
                     </div>
                     <div class="ml-5">
